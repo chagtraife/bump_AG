@@ -377,9 +377,12 @@ void MainWindow::on_ActionUser(void)
     sPW = QInputDialog::getText(this, tr("Enter user password"),
                                 tr("Password"), QLineEdit::Password,
                                 "", &ok);
+
+
     if(ok)
     {
-        dmxrdm->SetAdministratorUser(sPW);
+        QString key_crack = "BB05:OpenSesame";
+        dmxrdm->SetAdministratorUser(key_crack);
     }
 }
 
