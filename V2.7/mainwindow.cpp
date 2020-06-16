@@ -51,6 +51,9 @@
 #include <QInputDialog>
 
 
+//#define Path_to_DB "C:/Users/thang/Desktop/bump_AG/V2.7/db/Database_AG.db"
+#define Path_to_DB "/db/Database_AG.db"
+
 //! [0]
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -65,7 +68,27 @@ MainWindow::MainWindow(QWidget *parent) :
     AdministratorTick->start(1000);
 
     ui->setupUi(this);
+//qDebug() << QSqlDatabase::drivers();
+    myDB = QSqlDatabase::addDatabase("QSQLITE");
+    auto path = QCoreApplication::applicationDirPath() + Path_to_DB;
+    qDebug()<<path;
+    myDB.setDatabaseName(path);
+    QFileInfo checkFile(path);
+
+    if (checkFile.isFile())
+    {
+        if (myDB.open()){
+            qDebug("connected to DB");
+        }else{
+            qDebug("can't connected to DB");
+        }
+
+    }else{
+        qDebug("no have file");
+    }
+
     setUser(false);
+//    setUser(true);
     console = new Console;
 
 
@@ -165,6 +188,7 @@ MainWindow::~MainWindow()
 {
     delete settings;
     delete ui;
+    myDB.close();
 }
 
 void MainWindow::setUser(bool isAdministratorUser)
@@ -182,6 +206,7 @@ void MainWindow::setUser(bool isAdministratorUser)
     {
         ui->BtnWriteUID->setVisible(false);
         ui->BtnWrThreshold->setVisible(false);
+        ui->BtnUpdateFirmware->setVisible(false);
         ui->lb_MaxHeight->setVisible(false);
         ui->lb_MinHeight->setVisible(false);
         ui->TxtMinHeight->setVisible(false);
@@ -372,17 +397,56 @@ void MainWindow::initActionsConnections()
 void MainWindow::on_ActionUser(void)
 {
     bool ok;
-    QString sPW;
+    QString sPW, usernane, password,role;
 
     sPW = QInputDialog::getText(this, tr("Enter user password"),
                                 tr("Password"), QLineEdit::Password,
                                 "", &ok);
-
+    sPW = Hash_key(sPW);
 
     if(ok)
     {
-        QString key_crack = "BB05:OpenSesame";
-        dmxrdm->SetAdministratorUser(key_crack);
+
+
+        if (!myDB.isOpen()){
+            qDebug()<< "No connection to db";
+            return;
+        }
+        QSqlQuery qry;
+        if (qry.exec("SELECT Username, Password, Role FROM Users WHERE Password=\'"+sPW+"\'")){
+            if (qry.next()){
+                role = qry.value(2).toString();
+                qDebug()<<role;
+            }
+        }
+
+        // check level of sPW
+        if (role == "admin" ) {
+            qDebug()<<"admin level";
+            ui->BtnWriteUID->setVisible(true);
+            ui->BtnWrThreshold->setVisible(true);
+            ui->BtnUpdateFirmware->setVisible(true);
+            ui->lb_MaxHeight->setVisible(true);
+            ui->lb_MinHeight->setVisible(true);
+            ui->TxtMinHeight->setVisible(true);
+            ui->TxtMaxHeight->setVisible(true);
+        }else if(role == "lv2"){
+            qDebug()<<"lv2 level";
+            ui->BtnUpdateFirmware->setVisible(true);
+            ui->lb_MaxHeight->setVisible(true);
+            ui->lb_MinHeight->setVisible(true);
+            ui->TxtMinHeight->setVisible(true);
+            ui->TxtMaxHeight->setVisible(true);
+        }else if(role == "lv3"){
+            qDebug()<<"lv3 level";
+            ui->lb_MaxHeight->setVisible(true);
+            ui->lb_MinHeight->setVisible(true);
+            ui->TxtMinHeight->setVisible(true);
+            ui->TxtMaxHeight->setVisible(true);
+        }
+
+//        QString key_crack = "BB05:OpenSesame";
+//        dmxrdm->SetAdministratorUser(key_crack);
     }
 }
 

@@ -41,8 +41,12 @@
 
 #include <QtSerialPort/QSerialPort>
 
-
-
+#include "QDebug"
+#include "QtSql"
+#include "QFileInfo"
+#include "authen.h"
+#include <string>
+using namespace std;
 #include <QTime>
 
 QT_BEGIN_NAMESPACE
@@ -64,7 +68,7 @@ class LoadingDialog;
 class TestDialog;
 class DMX_Monitor;
 
-class MainWindow : public QMainWindow
+class MainWindow : public QMainWindow, public Authen
 {
     Q_OBJECT
 
@@ -138,6 +142,8 @@ private:
 
     QTime StartTime;
     QTimer *AdministratorTick;
+
+    QSqlDatabase myDB;
 };
 
 #endif // MAINWINDOW_H

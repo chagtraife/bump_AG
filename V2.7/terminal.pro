@@ -1,4 +1,4 @@
-QT += widgets serialport core
+QT += widgets serialport core sql
 
 TARGET = terminal
 TEMPLATE = app
@@ -11,6 +11,7 @@ INCLUDEPATH += ../qtBaseLib
 RC_FILE = terminal.rc
 
 SOURCES += \
+    authen.cpp \
     main.cpp \
     mainwindow.cpp \
     settingsdialog.cpp \
@@ -23,6 +24,7 @@ SOURCES += \
     WindDMXConverter_Setting.cpp
 
 HEADERS += \
+    authen.h \
     mainwindow.h \
     settingsdialog.h \
     console.h \
@@ -48,3 +50,5 @@ LIBS += -L"$$_PRO_FILE_PWD_/" -lqtBaseLib
 
 RESOURCES += \
     terminal.qrc
+
+DISTFILES +=
