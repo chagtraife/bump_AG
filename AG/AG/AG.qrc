@@ -13,5 +13,7 @@
         <file>images/USB_Connected.png</file>
         <file>images/USB_Disconnected.png</file>
         <file>images/waiting.gif</file>
+        <file>AG-logo.ico</file>
+        <file>AG-logo.png</file>
     </qresource>
 </RCC>

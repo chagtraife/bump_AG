@@ -32,6 +32,7 @@ SOURCES += \
     settingsdialog.cpp \
     testdialog.cpp \
     console.cpp \
+    usermanagersetting.cpp \
 
 HEADERS += \
     WindDMXConverter_Setting.h \
@@ -45,6 +46,7 @@ HEADERS += \
     testdialog.h \
     console.h \
     qtBaseLib.h \
+    usermanagersetting.h \
 
 FORMS += \
     WindDMXConverter_Setting.ui \
@@ -55,6 +57,7 @@ FORMS += \
     mainwindow.ui \
     settingsdialog.ui \
     testdialog.ui \
+    usermanagersetting.ui \
 
 
 LIBS += -L"$$_PRO_FILE_PWD_/" -lqtBaseLib
@@ -68,5 +71,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     AG.qrc
+
 
 

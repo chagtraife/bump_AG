@@ -47,7 +47,7 @@ public:
     QAction *actionUser_Manager;
     QWidget *centralWidget;
     QGridLayout *gridLayout;
-    QPushButton *BtnDMXConsole;
+    QSpacerItem *verticalSpacer_2;
     QGroupBox *Functions;
     QVBoxLayout *verticalLayout_3;
     QPushButton *BtnDeviceDiscovery;
@@ -57,8 +57,14 @@ public:
     QPushButton *BtnWrThreshold;
     QPushButton *BtnTestMode;
     QPushButton *BtnUpdateFirmware;
+    QLabel *lb_ConnectIcon;
+    QPushButton *BtnDMXConsole;
+    QGroupBox *groupBox_2;
+    QHBoxLayout *horizontalLayout;
+    QRadioButton *rdBtn_OthersDevices;
+    QRadioButton *rdBtn_Light;
+    QRadioButton *rdBtn_LightRGBW;
     QSpacerItem *verticalSpacer;
-    QSpacerItem *verticalSpacer_2;
     QGroupBox *groupBox;
     QGridLayout *gridLayout_2;
     QLineEdit *TxtMaxHeight;
@@ -71,12 +77,6 @@ public:
     QLineEdit *TxtSEQID;
     QLineEdit *TxtMinHeight;
     QLabel *label_3;
-    QGroupBox *groupBox_2;
-    QHBoxLayout *horizontalLayout;
-    QRadioButton *rdBtn_OthersDevices;
-    QRadioButton *rdBtn_Light;
-    QRadioButton *rdBtn_LightRGBW;
-    QLabel *lb_ConnectIcon;
     QMenuBar *menuBar;
     QMenu *menuCalls;
     QMenu *menuTools;
@@ -88,7 +88,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(710, 480);
+        MainWindow->resize(707, 508);
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/AG-logo.png"), QSize(), QIcon::Normal, QIcon::Off);
         MainWindow->setWindowIcon(icon);
@@ -141,16 +141,14 @@ public:
         gridLayout->setSpacing(6);
         gridLayout->setContentsMargins(11, 11, 11, 11);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-        BtnDMXConsole = new QPushButton(centralWidget);
-        BtnDMXConsole->setObjectName(QString::fromUtf8("BtnDMXConsole"));
-        QFont font;
-        font.setPointSize(12);
-        BtnDMXConsole->setFont(font);
+        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-        gridLayout->addWidget(BtnDMXConsole, 4, 0, 1, 1);
+        gridLayout->addItem(verticalSpacer_2, 5, 0, 1, 1);
 
         Functions = new QGroupBox(centralWidget);
         Functions->setObjectName(QString::fromUtf8("Functions"));
+        QFont font;
+        font.setPointSize(12);
         Functions->setFont(font);
         verticalLayout_3 = new QVBoxLayout(Functions);
         verticalLayout_3->setSpacing(6);
@@ -201,13 +199,50 @@ public:
 
         gridLayout->addWidget(Functions, 2, 1, 3, 1);
 
+        lb_ConnectIcon = new QLabel(centralWidget);
+        lb_ConnectIcon->setObjectName(QString::fromUtf8("lb_ConnectIcon"));
+        lb_ConnectIcon->setMaximumSize(QSize(60, 60));
+        lb_ConnectIcon->setScaledContents(true);
+        lb_ConnectIcon->setAlignment(Qt::AlignCenter);
+
+        gridLayout->addWidget(lb_ConnectIcon, 0, 1, 1, 1);
+
+        BtnDMXConsole = new QPushButton(centralWidget);
+        BtnDMXConsole->setObjectName(QString::fromUtf8("BtnDMXConsole"));
+        BtnDMXConsole->setFont(font);
+
+        gridLayout->addWidget(BtnDMXConsole, 4, 0, 1, 1);
+
+        groupBox_2 = new QGroupBox(centralWidget);
+        groupBox_2->setObjectName(QString::fromUtf8("groupBox_2"));
+        groupBox_2->setAutoFillBackground(false);
+        groupBox_2->setStyleSheet(QString::fromUtf8("font: 87 italic 11pt \"Arial Black\";"));
+        horizontalLayout = new QHBoxLayout(groupBox_2);
+        horizontalLayout->setSpacing(6);
+        horizontalLayout->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        rdBtn_OthersDevices = new QRadioButton(groupBox_2);
+        rdBtn_OthersDevices->setObjectName(QString::fromUtf8("rdBtn_OthersDevices"));
+        rdBtn_OthersDevices->setChecked(true);
+
+        horizontalLayout->addWidget(rdBtn_OthersDevices);
+
+        rdBtn_Light = new QRadioButton(groupBox_2);
+        rdBtn_Light->setObjectName(QString::fromUtf8("rdBtn_Light"));
+
+        horizontalLayout->addWidget(rdBtn_Light);
+
+        rdBtn_LightRGBW = new QRadioButton(groupBox_2);
+        rdBtn_LightRGBW->setObjectName(QString::fromUtf8("rdBtn_LightRGBW"));
+
+        horizontalLayout->addWidget(rdBtn_LightRGBW);
+
+
+        gridLayout->addWidget(groupBox_2, 0, 0, 1, 1);
+
         verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
         gridLayout->addItem(verticalSpacer, 1, 0, 1, 1);
-
-        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        gridLayout->addItem(verticalSpacer_2, 5, 0, 1, 1);
 
         groupBox = new QGroupBox(centralWidget);
         groupBox->setObjectName(QString::fromUtf8("groupBox"));
@@ -277,45 +312,10 @@ public:
 
         gridLayout->addWidget(groupBox, 2, 0, 2, 1);
 
-        groupBox_2 = new QGroupBox(centralWidget);
-        groupBox_2->setObjectName(QString::fromUtf8("groupBox_2"));
-        groupBox_2->setAutoFillBackground(false);
-        groupBox_2->setStyleSheet(QString::fromUtf8("font: 87 italic 11pt \"Arial Black\";"));
-        horizontalLayout = new QHBoxLayout(groupBox_2);
-        horizontalLayout->setSpacing(6);
-        horizontalLayout->setContentsMargins(11, 11, 11, 11);
-        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
-        rdBtn_OthersDevices = new QRadioButton(groupBox_2);
-        rdBtn_OthersDevices->setObjectName(QString::fromUtf8("rdBtn_OthersDevices"));
-        rdBtn_OthersDevices->setChecked(true);
-
-        horizontalLayout->addWidget(rdBtn_OthersDevices);
-
-        rdBtn_Light = new QRadioButton(groupBox_2);
-        rdBtn_Light->setObjectName(QString::fromUtf8("rdBtn_Light"));
-
-        horizontalLayout->addWidget(rdBtn_Light);
-
-        rdBtn_LightRGBW = new QRadioButton(groupBox_2);
-        rdBtn_LightRGBW->setObjectName(QString::fromUtf8("rdBtn_LightRGBW"));
-
-        horizontalLayout->addWidget(rdBtn_LightRGBW);
-
-
-        gridLayout->addWidget(groupBox_2, 0, 0, 1, 1);
-
-        lb_ConnectIcon = new QLabel(centralWidget);
-        lb_ConnectIcon->setObjectName(QString::fromUtf8("lb_ConnectIcon"));
-        lb_ConnectIcon->setMaximumSize(QSize(60, 60));
-        lb_ConnectIcon->setScaledContents(true);
-        lb_ConnectIcon->setAlignment(Qt::AlignCenter);
-
-        gridLayout->addWidget(lb_ConnectIcon, 0, 1, 1, 1);
-
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 710, 21));
+        menuBar->setGeometry(QRect(0, 0, 707, 21));
         menuCalls = new QMenu(menuBar);
         menuCalls->setObjectName(QString::fromUtf8("menuCalls"));
         menuTools = new QMenu(menuBar);
@@ -405,7 +405,6 @@ public:
         actionDMX_monitor->setText(QCoreApplication::translate("MainWindow", "DMX monitor", nullptr));
         actionDMX_monitor_2->setText(QCoreApplication::translate("MainWindow", "DMX monitor", nullptr));
         actionUser_Manager->setText(QCoreApplication::translate("MainWindow", "User Manager", nullptr));
-        BtnDMXConsole->setText(QCoreApplication::translate("MainWindow", "DMX", nullptr));
         Functions->setTitle(QCoreApplication::translate("MainWindow", "Functions", nullptr));
         BtnDeviceDiscovery->setText(QCoreApplication::translate("MainWindow", "Discovery", nullptr));
         BtnSearchDev->setText(QCoreApplication::translate("MainWindow", "Ping Device", nullptr));
@@ -414,16 +413,17 @@ public:
         BtnWrThreshold->setText(QCoreApplication::translate("MainWindow", "Write Level", nullptr));
         BtnTestMode->setText(QCoreApplication::translate("MainWindow", "Test device", nullptr));
         BtnUpdateFirmware->setText(QCoreApplication::translate("MainWindow", "Update Firmware", nullptr));
+        lb_ConnectIcon->setText(QString());
+        BtnDMXConsole->setText(QCoreApplication::translate("MainWindow", "DMX", nullptr));
+        rdBtn_OthersDevices->setText(QCoreApplication::translate("MainWindow", "Others devices", nullptr));
+        rdBtn_Light->setText(QCoreApplication::translate("MainWindow", "RGB LED", nullptr));
+        rdBtn_LightRGBW->setText(QCoreApplication::translate("MainWindow", "RGBW LED", nullptr));
         groupBox->setTitle(QCoreApplication::translate("MainWindow", "Device info", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "DMX ID", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "UID", nullptr));
         lb_MaxHeight->setText(QCoreApplication::translate("MainWindow", "MAX Height", nullptr));
         lb_MinHeight->setText(QCoreApplication::translate("MainWindow", "MIN Height", nullptr));
         label_3->setText(QCoreApplication::translate("MainWindow", "Position", nullptr));
-        rdBtn_OthersDevices->setText(QCoreApplication::translate("MainWindow", "Others devices", nullptr));
-        rdBtn_Light->setText(QCoreApplication::translate("MainWindow", "RGB LED", nullptr));
-        rdBtn_LightRGBW->setText(QCoreApplication::translate("MainWindow", "RGBW LED", nullptr));
-        lb_ConnectIcon->setText(QString());
         menuCalls->setTitle(QCoreApplication::translate("MainWindow", "Calls", nullptr));
         menuTools->setTitle(QCoreApplication::translate("MainWindow", "Tools", nullptr));
         menuHelp->setTitle(QCoreApplication::translate("MainWindow", "Help", nullptr));

@@ -10,6 +10,7 @@
 #define UI_TESTDIALOG_H
 
 #include <QtCore/QVariant>
+#include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QLCDNumber>
@@ -33,6 +34,9 @@ public:
         if (TestDialog->objectName().isEmpty())
             TestDialog->setObjectName(QString::fromUtf8("TestDialog"));
         TestDialog->resize(151, 190);
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/AG-logo.png"), QSize(), QIcon::Normal, QIcon::Off);
+        TestDialog->setWindowIcon(icon);
         verticalLayout = new QVBoxLayout(TestDialog);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         lcd_TimeRemain = new QLCDNumber(TestDialog);

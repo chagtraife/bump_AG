@@ -10,6 +10,7 @@
 #define UI_WINDDMXCONVERTER_SETTING_H
 
 #include <QtCore/QVariant>
+#include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QGroupBox>
@@ -39,12 +40,15 @@ public:
         if (WindDMXConverter_Setting->objectName().isEmpty())
             WindDMXConverter_Setting->setObjectName(QString::fromUtf8("WindDMXConverter_Setting"));
         WindDMXConverter_Setting->resize(820, 367);
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/AG-logo.png"), QSize(), QIcon::Normal, QIcon::Off);
+        WindDMXConverter_Setting->setWindowIcon(icon);
         horizontalLayout = new QHBoxLayout(WindDMXConverter_Setting);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         tableView_DMXMap = new QTableView(WindDMXConverter_Setting);
         tableView_DMXMap->setObjectName(QString::fromUtf8("tableView_DMXMap"));
         tableView_DMXMap->setContextMenuPolicy(Qt::CustomContextMenu);
-        tableView_DMXMap->horizontalHeader()->setDefaultSectionSize(33);
+        tableView_DMXMap->horizontalHeader()->setDefaultSectionSize(35);
 
         horizontalLayout->addWidget(tableView_DMXMap);
 

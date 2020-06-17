@@ -10,6 +10,7 @@
 #define UI_SETTINGSDIALOG_H
 
 #include <QtCore/QVariant>
+#include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QCheckBox>
 #include <QtWidgets/QComboBox>
@@ -61,6 +62,9 @@ public:
         if (SettingsDialog->objectName().isEmpty())
             SettingsDialog->setObjectName(QString::fromUtf8("SettingsDialog"));
         SettingsDialog->resize(519, 290);
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/AG-logo.png"), QSize(), QIcon::Normal, QIcon::Off);
+        SettingsDialog->setWindowIcon(icon);
         gridLayout_3 = new QGridLayout(SettingsDialog);
         gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
         parametersBox = new QGroupBox(SettingsDialog);

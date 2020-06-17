@@ -42,8 +42,8 @@
 #include <QtSerialPort/QSerialPort>
 
 #include "QDebug"
-#include "QtSql"
-#include "QFileInfo"
+//#include "QtSql"
+//#include "QFileInfo"
 #include "authen.h"
 #include <string>
 using namespace std;
@@ -67,6 +67,7 @@ class DeviceView;
 class LoadingDialog;
 class TestDialog;
 class DMX_Monitor;
+class UserManagerSetting;
 
 class MainWindow : public QMainWindow, public Authen
 {
@@ -138,12 +139,13 @@ private:
     LoadingDialog *loadingDialog;
     TestDialog *testDialog;
     DMX_Monitor *DMXmonitor;
+    UserManagerSetting *userManagerSetting;
     bool IsUSARTAvailable;
 
     QTime StartTime;
     QTimer *AdministratorTick;
 
-    QSqlDatabase myDB;
+//    QSqlDatabase myDB;
 };
 
 #endif // MAINWINDOW_H

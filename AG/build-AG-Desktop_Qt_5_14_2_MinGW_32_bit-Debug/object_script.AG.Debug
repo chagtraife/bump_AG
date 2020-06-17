@@ -9,6 +9,7 @@ debug/mainwindow.o
 debug/settingsdialog.o
 debug/testdialog.o
 debug/console.o
+debug/usermanagersetting.o
 debug/qrc_AG.o
 debug/moc_WindDMXConverter_Setting.o
 debug/moc_deviceview.o
@@ -20,3 +21,4 @@ debug/moc_settingsdialog.o
 debug/moc_testdialog.o
 debug/moc_console.o
 debug/moc_qtBaseLib.o
+debug/moc_usermanagersetting.o

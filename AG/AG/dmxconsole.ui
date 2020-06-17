@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="AG.qrc">
+    <normaloff>:/AG-logo.png</normaloff>:/AG-logo.png</iconset>
+  </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="2" column="0">
     <widget class="QGroupBox" name="groupBox">
@@ -344,7 +348,9 @@
  <tabstops>
   <tabstop>BtnStartStreaming</tabstop>
  </tabstops>
- <resources/>
+ <resources>
+  <include location="AG.qrc"/>
+ </resources>
  <connections/>
  <slots>
   <signal>deactived()</signal>

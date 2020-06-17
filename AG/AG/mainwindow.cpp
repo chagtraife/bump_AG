@@ -42,6 +42,7 @@
 #include "loadingdialog.h"
 #include "TestDialog.h"
 #include "dmx_monitor.h"
+#include "usermanagersetting.h"
 #include <QTimer>
 
 #include <QMessageBox>
@@ -52,7 +53,7 @@
 
 
 //#define Path_to_DB "C:/Users/thang/Desktop/bump_AG/V2.7/db/Database_AG.db"
-#define Path_to_DB "/db/Database_AG.db"
+//#define Path_to_DB "/db/Database_AG.db"
 
 //! [0]
 MainWindow::MainWindow(QWidget *parent) :
@@ -69,23 +70,25 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->setupUi(this);
 //qDebug() << QSqlDatabase::drivers();
-    myDB = QSqlDatabase::addDatabase("QSQLITE");
-    auto path = QCoreApplication::applicationDirPath() + Path_to_DB;
-    qDebug()<<path;
-    myDB.setDatabaseName(path);
-    QFileInfo checkFile(path);
+//    myDB = QSqlDatabase::addDatabase("QSQLITE");
+//    auto path = QCoreApplication::applicationDirPath() + Path_to_DB;
+//    qDebug()<<path;
+//    myDB.setDatabaseName(path);
+//    QFileInfo checkFile(path);
 
-    if (checkFile.isFile())
-    {
-        if (myDB.open()){
-            qDebug("connected to DB");
-        }else{
-            qDebug("can't connected to DB");
-        }
+//    if (checkFile.isFile())
+//    {
+//        if (myDB.open()){
+//            qDebug("connected to DB");
+//        }else{
+//            qDebug("can't connected to DB");
+//        }
 
-    }else{
-        qDebug("no have file");
-    }
+//    }else{
+//        qDebug("no have file");
+//    }
+
+    connectDB();
 
     setUser(false);
 //    setUser(true);
@@ -108,6 +111,7 @@ MainWindow::MainWindow(QWidget *parent) :
     loadingDialog = new LoadingDialog(this);
     testDialog = new TestDialog(this);
     DMXmonitor = new DMX_Monitor(this);
+    userManagerSetting = new UserManagerSetting(this);
 
     ui->actionConnect->setEnabled(true);
     ui->actionDisconnect->setEnabled(false);
@@ -204,6 +208,7 @@ void MainWindow::setUser(bool isAdministratorUser)
     }
     else
     {
+        ui->actionUser_Manager->setVisible(false);
         ui->BtnWriteUID->setVisible(false);
         ui->BtnWrThreshold->setVisible(false);
         ui->BtnUpdateFirmware->setVisible(false);
@@ -307,7 +312,7 @@ void MainWindow::closeSerialPort()
 void MainWindow::about()
 {
     QMessageBox::about(this, tr("DMX Device Manager"),
-                       tr("AG Device Manager V2.7 \r\n"));
+                       tr("AG Device Manager V4.0 \r\n"));
 }
 
 //! [6]
@@ -392,6 +397,7 @@ void MainWindow::initActionsConnections()
     connect(ui->actionAboutQt, SIGNAL(triggered()), qApp, SLOT(aboutQt()));
     connect(ui->actionUser, SIGNAL(triggered()), this, SLOT(on_ActionUser()));
     connect(ui->actionDMX_monitor_2, SIGNAL(triggered()),DMXmonitor, SLOT(ShowDMXmonitor()));
+    connect(ui->actionUser_Manager,SIGNAL(triggered()),userManagerSetting,SLOT(ShowUserManagerSetting()));
 }
 
 void MainWindow::on_ActionUser(void)
@@ -423,6 +429,7 @@ void MainWindow::on_ActionUser(void)
         // check level of sPW
         if (role == "admin" ) {
             qDebug()<<"admin level";
+            setUser(false);
             ui->BtnWriteUID->setVisible(true);
             ui->BtnWrThreshold->setVisible(true);
             ui->BtnUpdateFirmware->setVisible(true);
@@ -430,8 +437,10 @@ void MainWindow::on_ActionUser(void)
             ui->lb_MinHeight->setVisible(true);
             ui->TxtMinHeight->setVisible(true);
             ui->TxtMaxHeight->setVisible(true);
+            ui->actionUser_Manager->setVisible(true);
         }else if(role == "lv2"){
             qDebug()<<"lv2 level";
+            setUser(false);
             ui->BtnUpdateFirmware->setVisible(true);
             ui->lb_MaxHeight->setVisible(true);
             ui->lb_MinHeight->setVisible(true);
@@ -439,6 +448,7 @@ void MainWindow::on_ActionUser(void)
             ui->TxtMaxHeight->setVisible(true);
         }else if(role == "lv3"){
             qDebug()<<"lv3 level";
+            setUser(false);
             ui->lb_MaxHeight->setVisible(true);
             ui->lb_MinHeight->setVisible(true);
             ui->TxtMinHeight->setVisible(true);

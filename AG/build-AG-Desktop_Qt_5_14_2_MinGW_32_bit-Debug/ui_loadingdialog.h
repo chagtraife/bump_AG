@@ -10,6 +10,7 @@
 #define UI_LOADINGDIALOG_H
 
 #include <QtCore/QVariant>
+#include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
@@ -56,6 +57,9 @@ public:
         palette.setBrush(QPalette::Disabled, QPalette::Window, brush);
         LoadingDialog->setPalette(palette);
         LoadingDialog->setContextMenuPolicy(Qt::PreventContextMenu);
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/AG-logo.png"), QSize(), QIcon::Normal, QIcon::Off);
+        LoadingDialog->setWindowIcon(icon);
         LoadingDialog->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
         LoadingDialog->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
         centralwidget = new QWidget(LoadingDialog);
@@ -71,7 +75,7 @@ public:
         LoadingDialog->setCentralWidget(centralwidget);
         menubar = new QMenuBar(LoadingDialog);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 62, 20));
+        menubar->setGeometry(QRect(0, 0, 62, 21));
         LoadingDialog->setMenuBar(menubar);
         statusbar = new QStatusBar(LoadingDialog);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));

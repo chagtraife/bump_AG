@@ -10,6 +10,7 @@
 #define UI_DMX_MONITOR_H
 
 #include <QtCore/QVariant>
+#include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QGridLayout>
@@ -51,6 +52,9 @@ public:
         if (DMX_Monitor->objectName().isEmpty())
             DMX_Monitor->setObjectName(QString::fromUtf8("DMX_Monitor"));
         DMX_Monitor->resize(713, 446);
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/AG-logo.png"), QSize(), QIcon::Normal, QIcon::Off);
+        DMX_Monitor->setWindowIcon(icon);
         verticalLayout = new QVBoxLayout(DMX_Monitor);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         groupBox = new QGroupBox(DMX_Monitor);
@@ -75,7 +79,7 @@ public:
         tableView_DMXval->setToolTipDuration(500);
         tableView_DMXval->setEditTriggers(QAbstractItemView::NoEditTriggers);
         tableView_DMXval->setAlternatingRowColors(true);
-        tableView_DMXval->horizontalHeader()->setDefaultSectionSize(33);
+        tableView_DMXval->horizontalHeader()->setDefaultSectionSize(35);
 
         gridLayout->addWidget(tableView_DMXval, 0, 0, 1, 1);
 

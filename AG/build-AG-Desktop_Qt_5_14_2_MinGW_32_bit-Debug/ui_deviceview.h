@@ -10,6 +10,7 @@
 #define UI_DEVICEVIEW_H
 
 #include <QtCore/QVariant>
+#include <QtGui/QIcon>
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGridLayout>
@@ -60,19 +61,22 @@ public:
         if (DeviceView->objectName().isEmpty())
             DeviceView->setObjectName(QString::fromUtf8("DeviceView"));
         DeviceView->resize(650, 401);
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/AG-logo.png"), QSize(), QIcon::Normal, QIcon::Off);
+        DeviceView->setWindowIcon(icon);
         actionSave = new QAction(DeviceView);
         actionSave->setObjectName(QString::fromUtf8("actionSave"));
-        QIcon icon;
-        icon.addFile(QString::fromUtf8(":/images/save (2).ico"), QSize(), QIcon::Normal, QIcon::Off);
-        actionSave->setIcon(icon);
+        QIcon icon1;
+        icon1.addFile(QString::fromUtf8(":/images/save (2).ico"), QSize(), QIcon::Normal, QIcon::Off);
+        actionSave->setIcon(icon1);
         QFont font;
         font.setPointSize(10);
         actionSave->setFont(font);
         actionLoad = new QAction(DeviceView);
         actionLoad->setObjectName(QString::fromUtf8("actionLoad"));
-        QIcon icon1;
-        icon1.addFile(QString::fromUtf8(":/images/folder_open.ico"), QSize(), QIcon::Normal, QIcon::Off);
-        actionLoad->setIcon(icon1);
+        QIcon icon2;
+        icon2.addFile(QString::fromUtf8(":/images/folder_open.ico"), QSize(), QIcon::Normal, QIcon::Off);
+        actionLoad->setIcon(icon2);
         actionLoad->setFont(font);
         actionRefresh_Position = new QAction(DeviceView);
         actionRefresh_Position->setObjectName(QString::fromUtf8("actionRefresh_Position"));
@@ -176,7 +180,7 @@ public:
         DeviceView->setCentralWidget(centralwidget);
         menubar = new QMenuBar(DeviceView);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 650, 20));
+        menubar->setGeometry(QRect(0, 0, 650, 21));
         menuFile = new QMenu(menubar);
         menuFile->setObjectName(QString::fromUtf8("menuFile"));
         menuFunctions = new QMenu(menubar);

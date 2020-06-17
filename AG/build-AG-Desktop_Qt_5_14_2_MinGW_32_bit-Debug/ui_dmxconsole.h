@@ -10,6 +10,7 @@
 #define UI_DMXCONSOLE_H
 
 #include <QtCore/QVariant>
+#include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QCheckBox>
 #include <QtWidgets/QDialog>
@@ -81,6 +82,9 @@ public:
         if (DMXconsole->objectName().isEmpty())
             DMXconsole->setObjectName(QString::fromUtf8("DMXconsole"));
         DMXconsole->resize(938, 438);
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/AG-logo.png"), QSize(), QIcon::Normal, QIcon::Off);
+        DMXconsole->setWindowIcon(icon);
         gridLayout = new QGridLayout(DMXconsole);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         groupBox = new QGroupBox(DMXconsole);
