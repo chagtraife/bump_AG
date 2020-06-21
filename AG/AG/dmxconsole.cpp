@@ -34,10 +34,11 @@ void DMXconsole::DMXTick(void)
     if(IsDMXRunning == true)
     {
         this->DMXTriggle();
-        if(!this->isActiveWindow())
-        {
-            BtnDMXStreaming_Clicked();
-        }
+        // remove this code, stream will only off when click button
+//        if(!this->isActiveWindow())
+//        {
+//            BtnDMXStreaming_Clicked();
+//        }
     }
 }
 

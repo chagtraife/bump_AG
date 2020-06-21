@@ -1,11 +1,13 @@
 debug/WindDMXConverter_Setting.o
 debug/authen.o
+debug/debug.o
 debug/deviceview.o
 debug/dmx_monitor.o
 debug/dmxconsole.o
 debug/loadingdialog.o
 debug/main.o
 debug/mainwindow.o
+debug/qtdmxlib.o
 debug/settingsdialog.o
 debug/testdialog.o
 debug/console.o
@@ -17,6 +19,7 @@ debug/moc_dmx_monitor.o
 debug/moc_dmxconsole.o
 debug/moc_loadingdialog.o
 debug/moc_mainwindow.o
+debug/moc_qtdmxlib.o
 debug/moc_settingsdialog.o
 debug/moc_testdialog.o
 debug/moc_console.o

@@ -48,6 +48,9 @@
 #include <string>
 using namespace std;
 #include <QTime>
+#include "qtdmxlib.h"
+
+extern QT_RGB_DMX_LIB::DMXRDM *dmxrdm_rgb;
 
 QT_BEGIN_NAMESPACE
 
@@ -83,6 +86,9 @@ private slots:
     void about();
     void writeBreak(void);
     void writeData(const QByteArray &data);
+    void writeData_RGB(const QByteArray &data);
+    void writeDataBreak_RGB(const QByteArray &data, bool _break);
+    void readData_RGB();
     void readData();
     void _setBaudrate(quint32 br);
     void handleError(QSerialPort::SerialPortError error);

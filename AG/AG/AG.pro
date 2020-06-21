@@ -23,12 +23,14 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     WindDMXConverter_Setting.cpp \
     authen.cpp \
+    debug.cpp \
     deviceview.cpp \
     dmx_monitor.cpp \
     dmxconsole.cpp \
     loadingdialog.cpp \
     main.cpp \
     mainwindow.cpp \
+    qtdmxlib.cpp \
     settingsdialog.cpp \
     testdialog.cpp \
     console.cpp \
@@ -37,11 +39,13 @@ SOURCES += \
 HEADERS += \
     WindDMXConverter_Setting.h \
     authen.h \
+    debug.h \
     deviceview.h \
     dmx_monitor.h \
     dmxconsole.h \
     loadingdialog.h \
     mainwindow.h \
+    qtdmxlib.h \
     settingsdialog.h \
     testdialog.h \
     console.h \

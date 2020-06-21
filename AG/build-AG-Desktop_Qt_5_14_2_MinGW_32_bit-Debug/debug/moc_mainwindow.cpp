@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[44];
-    char stringdata0[627];
+    QByteArrayData data[48];
+    char stringdata0[680];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -42,55 +42,61 @@ QT_MOC_LITERAL(6, 79, 5), // "about"
 QT_MOC_LITERAL(7, 85, 10), // "writeBreak"
 QT_MOC_LITERAL(8, 96, 9), // "writeData"
 QT_MOC_LITERAL(9, 106, 4), // "data"
-QT_MOC_LITERAL(10, 111, 8), // "readData"
-QT_MOC_LITERAL(11, 120, 12), // "_setBaudrate"
-QT_MOC_LITERAL(12, 133, 2), // "br"
-QT_MOC_LITERAL(13, 136, 11), // "handleError"
-QT_MOC_LITERAL(14, 148, 28), // "QSerialPort::SerialPortError"
-QT_MOC_LITERAL(15, 177, 5), // "error"
-QT_MOC_LITERAL(16, 183, 24), // "AdministratorTick_Handle"
-QT_MOC_LITERAL(17, 208, 13), // "_searchDevice"
-QT_MOC_LITERAL(18, 222, 11), // "_writeDMXID"
-QT_MOC_LITERAL(19, 234, 11), // "_writeSEQID"
-QT_MOC_LITERAL(20, 246, 9), // "_writeUID"
-QT_MOC_LITERAL(21, 256, 12), // "_setTestMode"
-QT_MOC_LITERAL(22, 269, 18), // "_showDMXRDMMessage"
-QT_MOC_LITERAL(23, 288, 7), // "message"
-QT_MOC_LITERAL(24, 296, 18), // "_DisplayDMXAddress"
-QT_MOC_LITERAL(25, 315, 6), // "DMXAdd"
-QT_MOC_LITERAL(26, 322, 18), // "_DisplayUIDAddress"
-QT_MOC_LITERAL(27, 341, 3), // "UID"
-QT_MOC_LITERAL(28, 345, 18), // "_DisplaySEQAddress"
-QT_MOC_LITERAL(29, 364, 6), // "SEQAdd"
-QT_MOC_LITERAL(30, 371, 17), // "_DisplayThreshold"
-QT_MOC_LITERAL(31, 389, 3), // "Max"
-QT_MOC_LITERAL(32, 393, 3), // "Min"
-QT_MOC_LITERAL(33, 397, 15), // "_BtnDMX_Clicked"
-QT_MOC_LITERAL(34, 413, 26), // "_BtnFirmwareUpdate_Clicked"
-QT_MOC_LITERAL(35, 440, 10), // "_DMXStream"
-QT_MOC_LITERAL(36, 451, 23), // "on_BtnSearchDev_clicked"
-QT_MOC_LITERAL(37, 475, 25), // "on_BtnWrThreshold_clicked"
-QT_MOC_LITERAL(38, 501, 22), // "on_BtnWriteUID_clicked"
-QT_MOC_LITERAL(39, 524, 29), // "on_BtnDeviceDiscovery_clicked"
-QT_MOC_LITERAL(40, 554, 13), // "on_ActionUser"
-QT_MOC_LITERAL(41, 568, 7), // "setUser"
-QT_MOC_LITERAL(42, 576, 19), // "isAdministratorUser"
-QT_MOC_LITERAL(43, 596, 30) // "on_DeviceTypeSelection_clicked"
+QT_MOC_LITERAL(10, 111, 13), // "writeData_RGB"
+QT_MOC_LITERAL(11, 125, 18), // "writeDataBreak_RGB"
+QT_MOC_LITERAL(12, 144, 6), // "_break"
+QT_MOC_LITERAL(13, 151, 12), // "readData_RGB"
+QT_MOC_LITERAL(14, 164, 8), // "readData"
+QT_MOC_LITERAL(15, 173, 12), // "_setBaudrate"
+QT_MOC_LITERAL(16, 186, 2), // "br"
+QT_MOC_LITERAL(17, 189, 11), // "handleError"
+QT_MOC_LITERAL(18, 201, 28), // "QSerialPort::SerialPortError"
+QT_MOC_LITERAL(19, 230, 5), // "error"
+QT_MOC_LITERAL(20, 236, 24), // "AdministratorTick_Handle"
+QT_MOC_LITERAL(21, 261, 13), // "_searchDevice"
+QT_MOC_LITERAL(22, 275, 11), // "_writeDMXID"
+QT_MOC_LITERAL(23, 287, 11), // "_writeSEQID"
+QT_MOC_LITERAL(24, 299, 9), // "_writeUID"
+QT_MOC_LITERAL(25, 309, 12), // "_setTestMode"
+QT_MOC_LITERAL(26, 322, 18), // "_showDMXRDMMessage"
+QT_MOC_LITERAL(27, 341, 7), // "message"
+QT_MOC_LITERAL(28, 349, 18), // "_DisplayDMXAddress"
+QT_MOC_LITERAL(29, 368, 6), // "DMXAdd"
+QT_MOC_LITERAL(30, 375, 18), // "_DisplayUIDAddress"
+QT_MOC_LITERAL(31, 394, 3), // "UID"
+QT_MOC_LITERAL(32, 398, 18), // "_DisplaySEQAddress"
+QT_MOC_LITERAL(33, 417, 6), // "SEQAdd"
+QT_MOC_LITERAL(34, 424, 17), // "_DisplayThreshold"
+QT_MOC_LITERAL(35, 442, 3), // "Max"
+QT_MOC_LITERAL(36, 446, 3), // "Min"
+QT_MOC_LITERAL(37, 450, 15), // "_BtnDMX_Clicked"
+QT_MOC_LITERAL(38, 466, 26), // "_BtnFirmwareUpdate_Clicked"
+QT_MOC_LITERAL(39, 493, 10), // "_DMXStream"
+QT_MOC_LITERAL(40, 504, 23), // "on_BtnSearchDev_clicked"
+QT_MOC_LITERAL(41, 528, 25), // "on_BtnWrThreshold_clicked"
+QT_MOC_LITERAL(42, 554, 22), // "on_BtnWriteUID_clicked"
+QT_MOC_LITERAL(43, 577, 29), // "on_BtnDeviceDiscovery_clicked"
+QT_MOC_LITERAL(44, 607, 13), // "on_ActionUser"
+QT_MOC_LITERAL(45, 621, 7), // "setUser"
+QT_MOC_LITERAL(46, 629, 19), // "isAdministratorUser"
+QT_MOC_LITERAL(47, 649, 30) // "on_DeviceTypeSelection_clicked"
 
     },
     "MainWindow\0showLoadingDialog\0\0"
     "hideLoadingDialog\0openSerialPort\0"
     "closeSerialPort\0about\0writeBreak\0"
-    "writeData\0data\0readData\0_setBaudrate\0"
-    "br\0handleError\0QSerialPort::SerialPortError\0"
-    "error\0AdministratorTick_Handle\0"
-    "_searchDevice\0_writeDMXID\0_writeSEQID\0"
-    "_writeUID\0_setTestMode\0_showDMXRDMMessage\0"
-    "message\0_DisplayDMXAddress\0DMXAdd\0"
-    "_DisplayUIDAddress\0UID\0_DisplaySEQAddress\0"
-    "SEQAdd\0_DisplayThreshold\0Max\0Min\0"
-    "_BtnDMX_Clicked\0_BtnFirmwareUpdate_Clicked\0"
-    "_DMXStream\0on_BtnSearchDev_clicked\0"
+    "writeData\0data\0writeData_RGB\0"
+    "writeDataBreak_RGB\0_break\0readData_RGB\0"
+    "readData\0_setBaudrate\0br\0handleError\0"
+    "QSerialPort::SerialPortError\0error\0"
+    "AdministratorTick_Handle\0_searchDevice\0"
+    "_writeDMXID\0_writeSEQID\0_writeUID\0"
+    "_setTestMode\0_showDMXRDMMessage\0message\0"
+    "_DisplayDMXAddress\0DMXAdd\0_DisplayUIDAddress\0"
+    "UID\0_DisplaySEQAddress\0SEQAdd\0"
+    "_DisplayThreshold\0Max\0Min\0_BtnDMX_Clicked\0"
+    "_BtnFirmwareUpdate_Clicked\0_DMXStream\0"
+    "on_BtnSearchDev_clicked\0"
     "on_BtnWrThreshold_clicked\0"
     "on_BtnWriteUID_clicked\0"
     "on_BtnDeviceDiscovery_clicked\0"
@@ -105,7 +111,7 @@ static const uint qt_meta_data_MainWindow[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-      31,   14, // methods
+      34,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -113,39 +119,42 @@ static const uint qt_meta_data_MainWindow[] = {
        2,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,  169,    2, 0x06 /* Public */,
-       3,    0,  170,    2, 0x06 /* Public */,
+       1,    0,  184,    2, 0x06 /* Public */,
+       3,    0,  185,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       4,    0,  171,    2, 0x08 /* Private */,
-       5,    0,  172,    2, 0x08 /* Private */,
-       6,    0,  173,    2, 0x08 /* Private */,
-       7,    0,  174,    2, 0x08 /* Private */,
-       8,    1,  175,    2, 0x08 /* Private */,
-      10,    0,  178,    2, 0x08 /* Private */,
-      11,    1,  179,    2, 0x08 /* Private */,
-      13,    1,  182,    2, 0x08 /* Private */,
-      16,    0,  185,    2, 0x08 /* Private */,
-      17,    0,  186,    2, 0x08 /* Private */,
-      18,    0,  187,    2, 0x08 /* Private */,
-      19,    0,  188,    2, 0x08 /* Private */,
-      20,    0,  189,    2, 0x08 /* Private */,
-      21,    0,  190,    2, 0x08 /* Private */,
-      22,    1,  191,    2, 0x08 /* Private */,
-      24,    1,  194,    2, 0x08 /* Private */,
-      26,    1,  197,    2, 0x08 /* Private */,
-      28,    1,  200,    2, 0x08 /* Private */,
-      30,    2,  203,    2, 0x08 /* Private */,
-      33,    0,  208,    2, 0x08 /* Private */,
-      34,    0,  209,    2, 0x08 /* Private */,
-      35,    0,  210,    2, 0x08 /* Private */,
-      36,    0,  211,    2, 0x08 /* Private */,
-      37,    0,  212,    2, 0x08 /* Private */,
-      38,    0,  213,    2, 0x08 /* Private */,
-      39,    0,  214,    2, 0x08 /* Private */,
-      40,    0,  215,    2, 0x08 /* Private */,
-      41,    1,  216,    2, 0x08 /* Private */,
-      43,    0,  219,    2, 0x08 /* Private */,
+       4,    0,  186,    2, 0x08 /* Private */,
+       5,    0,  187,    2, 0x08 /* Private */,
+       6,    0,  188,    2, 0x08 /* Private */,
+       7,    0,  189,    2, 0x08 /* Private */,
+       8,    1,  190,    2, 0x08 /* Private */,
+      10,    1,  193,    2, 0x08 /* Private */,
+      11,    2,  196,    2, 0x08 /* Private */,
+      13,    0,  201,    2, 0x08 /* Private */,
+      14,    0,  202,    2, 0x08 /* Private */,
+      15,    1,  203,    2, 0x08 /* Private */,
+      17,    1,  206,    2, 0x08 /* Private */,
+      20,    0,  209,    2, 0x08 /* Private */,
+      21,    0,  210,    2, 0x08 /* Private */,
+      22,    0,  211,    2, 0x08 /* Private */,
+      23,    0,  212,    2, 0x08 /* Private */,
+      24,    0,  213,    2, 0x08 /* Private */,
+      25,    0,  214,    2, 0x08 /* Private */,
+      26,    1,  215,    2, 0x08 /* Private */,
+      28,    1,  218,    2, 0x08 /* Private */,
+      30,    1,  221,    2, 0x08 /* Private */,
+      32,    1,  224,    2, 0x08 /* Private */,
+      34,    2,  227,    2, 0x08 /* Private */,
+      37,    0,  232,    2, 0x08 /* Private */,
+      38,    0,  233,    2, 0x08 /* Private */,
+      39,    0,  234,    2, 0x08 /* Private */,
+      40,    0,  235,    2, 0x08 /* Private */,
+      41,    0,  236,    2, 0x08 /* Private */,
+      42,    0,  237,    2, 0x08 /* Private */,
+      43,    0,  238,    2, 0x08 /* Private */,
+      44,    0,  239,    2, 0x08 /* Private */,
+      45,    1,  240,    2, 0x08 /* Private */,
+      47,    0,  243,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void,
@@ -157,20 +166,23 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void, QMetaType::QByteArray,    9,
-    QMetaType::Void,
-    QMetaType::Void, QMetaType::UInt,   12,
-    QMetaType::Void, 0x80000000 | 14,   15,
-    QMetaType::Void,
+    QMetaType::Void, QMetaType::QByteArray,    9,
+    QMetaType::Void, QMetaType::QByteArray, QMetaType::Bool,    9,   12,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void, QMetaType::UInt,   16,
+    QMetaType::Void, 0x80000000 | 18,   19,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QString,   23,
-    QMetaType::Void, QMetaType::UShort,   25,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
     QMetaType::Void, QMetaType::QString,   27,
     QMetaType::Void, QMetaType::UShort,   29,
-    QMetaType::Void, QMetaType::QString, QMetaType::QString,   31,   32,
+    QMetaType::Void, QMetaType::QString,   31,
+    QMetaType::Void, QMetaType::UShort,   33,
+    QMetaType::Void, QMetaType::QString, QMetaType::QString,   35,   36,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -179,7 +191,7 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Bool,   42,
+    QMetaType::Void, QMetaType::Bool,   46,
     QMetaType::Void,
 
        0        // eod
@@ -198,30 +210,33 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 4: _t->about(); break;
         case 5: _t->writeBreak(); break;
         case 6: _t->writeData((*reinterpret_cast< const QByteArray(*)>(_a[1]))); break;
-        case 7: _t->readData(); break;
-        case 8: _t->_setBaudrate((*reinterpret_cast< quint32(*)>(_a[1]))); break;
-        case 9: _t->handleError((*reinterpret_cast< QSerialPort::SerialPortError(*)>(_a[1]))); break;
-        case 10: _t->AdministratorTick_Handle(); break;
-        case 11: _t->_searchDevice(); break;
-        case 12: _t->_writeDMXID(); break;
-        case 13: _t->_writeSEQID(); break;
-        case 14: _t->_writeUID(); break;
-        case 15: _t->_setTestMode(); break;
-        case 16: _t->_showDMXRDMMessage((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 17: _t->_DisplayDMXAddress((*reinterpret_cast< quint16(*)>(_a[1]))); break;
-        case 18: _t->_DisplayUIDAddress((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 19: _t->_DisplaySEQAddress((*reinterpret_cast< quint16(*)>(_a[1]))); break;
-        case 20: _t->_DisplayThreshold((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2]))); break;
-        case 21: _t->_BtnDMX_Clicked(); break;
-        case 22: _t->_BtnFirmwareUpdate_Clicked(); break;
-        case 23: _t->_DMXStream(); break;
-        case 24: _t->on_BtnSearchDev_clicked(); break;
-        case 25: _t->on_BtnWrThreshold_clicked(); break;
-        case 26: _t->on_BtnWriteUID_clicked(); break;
-        case 27: _t->on_BtnDeviceDiscovery_clicked(); break;
-        case 28: _t->on_ActionUser(); break;
-        case 29: _t->setUser((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 30: _t->on_DeviceTypeSelection_clicked(); break;
+        case 7: _t->writeData_RGB((*reinterpret_cast< const QByteArray(*)>(_a[1]))); break;
+        case 8: _t->writeDataBreak_RGB((*reinterpret_cast< const QByteArray(*)>(_a[1])),(*reinterpret_cast< bool(*)>(_a[2]))); break;
+        case 9: _t->readData_RGB(); break;
+        case 10: _t->readData(); break;
+        case 11: _t->_setBaudrate((*reinterpret_cast< quint32(*)>(_a[1]))); break;
+        case 12: _t->handleError((*reinterpret_cast< QSerialPort::SerialPortError(*)>(_a[1]))); break;
+        case 13: _t->AdministratorTick_Handle(); break;
+        case 14: _t->_searchDevice(); break;
+        case 15: _t->_writeDMXID(); break;
+        case 16: _t->_writeSEQID(); break;
+        case 17: _t->_writeUID(); break;
+        case 18: _t->_setTestMode(); break;
+        case 19: _t->_showDMXRDMMessage((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 20: _t->_DisplayDMXAddress((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 21: _t->_DisplayUIDAddress((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 22: _t->_DisplaySEQAddress((*reinterpret_cast< quint16(*)>(_a[1]))); break;
+        case 23: _t->_DisplayThreshold((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2]))); break;
+        case 24: _t->_BtnDMX_Clicked(); break;
+        case 25: _t->_BtnFirmwareUpdate_Clicked(); break;
+        case 26: _t->_DMXStream(); break;
+        case 27: _t->on_BtnSearchDev_clicked(); break;
+        case 28: _t->on_BtnWrThreshold_clicked(); break;
+        case 29: _t->on_BtnWriteUID_clicked(); break;
+        case 30: _t->on_BtnDeviceDiscovery_clicked(); break;
+        case 31: _t->on_ActionUser(); break;
+        case 32: _t->setUser((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 33: _t->on_DeviceTypeSelection_clicked(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -274,13 +289,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 31)
+        if (_id < 34)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 31;
+        _id -= 34;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 31)
+        if (_id < 34)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 31;
+        _id -= 34;
     }
     return _id;
 }

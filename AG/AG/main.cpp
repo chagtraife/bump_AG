@@ -35,7 +35,8 @@
 #include <QApplication>
 
 #include "mainwindow.h"
-
+#include "qtdmxlib.h"
+QT_RGB_DMX_LIB::DMXRDM *dmxrdm_rgb;
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);

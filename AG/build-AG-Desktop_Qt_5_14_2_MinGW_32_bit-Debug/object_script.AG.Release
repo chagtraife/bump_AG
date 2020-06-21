@@ -1,11 +1,13 @@
 release/WindDMXConverter_Setting.o
 release/authen.o
+release/debug.o
 release/deviceview.o
 release/dmx_monitor.o
 release/dmxconsole.o
 release/loadingdialog.o
 release/main.o
 release/mainwindow.o
+release/qtdmxlib.o
 release/settingsdialog.o
 release/testdialog.o
 release/console.o
@@ -17,6 +19,7 @@ release/moc_dmx_monitor.o
 release/moc_dmxconsole.o
 release/moc_loadingdialog.o
 release/moc_mainwindow.o
+release/moc_qtdmxlib.o
 release/moc_settingsdialog.o
 release/moc_testdialog.o
 release/moc_console.o

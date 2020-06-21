@@ -40,7 +40,7 @@
 #include "dmxconsole.h"
 #include "deviceview.h"
 #include "loadingdialog.h"
-#include "TestDialog.h"
+#include "testdialog.h"
 #include "dmx_monitor.h"
 #include "usermanagersetting.h"
 #include <QTimer>
@@ -50,6 +50,9 @@
 #include <QtSerialPort/QSerialPort>
 #include <QDebug>
 #include <QInputDialog>
+
+#include "qtdmxlib.h"
+#include "debug.h"
 
 
 //#define Path_to_DB "C:/Users/thang/Desktop/bump_AG/V2.7/db/Database_AG.db"
@@ -122,6 +125,10 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->statusBar->addWidget(status);
 
     initActionsConnections();
+    dmxrdm_rgb = new QT_RGB_DMX_LIB::DMXRDM();
+    connect(dmxrdm_rgb,SIGNAL(writeData(const QByteArray)), this, SLOT(writeData_RGB(const QByteArray)));
+    connect(dmxrdm_rgb, SIGNAL(writeDataBreak(QByteArray, bool)), this, SLOT(writeDataBreak_RGB(QByteArray, bool)));
+
     ui_Init();
     this->showDisconnected();
     IsUSARTAvailable = false;
@@ -163,6 +170,10 @@ void MainWindow::on_DeviceTypeSelection_clicked()
 {
     if(ui->rdBtn_OthersDevices->isChecked())
     {
+        ui->gboptionRGB->setVisible(false);
+        ui->rdLoop->setVisible(false);
+        ui->rdOneOne->setVisible(false);
+        ui->BtnReadDMXID->setVisible(false);
         ui->TxtUID->setEnabled(true);
         ui->TxtMaxHeight->setEnabled(true);
         ui->TxtMinHeight->setEnabled(true);
@@ -175,6 +186,10 @@ void MainWindow::on_DeviceTypeSelection_clicked()
     }
     else
     {
+        ui->gboptionRGB->setVisible(true);
+        ui->rdLoop->setVisible(true);
+        ui->rdOneOne->setVisible(true);
+        ui->BtnReadDMXID->setVisible(true);
         ui->TxtUID->setEnabled(false);
         ui->TxtMaxHeight->setEnabled(false);
         ui->TxtMinHeight->setEnabled(false);
@@ -208,6 +223,8 @@ void MainWindow::setUser(bool isAdministratorUser)
     }
     else
     {
+        ui->gboptionRGB->setVisible(false);
+        ui->BtnReadDMXID->setVisible(false);
         ui->actionUser_Manager->setVisible(false);
         ui->BtnWriteUID->setVisible(false);
         ui->BtnWrThreshold->setVisible(false);
@@ -323,7 +340,7 @@ void MainWindow::writeData(const QByteArray &data)
         IsUSARTAvailable = false;
         openSerialPort();
         dmxrdm->delay_ms(500);
-        serial->write(data);
+//        serial->write(data);
     }
     else if(IsUSARTAvailable == true)
     {
@@ -331,6 +348,71 @@ void MainWindow::writeData(const QByteArray &data)
     }
 }
 //! [6]
+void MainWindow::writeData_RGB(const QByteArray &data)
+{
+    if(serial->isOpen() == false)
+    {
+        IsUSARTAvailable = false;
+        openSerialPort();
+        dmxrdm_rgb->delay(500);
+    }
+
+    if(serial->isOpen())
+    {
+        /*
+        QString _sprint = tr("data send. Size:\t%1. Data").arg(data.size());
+        for(int i = 0; i < data.size(); i++)
+        {
+            _sprint += tr(" %1").arg((quint8)data[i]);
+        }
+        DEBUG(_sprint);
+*/
+        serial->sendBreak(1);
+        //dmxrdm->delay(1);
+        serial->write(data);
+    }
+}
+
+void MainWindow::writeDataBreak_RGB(const QByteArray &data, bool _break)
+{
+    QString _sprint = tr("data send. Size:\t%1. Data").arg(data.size());
+
+    if(serial->isOpen() == false)
+    {
+        IsUSARTAvailable = false;
+        openSerialPort();
+        dmxrdm_rgb->delay(500);
+    }
+
+    for(int i = 0; i < data.size(); i++)
+    {
+        _sprint += tr(" %1").arg((quint8)data[i]);
+    }
+    if(_break)
+    {
+        serial->sendBreak(1);
+        dmxrdm_rgb->delay(1);
+    }
+    else {
+    }
+    serial->write(data);
+}
+
+void MainWindow::readData_RGB()
+{
+    const QByteArray data = serial->readAll();
+    //m_console->putData(data);
+
+    QString _sprint;
+    _sprint = tr("Data rec. Size: %1, data: ").arg(data.size());
+    for(int i = 0; i < data.size(); i++)
+    {
+        _sprint += tr("%1 ").arg((quint8)data[i]);
+    }
+    DEBUG(_sprint);
+    dmxrdm_rgb->RDMRecHandler(data);
+}
+
 
 void MainWindow::writeBreak(void)
 {
@@ -360,6 +442,7 @@ void MainWindow::readData()
         dmxrdm->RxFrame.clear();
         dmxrdm->RxFrame = _dat;
         DMXmonitor->ReadData(_dat);
+        dmxrdm_rgb->RDMRecHandler(_dat);
     }
 }
 //! [7]
@@ -653,84 +736,129 @@ void MainWindow::_writeDMXID()
     }
     if(ui->rdBtn_Light->isChecked())
     {
-        s = ui->TxtDMXID->text().trimmed();
-        quint16 _DMXID = s.toUInt();
-        if(_DMXID > 0 && _DMXID <= 510)
-        {
-            if((_DMXID-1)%3 == 0)
-            {
-                QByteArray addressing = dmxrdm->tr3Array();
-                this->writeData(addressing);
-                dmxrdm->delay_ms(500);
 
-                //open gate
-                for(int i = (_DMXID-1)/3 + 1; i <= 170; i++)
-                {
-                    //for(int j = 0; j < 3; j++)
-                    {
-                        addressing = dmxrdm->tr4Array();
-                        addressing.append(i);
-                        addressing.append((char)0);
-                        //write continously
-                        this->writeBreak();
-                        this->writeData(addressing);
-                        dmxrdm->delay_ms(8);
-                    }
-                }
-                dmxrdm->delay_ms(2000);
-                QMessageBox::information(this, "DMX Lights Addressing", "Done");
-            }
-            else
-            {
-                QString message;
-                message = QString("Addressing is incorrect\r\nAddress should be ") + QString::number(((_DMXID-1)/3)*3 + 1);
-                message += QString(" or ") + QString::number(((_DMXID-1)/3 + 1)*3 + 1);
-                QMessageBox::warning(this, "DMX Addressing", message);
-            }
-        }
-        else
+//        s = ui->TxtDMXID->text().trimmed();
+//        quint16 _DMXID = s.toUInt();
+//        if(_DMXID > 0 && _DMXID <= 510)
+//        {
+//            if((_DMXID-1)%3 == 0)
+//            {
+//                QByteArray addressing = dmxrdm->tr3Array();
+//                this->writeData(addressing);
+//                dmxrdm->delay_ms(500);
+
+//                //open gate
+//                for(int i = (_DMXID-1)/3 + 1; i <= 170; i++)
+//                {
+//                    //for(int j = 0; j < 3; j++)
+//                    {
+//                        addressing = dmxrdm->tr4Array();
+//                        addressing.append(i);
+//                        addressing.append((char)0);
+//                        //write continously
+//                        this->writeBreak();
+//                        this->writeData(addressing);
+//                        dmxrdm->delay_ms(8);
+//                    }
+//                }
+//                dmxrdm->delay_ms(2000);
+//                QMessageBox::information(this, "DMX Lights Addressing", "Done");
+//            }
+//            else
+//            {
+//                QString message;
+//                message = QString("Addressing is incorrect\r\nAddress should be ") + QString::number(((_DMXID-1)/3)*3 + 1);
+//                message += QString(" or ") + QString::number(((_DMXID-1)/3 + 1)*3 + 1);
+//                QMessageBox::warning(this, "DMX Addressing", message);
+//            }
+//        }
+//        else
+//        {
+//            QMessageBox::warning(this,"DMX Addressing", "Address is out of range");
+//        }
+
+        //=================RGB==================
+        quint16 channel = (quint16) ui->TxtDMXID->text().trimmed().toInt();
+        if(channel == 1 || (channel - 1)%3 == 0)
         {
-            QMessageBox::warning(this,"DMX Addressing", "Address is out of range");
+            channel = (channel - 1)/3 + 1;
+            if(dmxrdm_rgb->writeChannel_RGB_old(channel))
+            {
+                QMessageBox::information(this, "Done", "Write channel done!");
+            }
+            else {
+                QMessageBox::information(this, "ERROR", "Can't write channel");
+            }
         }
+        else {
+            QMessageBox::information(this, "INFO", "DMX ID 1, 4, 7, 10,...!");
+        }
+
+
+
+        //===================================
+
     }
     else if(ui->rdBtn_LightRGBW->isChecked())
     {
-        s = ui->TxtDMXID->text().trimmed();
-        quint16 _DMXID = s.toUInt();
-        if(_DMXID > 0 && _DMXID <= 509)
-        {
-            if((_DMXID-1)%4 == 0)
-            {
-                QByteArray addressing = dmxrdm->tr3Array();
-                this->writeData(addressing);
-                dmxrdm->delay_ms(500);
 
-                //open gate
-                for(int i = (_DMXID-1)/4 + 1; i <= 128; i++)
-                {
-                    addressing = dmxrdm->tr4Array();
-                    addressing.append(i);
-                    addressing.append((char)0);
-                    //write continously
-                    this->writeBreak();
-                    this->writeData(addressing);
-                    dmxrdm->delay_ms(8);
-                }
-                dmxrdm->delay_ms(2000);
-                QMessageBox::information(this, "DMX Lights Addressing", "Done");
-            }
-            else
-            {
-                QString message;
-                message = QString("Addressing is incorrect\r\nAddress should be ") + QString::number(((_DMXID-1)/4)*4 + 1);
-                message += QString(" or ") + QString::number(((_DMXID-1)/4 + 1)*4 + 1);
-                QMessageBox::warning(this, "DMX Addressing", message);
-            }
-        }
-        else
+//        s = ui->TxtDMXID->text().trimmed();
+//        quint16 _DMXID = s.toUInt();
+//        if(_DMXID > 0 && _DMXID <= 509)
+//        {
+//            if((_DMXID-1)%4 == 0)
+//            {
+//                QByteArray addressing = dmxrdm->tr3Array();
+//                this->writeData(addressing);
+//                dmxrdm->delay_ms(500);
+
+//                //open gate
+//                for(int i = (_DMXID-1)/4 + 1; i <= 128; i++)
+//                {
+//                    addressing = dmxrdm->tr4Array();
+//                    addressing.append(i);
+//                    addressing.append((char)0);
+//                    //write continously
+//                    this->writeBreak();
+//                    this->writeData(addressing);
+//                    dmxrdm->delay_ms(8);
+//                }
+//                dmxrdm->delay_ms(2000);
+//                QMessageBox::information(this, "DMX Lights Addressing", "Done");
+//            }
+//            else
+//            {
+//                QString message;
+//                message = QString("Addressing is incorrect\r\nAddress should be ") + QString::number(((_DMXID-1)/4)*4 + 1);
+//                message += QString(" or ") + QString::number(((_DMXID-1)/4 + 1)*4 + 1);
+//                QMessageBox::warning(this, "DMX Addressing", message);
+//            }
+//        }
+//        else
+//        {
+//            QMessageBox::warning(this,"DMX Addressing", "Address is out of range");
+//        }
+
+
+        //================RGBW===================
+        quint16 channel = (quint16) ui->TxtDMXID->text().trimmed().toInt();
+        if(channel == 1 || (channel - 1)%4 == 0)
         {
-            QMessageBox::warning(this,"DMX Addressing", "Address is out of range");
+            channel = (channel - 1)/4 + 1;
+            if(dmxrdm_rgb->writeChannel_RGB_old(channel))
+            {
+                QMessageBox::information(this, "Done", "Write channel done!");
+            }
+            else {
+                QMessageBox::information(this, "ERROR", "Can't write channel");
+            }
         }
+        else {
+            QMessageBox::information(this, "INFO", "DMX ID 1, 5, 9, 13, ...!");
+        }
+
+        //===================================
+
     }
     else
     {

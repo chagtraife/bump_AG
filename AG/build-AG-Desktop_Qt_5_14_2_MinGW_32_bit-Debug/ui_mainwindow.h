@@ -47,24 +47,25 @@ public:
     QAction *actionUser_Manager;
     QWidget *centralWidget;
     QGridLayout *gridLayout;
-    QSpacerItem *verticalSpacer_2;
     QGroupBox *Functions;
     QVBoxLayout *verticalLayout_3;
     QPushButton *BtnDeviceDiscovery;
     QPushButton *BtnSearchDev;
+    QPushButton *BtnReadDMXID;
     QPushButton *BtnWrDMXID;
     QPushButton *BtnWriteUID;
     QPushButton *BtnWrThreshold;
     QPushButton *BtnTestMode;
     QPushButton *BtnUpdateFirmware;
-    QLabel *lb_ConnectIcon;
     QPushButton *BtnDMXConsole;
+    QSpacerItem *verticalSpacer;
+    QLabel *lb_ConnectIcon;
+    QSpacerItem *verticalSpacer_2;
     QGroupBox *groupBox_2;
     QHBoxLayout *horizontalLayout;
     QRadioButton *rdBtn_OthersDevices;
     QRadioButton *rdBtn_Light;
     QRadioButton *rdBtn_LightRGBW;
-    QSpacerItem *verticalSpacer;
     QGroupBox *groupBox;
     QGridLayout *gridLayout_2;
     QLineEdit *TxtMaxHeight;
@@ -77,6 +78,10 @@ public:
     QLineEdit *TxtSEQID;
     QLineEdit *TxtMinHeight;
     QLabel *label_3;
+    QGroupBox *gboptionRGB;
+    QHBoxLayout *horizontalLayout_2;
+    QRadioButton *rdOneOne;
+    QRadioButton *rdLoop;
     QMenuBar *menuBar;
     QMenu *menuCalls;
     QMenu *menuTools;
@@ -141,10 +146,6 @@ public:
         gridLayout->setSpacing(6);
         gridLayout->setContentsMargins(11, 11, 11, 11);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        gridLayout->addItem(verticalSpacer_2, 5, 0, 1, 1);
-
         Functions = new QGroupBox(centralWidget);
         Functions->setObjectName(QString::fromUtf8("Functions"));
         QFont font;
@@ -164,6 +165,11 @@ public:
         BtnSearchDev->setFont(font);
 
         verticalLayout_3->addWidget(BtnSearchDev);
+
+        BtnReadDMXID = new QPushButton(Functions);
+        BtnReadDMXID->setObjectName(QString::fromUtf8("BtnReadDMXID"));
+
+        verticalLayout_3->addWidget(BtnReadDMXID);
 
         BtnWrDMXID = new QPushButton(Functions);
         BtnWrDMXID->setObjectName(QString::fromUtf8("BtnWrDMXID"));
@@ -197,7 +203,17 @@ public:
         verticalLayout_3->addWidget(BtnUpdateFirmware);
 
 
-        gridLayout->addWidget(Functions, 2, 1, 3, 1);
+        gridLayout->addWidget(Functions, 3, 1, 3, 1);
+
+        BtnDMXConsole = new QPushButton(centralWidget);
+        BtnDMXConsole->setObjectName(QString::fromUtf8("BtnDMXConsole"));
+        BtnDMXConsole->setFont(font);
+
+        gridLayout->addWidget(BtnDMXConsole, 5, 0, 1, 1);
+
+        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout->addItem(verticalSpacer, 2, 0, 1, 1);
 
         lb_ConnectIcon = new QLabel(centralWidget);
         lb_ConnectIcon->setObjectName(QString::fromUtf8("lb_ConnectIcon"));
@@ -207,11 +223,9 @@ public:
 
         gridLayout->addWidget(lb_ConnectIcon, 0, 1, 1, 1);
 
-        BtnDMXConsole = new QPushButton(centralWidget);
-        BtnDMXConsole->setObjectName(QString::fromUtf8("BtnDMXConsole"));
-        BtnDMXConsole->setFont(font);
+        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-        gridLayout->addWidget(BtnDMXConsole, 4, 0, 1, 1);
+        gridLayout->addItem(verticalSpacer_2, 6, 0, 1, 1);
 
         groupBox_2 = new QGroupBox(centralWidget);
         groupBox_2->setObjectName(QString::fromUtf8("groupBox_2"));
@@ -239,10 +253,6 @@ public:
 
 
         gridLayout->addWidget(groupBox_2, 0, 0, 1, 1);
-
-        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        gridLayout->addItem(verticalSpacer, 1, 0, 1, 1);
 
         groupBox = new QGroupBox(centralWidget);
         groupBox->setObjectName(QString::fromUtf8("groupBox"));
@@ -310,7 +320,26 @@ public:
         gridLayout_2->addWidget(label_3, 5, 0, 1, 1);
 
 
-        gridLayout->addWidget(groupBox, 2, 0, 2, 1);
+        gridLayout->addWidget(groupBox, 3, 0, 2, 1);
+
+        gboptionRGB = new QGroupBox(centralWidget);
+        gboptionRGB->setObjectName(QString::fromUtf8("gboptionRGB"));
+        horizontalLayout_2 = new QHBoxLayout(gboptionRGB);
+        horizontalLayout_2->setSpacing(6);
+        horizontalLayout_2->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
+        rdOneOne = new QRadioButton(gboptionRGB);
+        rdOneOne->setObjectName(QString::fromUtf8("rdOneOne"));
+
+        horizontalLayout_2->addWidget(rdOneOne);
+
+        rdLoop = new QRadioButton(gboptionRGB);
+        rdLoop->setObjectName(QString::fromUtf8("rdLoop"));
+
+        horizontalLayout_2->addWidget(rdLoop);
+
+
+        gridLayout->addWidget(gboptionRGB, 1, 0, 1, 1);
 
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
@@ -408,13 +437,14 @@ public:
         Functions->setTitle(QCoreApplication::translate("MainWindow", "Functions", nullptr));
         BtnDeviceDiscovery->setText(QCoreApplication::translate("MainWindow", "Discovery", nullptr));
         BtnSearchDev->setText(QCoreApplication::translate("MainWindow", "Ping Device", nullptr));
+        BtnReadDMXID->setText(QCoreApplication::translate("MainWindow", "Read DMX ID", nullptr));
         BtnWrDMXID->setText(QCoreApplication::translate("MainWindow", "Write DMX ID", nullptr));
         BtnWriteUID->setText(QCoreApplication::translate("MainWindow", "Write UID", nullptr));
         BtnWrThreshold->setText(QCoreApplication::translate("MainWindow", "Write Level", nullptr));
         BtnTestMode->setText(QCoreApplication::translate("MainWindow", "Test device", nullptr));
         BtnUpdateFirmware->setText(QCoreApplication::translate("MainWindow", "Update Firmware", nullptr));
-        lb_ConnectIcon->setText(QString());
         BtnDMXConsole->setText(QCoreApplication::translate("MainWindow", "DMX", nullptr));
+        lb_ConnectIcon->setText(QString());
         rdBtn_OthersDevices->setText(QCoreApplication::translate("MainWindow", "Others devices", nullptr));
         rdBtn_Light->setText(QCoreApplication::translate("MainWindow", "RGB LED", nullptr));
         rdBtn_LightRGBW->setText(QCoreApplication::translate("MainWindow", "RGBW LED", nullptr));
@@ -424,6 +454,9 @@ public:
         lb_MaxHeight->setText(QCoreApplication::translate("MainWindow", "MAX Height", nullptr));
         lb_MinHeight->setText(QCoreApplication::translate("MainWindow", "MIN Height", nullptr));
         label_3->setText(QCoreApplication::translate("MainWindow", "Position", nullptr));
+        gboptionRGB->setTitle(QString());
+        rdOneOne->setText(QCoreApplication::translate("MainWindow", "One-One", nullptr));
+        rdLoop->setText(QCoreApplication::translate("MainWindow", "LOOP", nullptr));
         menuCalls->setTitle(QCoreApplication::translate("MainWindow", "Calls", nullptr));
         menuTools->setTitle(QCoreApplication::translate("MainWindow", "Tools", nullptr));
         menuHelp->setTitle(QCoreApplication::translate("MainWindow", "Help", nullptr));
