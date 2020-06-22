@@ -13,6 +13,9 @@
 #include <QXmlStreamWriter>
 #include <QXmlStreamReader>
 #include <QVariant>
+#include <QtCore/QtGlobal>
+#include <stdint.h>
+#include <QObject>
 
 DeviceView::DeviceView(QWidget *parent) :
     QMainWindow(parent),
@@ -23,13 +26,13 @@ DeviceView::DeviceView(QWidget *parent) :
     WindDMXConverter_Form = new WindDMXConverter_Setting(this);
     ui->setupUi(this);
     ui->BtnReadPosition->setVisible(false);
-    this->setUser(false);
+    this->setUser();
     connect(ui->actionLoad, SIGNAL(triggered(bool)), this, SLOT(LoadFile()));
     connect(ui->actionSave, SIGNAL(triggered(bool)), this, SLOT(SaveFile()));
     connect(ui->actionRefresh_Position, SIGNAL(triggered(bool)), this, SLOT(on_BtnReadPosition_clicked()));
     connect(ui->actionUpdate_Sub_Driver_Firmware, SIGNAL(triggered(bool)), this, SLOT(on_BtnUpdateSubDriverFW_clicked()));
     connect(dmxrdm, SIGNAL(showMessage(QString)), this, SLOT(showErrorMessage(QString)));
-    connect(dmxrdm, SIGNAL(SetUser(bool)), this, SLOT(setUser(bool)));
+//    connect(dmxrdm, SIGNAL(SetUser(bool)), this, SLOT(setUser(bool)));
 
 
     DeviceTable_Clear();
@@ -106,12 +109,25 @@ DeviceInfo DeviceView::GetRow(quint16 y)
     readDev.SEQAddr = GetCell(SEQAddr_CollumIndex, y).toUInt();
     readDev.strDeviceType = GetCell(DeviceType_CollumIndex, y);
     readDev.strFWVersion = GetCell(FirmwareVersion_CollumIndex, y);
-    if(dmxrdm->isAdministratorUser())
+
+    if(Authen::user_lv == 1)
     {
         readDev.MinLevel = GetCell(MinLevel_CollumIndex, y).toUInt();
         readDev.MaxLevel = GetCell(MaxLevel_CollumIndex, y).toInt();
         readDev.strEEprom = GetCell(Setting_Parameter, y);
     }
+    else if ((Authen::user_lv == 2) or (Authen::user_lv == 3))
+    {
+        readDev.MinLevel = GetCell(MinLevel_CollumIndex, y).toUInt();
+        readDev.MaxLevel = GetCell(MaxLevel_CollumIndex, y).toInt();
+    }
+
+//    if(dmxrdm->isAdministratorUser())
+//    {
+//        readDev.MinLevel = GetCell(MinLevel_CollumIndex, y).toUInt();
+//        readDev.MaxLevel = GetCell(MaxLevel_CollumIndex, y).toInt();
+//        readDev.strEEprom = GetCell(Setting_Parameter, y);
+//    }
     return readDev;
 }
 
@@ -124,12 +140,25 @@ DeviceInfo DeviceView::GetRow(QModelIndex index)
     readDev.SEQAddr = GetCell(SEQAddr_CollumIndex, index.row()).toUInt();
     readDev.strDeviceType = GetCell(DeviceType_CollumIndex, index.row());
     readDev.strFWVersion = GetCell(FirmwareVersion_CollumIndex, index.row());
-    if(dmxrdm->isAdministratorUser())
+
+    if(Authen::user_lv == 1)
     {
         readDev.MinLevel = GetCell(MinLevel_CollumIndex, index.row()).toUInt();
         readDev.MaxLevel = GetCell(MaxLevel_CollumIndex, index.row()).toInt();
         readDev.strEEprom = GetCell(Setting_Parameter, index.row());
     }
+    else if ((Authen::user_lv == 2) or (Authen::user_lv == 3))
+    {
+        readDev.MinLevel = GetCell(MinLevel_CollumIndex, index.row()).toUInt();
+        readDev.MaxLevel = GetCell(MaxLevel_CollumIndex, index.row()).toInt();
+    }
+
+//    if(dmxrdm->isAdministratorUser())
+//    {
+//        readDev.MinLevel = GetCell(MinLevel_CollumIndex, index.row()).toUInt();
+//        readDev.MaxLevel = GetCell(MaxLevel_CollumIndex, index.row()).toInt();
+//        readDev.strEEprom = GetCell(Setting_Parameter, index.row());
+//    }
     return readDev;
 }
 
@@ -153,14 +182,20 @@ void DeviceView::showErrorMessage(const QString &message)
     }
 }
 
-void DeviceView::setUser(bool isAdministratorUser)
+void DeviceView::setUser(void)
 {
-    if(isAdministratorUser)
+//    Authen::user_lv;
+    if(Authen::user_lv == 1)
     {
         ui->BtnWriteLevel->setVisible(true);
         ui->BtnWriteParameter->setVisible(true);
     }
-    else
+    else if ((Authen::user_lv == 2) or (Authen::user_lv == 3))
+    {
+        ui->BtnWriteLevel->setVisible(true);
+        ui->BtnWriteParameter->setVisible(false);
+    }
+    else if (Authen::user_lv == 4)
     {
         ui->BtnWriteLevel->setVisible(false);
         ui->BtnWriteParameter->setVisible(false);
@@ -206,13 +241,28 @@ void DeviceView::DeviceTable_Clear(void)
     {
         model->setHorizontalHeaderItem(i, new QStandardItem(strCollumIndex[i]));
     }
-    if(dmxrdm->isAdministratorUser())
+
+    if(Authen::user_lv == 1)
     {
         for(int i = NumberOfUserCollum; i < NumberOfCollum; i++)
         {
             model->setHorizontalHeaderItem(i, new QStandardItem(strCollumIndex[i]));
         }
     }
+    else if ((Authen::user_lv == 2) or (Authen::user_lv == 3))
+    {
+        for(int i = NumberOfUserCollum; i <= MaxLevel_CollumIndex; i++)
+        {
+            model->setHorizontalHeaderItem(i, new QStandardItem(strCollumIndex[i]));
+        }
+    }
+//    if(dmxrdm->isAdministratorUser())
+//    {
+//        for(int i = NumberOfUserCollum; i < NumberOfCollum; i++)
+//        {
+//            model->setHorizontalHeaderItem(i, new QStandardItem(strCollumIndex[i]));
+//        }
+//    }
 }
 
 void DeviceView::SetNextRow(DeviceInfo devInfo, QColor color)
@@ -224,12 +274,24 @@ void DeviceView::SetNextRow(DeviceInfo devInfo, QColor color)
     SetCell(Sensor_CollumIndex, Row_cnt, QString::number(devInfo.SensorValue,16), color);
     SetCell(DeviceType_CollumIndex, Row_cnt, devInfo.strDeviceType, color);
     SetCell(FirmwareVersion_CollumIndex, Row_cnt, devInfo.strFWVersion, color);
-    if(dmxrdm->isAdministratorUser())
+    if(Authen::user_lv == 1)
     {
         SetCell(MinLevel_CollumIndex, Row_cnt, devInfo.MinLevel, color);
         SetCell(MaxLevel_CollumIndex, Row_cnt, devInfo.MaxLevel, color);
         SetCell(Setting_Parameter, Row_cnt, devInfo.strEEprom, color);
     }
+    else if ((Authen::user_lv == 2) or (Authen::user_lv == 3))
+    {
+        SetCell(MinLevel_CollumIndex, Row_cnt, devInfo.MinLevel, color);
+        SetCell(MaxLevel_CollumIndex, Row_cnt, devInfo.MaxLevel, color);
+    }
+
+//    if(dmxrdm->isAdministratorUser())
+//    {
+//        SetCell(MinLevel_CollumIndex, Row_cnt, devInfo.MinLevel, color);
+//        SetCell(MaxLevel_CollumIndex, Row_cnt, devInfo.MaxLevel, color);
+//        SetCell(Setting_Parameter, Row_cnt, devInfo.strEEprom, color);
+//    }
     Row_cnt++;
 }
 
@@ -242,22 +304,74 @@ void DeviceView::SetRow(DeviceInfo devInfo, quint16 row, QColor color)
     SetCell(Sensor_CollumIndex, row, QString::number(devInfo.SensorValue,16), color);
     SetCell(DeviceType_CollumIndex, row, devInfo.strDeviceType, color);
     SetCell(FirmwareVersion_CollumIndex, row, devInfo.strFWVersion, color);
-    if(dmxrdm->isAdministratorUser())
+
+    if(Authen::user_lv == 1)
     {
         SetCell(MinLevel_CollumIndex, row, devInfo.MinLevel, color);
         SetCell(MaxLevel_CollumIndex, row, devInfo.MaxLevel, color);
         SetCell(Setting_Parameter, row, devInfo.strEEprom, color);
     }
+    else if ((Authen::user_lv == 2) or (Authen::user_lv == 3))
+    {
+        SetCell(MinLevel_CollumIndex, row, devInfo.MinLevel, color);
+        SetCell(MaxLevel_CollumIndex, row, devInfo.MaxLevel, color);
+    }
+
+
+//    if(dmxrdm->isAdministratorUser())
+//    {
+//        SetCell(MinLevel_CollumIndex, row, devInfo.MinLevel, color);
+//        SetCell(MaxLevel_CollumIndex, row, devInfo.MaxLevel, color);
+//        SetCell(Setting_Parameter, row, devInfo.strEEprom, color);
+//    }
 }
 
 void DeviceView::on_BtnBeginDiscovery_clicked(bool checked)
 {
+    bool ok = false;
     loadingDialog->showDialog();
     DeviceTable_Clear();
     lstOfDevice.clear();
     BeginSetRow();
     isRunning = true;
-    dmxrdm->discoveryProcess(UID::BroadcastUID());
+//    dmxrdm->discoveryProcess(UID::BroadcastUID());
+    //======================
+    DeviceInfo newDevice;
+    newDevice.DMXAddr = 1;
+    newDevice.SensorValue = 0;
+    quint8 a1, a2, a3, a4, a5,  a6;
+
+    for (a1 = 0; a1 <=255;a1++){
+        for(a2 = 0; a2<=255;a2++){
+            for(a3 =0;a3<=255;a3++){
+                for(a4 =0;a4<=255;a4++){
+                    for(a5 =0;a5<=255;a5++){
+                        for(a6 =0;a6<=255;a6++){
+                            newDevice = dmxrdm->GetDeviceInfo(UID(a1,a2,a3,a4,a5,a6), &ok);
+                            if(ok)
+                            {
+                                foreach (DeviceInfo _dev, lstOfDevice) {
+                                    if(_dev.UID.toString() == newDevice.UID.toString())
+                                    {
+                                        return;
+                                    }
+                                }
+                                lstOfDevice<<newDevice;
+                                SetNextRow(newDevice);
+                            }
+                            dmxrdm->showMessage("scanning"+QString::number(a1)+":"+QString::number(a2) + ":"+QString::number(a3)+":"+QString::number(a4) + ":"+QString::number(a5)+":"+QString::number(a6));
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+
+
+
+    //=====================
     isRunning = false;
     loadingDialog->hideDialog();
 }

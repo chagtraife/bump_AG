@@ -171,6 +171,7 @@ private:
     const int RetryTimes = 5;
     const int RetryDelay = 100;
 
+
     int DMXID;
     UID DevUID;
     DeviceInfo deviceInfo;

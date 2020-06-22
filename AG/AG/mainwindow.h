@@ -134,6 +134,7 @@ private:
 signals:
     void showLoadingDialog(void);
     void hideLoadingDialog(void);
+    void setUserlev(void);
 
 private:
     Ui::MainWindow *ui;

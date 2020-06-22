@@ -14,6 +14,7 @@ public:
     QString Hash_key(QString pw);
     void connectDB(void);
     static QSqlDatabase myDB;
+    static int user_lv;
 };
 
 #endif // AUTHEN_H

@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_DeviceView_t {
-    QByteArrayData data[31];
-    char stringdata0[562];
+    QByteArrayData data[30];
+    char stringdata0[542];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -58,11 +58,10 @@ QT_MOC_LITERAL(22, 390, 8), // "LoadFile"
 QT_MOC_LITERAL(23, 399, 16), // "showErrorMessage"
 QT_MOC_LITERAL(24, 416, 7), // "message"
 QT_MOC_LITERAL(25, 424, 7), // "setUser"
-QT_MOC_LITERAL(26, 432, 19), // "isAdministratorUser"
-QT_MOC_LITERAL(27, 452, 21), // "on_pushButton_clicked"
-QT_MOC_LITERAL(28, 474, 26), // "on_BtnReadPosition_clicked"
-QT_MOC_LITERAL(29, 501, 28), // "on_BtnWriteParameter_clicked"
-QT_MOC_LITERAL(30, 530, 31) // "on_BtnUpdateSubDriverFW_clicked"
+QT_MOC_LITERAL(26, 432, 21), // "on_pushButton_clicked"
+QT_MOC_LITERAL(27, 454, 26), // "on_BtnReadPosition_clicked"
+QT_MOC_LITERAL(28, 481, 28), // "on_BtnWriteParameter_clicked"
+QT_MOC_LITERAL(29, 510, 31) // "on_BtnUpdateSubDriverFW_clicked"
 
     },
     "DeviceView\0DiscoveryActived\0\0UID\0"
@@ -77,8 +76,8 @@ QT_MOC_LITERAL(30, 530, 31) // "on_BtnUpdateSubDriverFW_clicked"
     "on_BtnSetTestMode_clicked\0"
     "on_BtnWriteLevel_clicked\0SaveFile\0"
     "LoadFile\0showErrorMessage\0message\0"
-    "setUser\0isAdministratorUser\0"
-    "on_pushButton_clicked\0on_BtnReadPosition_clicked\0"
+    "setUser\0on_pushButton_clicked\0"
+    "on_BtnReadPosition_clicked\0"
     "on_BtnWriteParameter_clicked\0"
     "on_BtnUpdateSubDriverFW_clicked"
 };
@@ -116,11 +115,11 @@ static const uint qt_meta_data_DeviceView[] = {
       21,    0,  142,    2, 0x08 /* Private */,
       22,    0,  143,    2, 0x08 /* Private */,
       23,    1,  144,    2, 0x08 /* Private */,
-      25,    1,  147,    2, 0x08 /* Private */,
-      27,    0,  150,    2, 0x08 /* Private */,
-      28,    0,  151,    2, 0x08 /* Private */,
-      29,    0,  152,    2, 0x08 /* Private */,
-      30,    0,  153,    2, 0x08 /* Private */,
+      25,    0,  147,    2, 0x08 /* Private */,
+      26,    0,  148,    2, 0x08 /* Private */,
+      27,    0,  149,    2, 0x08 /* Private */,
+      28,    0,  150,    2, 0x08 /* Private */,
+      29,    0,  151,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void, 0x80000000 | 3,    4,
@@ -141,7 +140,7 @@ static const uint qt_meta_data_DeviceView[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void, QMetaType::QString,   24,
-    QMetaType::Void, QMetaType::Bool,   26,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -172,7 +171,7 @@ void DeviceView::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 13: _t->SaveFile(); break;
         case 14: _t->LoadFile(); break;
         case 15: _t->showErrorMessage((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 16: _t->setUser((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 16: _t->setUser(); break;
         case 17: _t->on_pushButton_clicked(); break;
         case 18: _t->on_BtnReadPosition_clicked(); break;
         case 19: _t->on_BtnWriteParameter_clicked(); break;

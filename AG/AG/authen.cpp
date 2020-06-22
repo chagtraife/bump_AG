@@ -31,3 +31,4 @@ void Authen::connectDB(void)
 }
 
 QSqlDatabase Authen::myDB = QSqlDatabase::addDatabase("QSQLITE");
+int Authen::user_lv = 4;

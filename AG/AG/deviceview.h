@@ -6,6 +6,7 @@
 #include <QProgressBar>
 #include "qtbaselib.h"
 #include "loadingdialog.h"
+#include "authen.h"
 
 class QStandardItemModel;
 class QLabel;
@@ -57,7 +58,7 @@ private slots:
 
     void showErrorMessage(const QString &message);
 
-    void setUser(bool isAdministratorUser);
+    void setUser(void);
     void on_pushButton_clicked();
 
     void on_BtnReadPosition_clicked();

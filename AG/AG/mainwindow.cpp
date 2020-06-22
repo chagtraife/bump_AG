@@ -150,6 +150,8 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->BtnTestMode, SIGNAL(clicked(bool)), this, SLOT(_setTestMode()));
     connect(ui->BtnDMXConsole, SIGNAL(clicked(bool)), dmx, SLOT(show()));
     connect(ui->BtnDeviceDiscovery, SIGNAL(clicked(bool)), devView, SLOT(show()));
+    connect(this, SIGNAL(setUserlev()), devView, SLOT(setUser()));
+
     connect(dmx, SIGNAL(DMXTriggle()), this, SLOT(_DMXStream()));
     connect(ui->BtnUpdateFirmware, SIGNAL(clicked(bool)), this, SLOT(_BtnFirmwareUpdate_Clicked()));
     connect(dmxrdm, SIGNAL(sendBreak()), this, SLOT(writeBreak()));
@@ -510,9 +512,11 @@ void MainWindow::on_ActionUser(void)
         }
 
         // check level of sPW
+        //admin: lv1
         if (role == "admin" ) {
             qDebug()<<"admin level";
             setUser(false);
+            user_lv = 1;
             ui->BtnWriteUID->setVisible(true);
             ui->BtnWrThreshold->setVisible(true);
             ui->BtnUpdateFirmware->setVisible(true);
@@ -524,6 +528,7 @@ void MainWindow::on_ActionUser(void)
         }else if(role == "lv2"){
             qDebug()<<"lv2 level";
             setUser(false);
+            user_lv = 2;
             ui->BtnUpdateFirmware->setVisible(true);
             ui->lb_MaxHeight->setVisible(true);
             ui->lb_MinHeight->setVisible(true);
@@ -532,12 +537,16 @@ void MainWindow::on_ActionUser(void)
         }else if(role == "lv3"){
             qDebug()<<"lv3 level";
             setUser(false);
+            user_lv = 3;
             ui->lb_MaxHeight->setVisible(true);
             ui->lb_MinHeight->setVisible(true);
             ui->TxtMinHeight->setVisible(true);
             ui->TxtMaxHeight->setVisible(true);
+        }else{
+            setUser(false);
+            user_lv = 4;
         }
-
+        this->setUserlev();
 //        QString key_crack = "BB05:OpenSesame";
 //        dmxrdm->SetAdministratorUser(key_crack);
     }
