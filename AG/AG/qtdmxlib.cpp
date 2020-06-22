@@ -173,7 +173,7 @@ void QT_RGB_DMX_LIB::DMXRDM::RDMRecHandler(QByteArray data)
     {
         LedOldCheckData = true;
         ChannelLEDOld = (quint16) data[0];
-        ChannelLEDOld = (ChannelLEDOld - 1)*4 + 1;
+//        ChannelLEDOld = (ChannelLEDOld - 1)*4 + 1;
         rdm_led_old = LED_OLD_NULL;
         //DEBUG(QString::number(ChannelLEDOld));
     }

@@ -122,6 +122,8 @@ private slots:
 
 
     void on_DeviceTypeSelection_clicked();
+    void on_BtnReadDMXID_clicked();
+
 private:
     void initActionsConnections();
     void ui_Init(void);

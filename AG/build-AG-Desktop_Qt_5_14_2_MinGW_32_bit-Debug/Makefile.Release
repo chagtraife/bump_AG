@@ -3773,7 +3773,7 @@ release/mainwindow.o: ../AG/mainwindow.cpp ../AG/mainwindow.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/qmovie.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/qimagereader.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/qimageiohandler.h \
-		../AG/TestDialog.h \
+		../AG/testdialog.h \
 		../AG/dmx_monitor.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/QElapsedTimer \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/QFile \

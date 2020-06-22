@@ -736,129 +736,76 @@ void MainWindow::_writeDMXID()
     }
     if(ui->rdBtn_Light->isChecked())
     {
-
-//        s = ui->TxtDMXID->text().trimmed();
-//        quint16 _DMXID = s.toUInt();
-//        if(_DMXID > 0 && _DMXID <= 510)
-//        {
-//            if((_DMXID-1)%3 == 0)
-//            {
-//                QByteArray addressing = dmxrdm->tr3Array();
-//                this->writeData(addressing);
-//                dmxrdm->delay_ms(500);
-
-//                //open gate
-//                for(int i = (_DMXID-1)/3 + 1; i <= 170; i++)
-//                {
-//                    //for(int j = 0; j < 3; j++)
-//                    {
-//                        addressing = dmxrdm->tr4Array();
-//                        addressing.append(i);
-//                        addressing.append((char)0);
-//                        //write continously
-//                        this->writeBreak();
-//                        this->writeData(addressing);
-//                        dmxrdm->delay_ms(8);
-//                    }
-//                }
-//                dmxrdm->delay_ms(2000);
-//                QMessageBox::information(this, "DMX Lights Addressing", "Done");
-//            }
-//            else
-//            {
-//                QString message;
-//                message = QString("Addressing is incorrect\r\nAddress should be ") + QString::number(((_DMXID-1)/3)*3 + 1);
-//                message += QString(" or ") + QString::number(((_DMXID-1)/3 + 1)*3 + 1);
-//                QMessageBox::warning(this, "DMX Addressing", message);
-//            }
-//        }
-//        else
-//        {
-//            QMessageBox::warning(this,"DMX Addressing", "Address is out of range");
-//        }
-
-        //=================RGB==================
-        quint16 channel = (quint16) ui->TxtDMXID->text().trimmed().toInt();
-        if(channel == 1 || (channel - 1)%3 == 0)
-        {
-            channel = (channel - 1)/3 + 1;
-            if(dmxrdm_rgb->writeChannel_RGB_old(channel))
+        if(ui->rdOneOne->isChecked()){
+            //=================RGB one one==================
+            quint16 channel = (quint16) ui->TxtDMXID->text().trimmed().toInt();
+            if(channel == 1 || (channel - 1)%3 == 0)
             {
+                channel = (channel - 1)/3 + 1;
+                if(dmxrdm_rgb->writeChannel_RGB_old(channel))
+                {
+                    QMessageBox::information(this, "Done", "Write channel done!");
+                }
+                else {
+                    QMessageBox::information(this, "ERROR", "Can't write channel");
+                }
+            }
+            else {
+                QMessageBox::information(this, "INFO", "DMX ID 1, 4, 7, 10,...!");
+            }
+            //===================================
+         }
+        else if(ui->rdOneOne->isChecked()){
+            //=================RGB loop==================
+            quint16 channel = (quint16) ui->TxtDMXID->text().trimmed().toInt();
+            if(channel == 1 || (channel - 1)%3 == 0)
+            {
+                channel = (channel - 1)/3 + 1;
+                dmxrdm_rgb->writeChannel_RGB_old_Loop(channel);
                 QMessageBox::information(this, "Done", "Write channel done!");
             }
             else {
-                QMessageBox::information(this, "ERROR", "Can't write channel");
+                QMessageBox::information(this, "INFO", "DMX ID 1, 4, 7, 10,...!");
             }
-        }
-        else {
-            QMessageBox::information(this, "INFO", "DMX ID 1, 4, 7, 10,...!");
-        }
-
-
-
-        //===================================
+            //===================================
+         }
 
     }
     else if(ui->rdBtn_LightRGBW->isChecked())
     {
-
-//        s = ui->TxtDMXID->text().trimmed();
-//        quint16 _DMXID = s.toUInt();
-//        if(_DMXID > 0 && _DMXID <= 509)
-//        {
-//            if((_DMXID-1)%4 == 0)
-//            {
-//                QByteArray addressing = dmxrdm->tr3Array();
-//                this->writeData(addressing);
-//                dmxrdm->delay_ms(500);
-
-//                //open gate
-//                for(int i = (_DMXID-1)/4 + 1; i <= 128; i++)
-//                {
-//                    addressing = dmxrdm->tr4Array();
-//                    addressing.append(i);
-//                    addressing.append((char)0);
-//                    //write continously
-//                    this->writeBreak();
-//                    this->writeData(addressing);
-//                    dmxrdm->delay_ms(8);
-//                }
-//                dmxrdm->delay_ms(2000);
-//                QMessageBox::information(this, "DMX Lights Addressing", "Done");
-//            }
-//            else
-//            {
-//                QString message;
-//                message = QString("Addressing is incorrect\r\nAddress should be ") + QString::number(((_DMXID-1)/4)*4 + 1);
-//                message += QString(" or ") + QString::number(((_DMXID-1)/4 + 1)*4 + 1);
-//                QMessageBox::warning(this, "DMX Addressing", message);
-//            }
-//        }
-//        else
-//        {
-//            QMessageBox::warning(this,"DMX Addressing", "Address is out of range");
-//        }
-
-
-        //================RGBW===================
-        quint16 channel = (quint16) ui->TxtDMXID->text().trimmed().toInt();
-        if(channel == 1 || (channel - 1)%4 == 0)
-        {
-            channel = (channel - 1)/4 + 1;
-            if(dmxrdm_rgb->writeChannel_RGB_old(channel))
+        if(ui->rdOneOne->isChecked()){
+            //================RGBW one one===================
+            quint16 channel = (quint16) ui->TxtDMXID->text().trimmed().toInt();
+            if(channel == 1 || (channel - 1)%4 == 0)
             {
+                channel = (channel - 1)/4 + 1;
+                if(dmxrdm_rgb->writeChannel_RGB_old(channel))
+                {
+                    QMessageBox::information(this, "Done", "Write channel done!");
+                }
+                else {
+                    QMessageBox::information(this, "ERROR", "Can't write channel");
+                }
+            }
+            else {
+                QMessageBox::information(this, "INFO", "DMX ID 1, 5, 9, 13, ...!");
+            }
+            //===================================
+        }
+        else if(ui->rdLoop->isChecked()){
+            //================RGBW loop===================
+            quint16 channel = (quint16) ui->TxtDMXID->text().trimmed().toInt();
+            if(channel == 1 || (channel - 1)%4 == 0)
+            {
+                channel = (channel - 1)/4 + 1;
+                dmxrdm_rgb->writeChannel_RGB_old_Loop(channel);
                 QMessageBox::information(this, "Done", "Write channel done!");
             }
             else {
-                QMessageBox::information(this, "ERROR", "Can't write channel");
+                QMessageBox::information(this, "INFO", "DMX ID 1, 5, 9, 13, ...!");
             }
+            //===================================
         }
-        else {
-            QMessageBox::information(this, "INFO", "DMX ID 1, 5, 9, 13, ...!");
-        }
-
-        //===================================
-
     }
     else
     {
@@ -876,3 +823,44 @@ void MainWindow::on_BtnDeviceDiscovery_clicked()
 
 }
 
+
+void MainWindow::on_BtnReadDMXID_clicked()
+{
+    if(ui->rdBtn_LightRGBW->isChecked()){
+        if(ui->rdOneOne->isChecked()){
+            quint16 channel;
+            ui->BtnReadDMXID->setEnabled(false);
+            if(dmxrdm_rgb->askChannel_RGB_old())
+            {
+                channel = dmxrdm_rgb->readChannl_RBB_old();
+                channel = (channel - 1)*4 + 1;
+                ui->TxtDMXID->setText(QString::number(channel));
+            }
+            else {
+                QMessageBox::information(this, "ERROR", "Device not found!");
+            }
+            ui->BtnReadDMXID->setEnabled(true);
+        }else if (ui->rdLoop->isChecked()){
+
+        }
+    }else if (ui->rdBtn_Light->isChecked()){
+            if(ui->rdOneOne->isChecked()){
+                quint16 channel;
+                ui->BtnReadDMXID->setEnabled(false);
+                if(dmxrdm_rgb->askChannel_RGB_old())
+                {
+                    channel = dmxrdm_rgb->readChannl_RBB_old();
+                    channel = (channel - 1)*3 + 1;
+                    ui->TxtDMXID->setText(QString::number(channel));
+                }
+                else {
+                    QMessageBox::information(this, "ERROR", "Device not found!");
+                }
+                ui->BtnReadDMXID->setEnabled(true);
+            }else if (ui->rdLoop->isChecked()){
+
+            }
+    }
+
+
+}

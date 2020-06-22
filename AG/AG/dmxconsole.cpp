@@ -24,6 +24,11 @@ DMXconsole::DMXconsole(QWidget *parent) :
 
 DMXconsole::~DMXconsole()
 {
+//    ui->BtnStartStreaming->setText("DMX Stream ON");
+//    ui->BtnStartStreaming->setStyleSheet("background-color:red");
+//    IsDMXRunning = false;
+
+
     TimerTick->stop();
     delete ui;
 }
