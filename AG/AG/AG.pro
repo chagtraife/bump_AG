@@ -66,6 +66,14 @@ FORMS += \
 
 LIBS += -L"$$_PRO_FILE_PWD_/" -lqtBaseLib
 
+ios {
+    CONFIG(debug, debug|release) {
+        LIBS += -lsqlitecipher_debug
+    } else {
+        LIBS += -lsqlitecipher
+    }
+}
+
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin

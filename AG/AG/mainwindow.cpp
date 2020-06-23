@@ -91,7 +91,7 @@ MainWindow::MainWindow(QWidget *parent) :
 //        qDebug("no have file");
 //    }
 
-    connectDB();
+//    connectDB();
 
     setUser(false);
 //    setUser(true);
@@ -497,26 +497,10 @@ void MainWindow::on_ActionUser(void)
 
     if(ok)
     {
-
-
-        if (!myDB.isOpen()){
-            qDebug()<< "No connection to db";
-            return;
-        }
-        QSqlQuery qry;
-        if (qry.exec("SELECT Username, Password, Role FROM Users WHERE Password=\'"+sPW+"\'")){
-            if (qry.next()){
-                role = qry.value(2).toString();
-                qDebug()<<role;
-            }
-        }
-
-        // check level of sPW
-        //admin: lv1
-        if (role == "admin" ) {
+        user_lv = checkUser(sPW);
+        if (user_lv == 1 ) {
             qDebug()<<"admin level";
             setUser(false);
-            user_lv = 1;
             ui->BtnWriteUID->setVisible(true);
             ui->BtnWrThreshold->setVisible(true);
             ui->BtnUpdateFirmware->setVisible(true);
@@ -525,26 +509,23 @@ void MainWindow::on_ActionUser(void)
             ui->TxtMinHeight->setVisible(true);
             ui->TxtMaxHeight->setVisible(true);
             ui->actionUser_Manager->setVisible(true);
-        }else if(role == "lv2"){
+        }else if(user_lv == 2){
             qDebug()<<"lv2 level";
             setUser(false);
-            user_lv = 2;
             ui->BtnUpdateFirmware->setVisible(true);
             ui->lb_MaxHeight->setVisible(true);
             ui->lb_MinHeight->setVisible(true);
             ui->TxtMinHeight->setVisible(true);
             ui->TxtMaxHeight->setVisible(true);
-        }else if(role == "lv3"){
+        }else if(user_lv == 3){
             qDebug()<<"lv3 level";
             setUser(false);
-            user_lv = 3;
             ui->lb_MaxHeight->setVisible(true);
             ui->lb_MinHeight->setVisible(true);
             ui->TxtMinHeight->setVisible(true);
             ui->TxtMaxHeight->setVisible(true);
         }else{
             setUser(false);
-            user_lv = 4;
         }
         this->setUserlev();
 //        QString key_crack = "BB05:OpenSesame";
