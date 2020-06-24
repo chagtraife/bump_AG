@@ -475,6 +475,10 @@ debug/moc_deviceview.cpp: ../AG/deviceview.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qdatetime.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/QProcess \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qprocess.h \
+		../AG/qtdmxlib.h \
+		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/QTimer \
+		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qtimer.h \
+		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qbasictimer.h \
 		../AG/loadingdialog.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/QMovie \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/qmovie.h \
@@ -487,6 +491,7 @@ debug/moc_deviceview.cpp: ../AG/deviceview.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qjsonobject.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qjsonvalue.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qfactoryinterface.h \
+		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/QCloseEvent \
 		../AG/authen.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/QDebug \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtSql/QtSql \
@@ -503,7 +508,6 @@ debug/moc_deviceview.cpp: ../AG/deviceview.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qanimationgroup.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qarraydataops.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qarraydatapointer.h \
-		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qbasictimer.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qbitarray.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qbuffer.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qbytearraymatcher.h \
@@ -596,7 +600,6 @@ debug/moc_deviceview.cpp: ../AG/deviceview.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qthreadpool.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qthreadstorage.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qtimeline.h \
-		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qtimer.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qtimezone.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qtranslator.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qtransposeproxymodel.h \
@@ -882,6 +885,7 @@ debug/moc_dmxconsole.cpp: ../AG/dmxconsole.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/QTimer \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qtimer.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qbasictimer.h \
+		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/QCloseEvent \
 		debug/moc_predefs.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/bin/moc.exe
 	C:\Qt\Qt5.14.2\5.14.2\mingw73_32\bin\moc.exe $(DEFINES) --include C:/Users/thang/Desktop/work/bump_AG/AG/build-AG-Desktop_Qt_5_14_2_MinGW_32_bit-Debug/debug/moc_predefs.h -IC:/Qt/Qt5.14.2/5.14.2/mingw73_32/mkspecs/win32-g++ -IC:/Users/thang/Desktop/work/bump_AG/AG/AG -IC:/Users/thang/Desktop/work/bump_AG/AG/AG -IC:/Users/thang/Desktop/work/bump_AG/AG/qtBaseLib -IC:/Qt/Qt5.14.2/5.14.2/mingw73_32/include -IC:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets -IC:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui -IC:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtANGLE -IC:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtSerialPort -IC:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtSql -IC:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore -I. -IC:/Qt/Qt5.14.2/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_32/i686-w64-mingw32/include ..\AG\dmxconsole.h -o debug\moc_dmxconsole.cpp
@@ -1005,6 +1009,7 @@ debug/moc_loadingdialog.cpp: ../AG/loadingdialog.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qjsonobject.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qjsonvalue.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qfactoryinterface.h \
+		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/QCloseEvent \
 		debug/moc_predefs.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/bin/moc.exe
 	C:\Qt\Qt5.14.2\5.14.2\mingw73_32\bin\moc.exe $(DEFINES) --include C:/Users/thang/Desktop/work/bump_AG/AG/build-AG-Desktop_Qt_5_14_2_MinGW_32_bit-Debug/debug/moc_predefs.h -IC:/Qt/Qt5.14.2/5.14.2/mingw73_32/mkspecs/win32-g++ -IC:/Users/thang/Desktop/work/bump_AG/AG/AG -IC:/Users/thang/Desktop/work/bump_AG/AG/AG -IC:/Users/thang/Desktop/work/bump_AG/AG/qtBaseLib -IC:/Qt/Qt5.14.2/5.14.2/mingw73_32/include -IC:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets -IC:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui -IC:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtANGLE -IC:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtSerialPort -IC:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtSql -IC:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore -I. -IC:/Qt/Qt5.14.2/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_32/i686-w64-mingw32/include ..\AG\loadingdialog.h -o debug\moc_loadingdialog.cpp
@@ -2860,6 +2865,10 @@ debug/deviceview.o: ../AG/deviceview.cpp ../AG/deviceview.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qdatetime.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/QProcess \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qprocess.h \
+		../AG/qtdmxlib.h \
+		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/QTimer \
+		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qtimer.h \
+		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qbasictimer.h \
 		../AG/loadingdialog.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/QMovie \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/qmovie.h \
@@ -2872,6 +2881,7 @@ debug/deviceview.o: ../AG/deviceview.cpp ../AG/deviceview.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qjsonobject.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qjsonvalue.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qfactoryinterface.h \
+		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/QCloseEvent \
 		../AG/authen.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/QDebug \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtSql/QtSql \
@@ -2888,7 +2898,6 @@ debug/deviceview.o: ../AG/deviceview.cpp ../AG/deviceview.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qanimationgroup.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qarraydataops.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qarraydatapointer.h \
-		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qbasictimer.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qbitarray.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qbuffer.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qbytearraymatcher.h \
@@ -2981,7 +2990,6 @@ debug/deviceview.o: ../AG/deviceview.cpp ../AG/deviceview.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qthreadpool.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qthreadstorage.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qtimeline.h \
-		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qtimer.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qtimezone.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qtranslator.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qtransposeproxymodel.h \
@@ -3316,6 +3324,7 @@ debug/dmxconsole.o: ../AG/dmxconsole.cpp ../AG/dmxconsole.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/QTimer \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qtimer.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qbasictimer.h \
+		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/QCloseEvent \
 		ui_dmxconsole.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\dmxconsole.o ..\AG\dmxconsole.cpp
@@ -3439,6 +3448,7 @@ debug/loadingdialog.o: ../AG/loadingdialog.cpp ../AG/loadingdialog.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qjsonobject.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qjsonvalue.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qfactoryinterface.h \
+		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/QCloseEvent \
 		ui_loadingdialog.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/QDebug \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/QDir \
@@ -4055,6 +4065,7 @@ debug/mainwindow.o: ../AG/mainwindow.cpp ../AG/mainwindow.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qgridlayout.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/QHBoxLayout \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/QLayout \
+		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/QCloseEvent \
 		../AG/deviceview.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/QList \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/QProgressBar \

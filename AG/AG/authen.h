@@ -10,6 +10,7 @@
 #  include <QtPlugin>
 
 Q_IMPORT_PLUGIN(SqliteCipherDriverPlugin)
+// using https://github.com/devbean/QtCipherSqlitePlugin
 #endif
 
 #define CONNECTION_FAILED -1

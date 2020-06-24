@@ -39,3 +39,9 @@ void LoadingDialog::hideDialog(void)
 {
     this->hide();
 }
+
+
+void LoadingDialog::closeEvent (QCloseEvent *event){
+    qDebug("LoadingDialogcloseEvent");
+    emit signal_close_loadingdialog();
+}

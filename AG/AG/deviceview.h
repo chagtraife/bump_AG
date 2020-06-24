@@ -5,9 +5,10 @@
 #include <QList>
 #include <QProgressBar>
 #include "qtbaselib.h"
+#include "qtdmxlib.h"
 #include "loadingdialog.h"
 #include "authen.h"
-
+#include <QCloseEvent>
 class QStandardItemModel;
 class QLabel;
 class DMXRDM;
@@ -32,8 +33,8 @@ signals:
 
 private slots:
     void on_tableView_Device_clicked(const QModelIndex &index);
-
-    void on_BtnBeginDiscovery_clicked(bool checked);
+    void closeEvent (QCloseEvent *event);
+    void BeginDiscovery(void);
 
     void on_tableView_Device_entered(const QModelIndex &index);
 
@@ -65,6 +66,10 @@ private slots:
 
     void on_BtnWriteParameter_clicked();
     void on_BtnUpdateSubDriverFW_clicked();
+
+    void close_loadingdialog(void);
+    void _DisplayUIDAddress(QString UID);
+
 
 private:
     enum UserCollumIndex
@@ -122,6 +127,9 @@ private:
     QLabel *lb_status;
     WindDMXConverter_Setting *WindDMXConverter_Form;
     LoadingDialog *loadingDialog;
+    QString scanUID;
+
+    bool status_running;
     void showStatusMessage(const QString &message);
 };
 

@@ -50,7 +50,7 @@ using namespace std;
 #include <QTime>
 #include "qtdmxlib.h"
 
-extern QT_RGB_DMX_LIB::DMXRDM *dmxrdm_rgb;
+//extern QT_RGB_DMX_LIB::DMXRDM *dmxrdm_rgb;
 
 QT_BEGIN_NAMESPACE
 
@@ -107,6 +107,7 @@ private slots:
     void _BtnDMX_Clicked(void);
     void _BtnFirmwareUpdate_Clicked(void);
     void _DMXStream(void);
+
 
     void on_BtnSearchDev_clicked();
 

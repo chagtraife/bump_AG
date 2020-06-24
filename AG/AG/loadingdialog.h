@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QMovie>
+#include <QCloseEvent>
 namespace Ui {
 class LoadingDialog;
 }
@@ -16,9 +17,16 @@ public:
     ~LoadingDialog();
     void showDialog(void);
     void hideDialog(void);
+signals:
+    void signal_close_loadingdialog(void);
+private slots:
+    void closeEvent (QCloseEvent *event);
+
 private:
     Ui::LoadingDialog *ui;
     QMovie* movie;
+
+
 };
 
 #endif // LOADINGDIALOG_H

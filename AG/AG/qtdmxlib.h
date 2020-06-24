@@ -270,10 +270,12 @@ private:
 };
 
 
-
+extern DMXRDM *dmxrdm_rgb;
 
 #endif // QTDMXLIB_H
 
 
 
 }
+
+extern QT_RGB_DMX_LIB::DMXRDM *dmxrdm_rgb;

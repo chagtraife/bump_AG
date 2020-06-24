@@ -16,13 +16,17 @@
 #include <QtCore/QtGlobal>
 #include <stdint.h>
 #include <QObject>
+#include <QCloseEvent>
 
 DeviceView::DeviceView(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::DeviceView)
 {
+    status_running = true;
     model = new QStandardItemModel(0,0,this);
     loadingDialog = new LoadingDialog(this);
+    connect(loadingDialog,SIGNAL(signal_close_loadingdialog()),this, SLOT(close_loadingdialog()));
+
     WindDMXConverter_Form = new WindDMXConverter_Setting(this);
     ui->setupUi(this);
     ui->BtnReadPosition->setVisible(false);
@@ -31,6 +35,11 @@ DeviceView::DeviceView(QWidget *parent) :
     connect(ui->actionSave, SIGNAL(triggered(bool)), this, SLOT(SaveFile()));
     connect(ui->actionRefresh_Position, SIGNAL(triggered(bool)), this, SLOT(on_BtnReadPosition_clicked()));
     connect(ui->actionUpdate_Sub_Driver_Firmware, SIGNAL(triggered(bool)), this, SLOT(on_BtnUpdateSubDriverFW_clicked()));
+    connect(ui->BtnBeginDiscovery, SIGNAL(clicked(bool)), this, SLOT(BeginDiscovery()));
+    connect(this,SIGNAL(aboutToQuit()),this,SLOT(quitdevView()));
+
+    connect(dmxrdm, SIGNAL(displayUID(QString)), this, SLOT(_DisplayUIDAddress(QString)));
+
     connect(dmxrdm, SIGNAL(showMessage(QString)), this, SLOT(showErrorMessage(QString)));
 //    connect(dmxrdm, SIGNAL(SetUser(bool)), this, SLOT(setUser(bool)));
 
@@ -326,8 +335,9 @@ void DeviceView::SetRow(DeviceInfo devInfo, quint16 row, QColor color)
 //    }
 }
 
-void DeviceView::on_BtnBeginDiscovery_clicked(bool checked)
+void DeviceView::BeginDiscovery()
 {
+    status_running = true;
     bool ok = false;
     loadingDialog->showDialog();
     DeviceTable_Clear();
@@ -339,32 +349,34 @@ void DeviceView::on_BtnBeginDiscovery_clicked(bool checked)
     DeviceInfo newDevice;
     newDevice.DMXAddr = 1;
     newDevice.SensorValue = 0;
-    quint8 a1, a2, a3, a4, a5,  a6;
+    quint8 a1;
 
-    for (a1 = 0; a1 <=255;a1++){
-        for(a2 = 0; a2<=255;a2++){
-            for(a3 =0;a3<=255;a3++){
-                for(a4 =0;a4<=255;a4++){
-                    for(a5 =0;a5<=255;a5++){
-                        for(a6 =0;a6<=255;a6++){
-                            newDevice = dmxrdm->GetDeviceInfo(UID(a1,a2,a3,a4,a5,a6), &ok);
-                            if(ok)
-                            {
-                                foreach (DeviceInfo _dev, lstOfDevice) {
-                                    if(_dev.UID.toString() == newDevice.UID.toString())
-                                    {
-                                        return;
-                                    }
-                                }
-                                lstOfDevice<<newDevice;
-                                SetNextRow(newDevice);
-                            }
-                            dmxrdm->showMessage("scanning"+QString::number(a1)+":"+QString::number(a2) + ":"+QString::number(a3)+":"+QString::number(a4) + ":"+QString::number(a5)+":"+QString::number(a6));
-                        }
-                    }
+    for (a1 = 0; a1 <=254;a1++){
+        dmxrdm->SetUID((QString)"ff");
+        dmxrdm->GetDeviceInfo();
+        newDevice = dmxrdm->GetDeviceInfo(UID(scanUID), &ok);
+//                            _DisplayUIDAddress
+        if (!status_running)
+        {
+                loadingDialog->hideDialog();
+                return;
+        }
+
+        if(ok)
+        {
+            bool repeat_list = false;
+            foreach (DeviceInfo _dev, lstOfDevice) {
+                if(_dev.UID.toString() == newDevice.UID.toString())
+                {
+                    repeat_list = true;
                 }
             }
+            if(!repeat_list){
+                lstOfDevice<<newDevice;
+                SetNextRow(newDevice);
+            }
         }
+        dmxrdm->showMessage("scanning");
     }
 
 
@@ -408,6 +420,16 @@ void DeviceView::on_BtnReadParameters_clicked()
         if(ok)
         {
             this->SetRow(devInfo, index.row());
+            qDebug()<<"DMXAddr:" + QString::number(devInfo.DMXAddr);
+            qDebug()<<"Sensor:" + QString::number(devInfo.Sensor);
+            qDebug()<<"SEQAddr:" + QString::number(devInfo.SEQAddr);
+            qDebug()<<"DeviceType:" + QString::number(devInfo.DeviceType);
+            qDebug()<<"strDeviceType:" + devInfo.strDeviceType;
+            qDebug()<<"SEQAddr:" + QString::number(devInfo.SEQAddr);
+            qDebug()<<"SensorValue:" + QString::number(devInfo.SensorValue);
+            qDebug()<<"rawSensorValue:" + QString::number(devInfo.rawSensorValue);
+            qDebug("===============");
+
         }
         else
         {
@@ -809,3 +831,20 @@ void DeviceView::on_BtnWriteParameter_clicked()
     ui->BtnWriteParameter->setEnabled(true);
 }
 
+void DeviceView::closeEvent (QCloseEvent *event)
+{
+    qDebug("close DeviceView window");
+    status_running = false;
+}
+
+
+void DeviceView::close_loadingdialog(){
+    qDebug("event close loadingdialog window");
+   status_running = false;
+}
+
+
+void DeviceView::_DisplayUIDAddress(QString UID){
+qDebug()<< "_DisplayUIDAddress:"+UID;
+scanUID = UID;
+}

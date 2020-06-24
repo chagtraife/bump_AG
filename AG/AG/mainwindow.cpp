@@ -347,6 +347,7 @@ void MainWindow::writeData(const QByteArray &data)
     else if(IsUSARTAvailable == true)
     {
         serial->write(data);
+        qDebug()<<"write data:" + data.toHex() + "\n";
     }
 }
 //! [6]
@@ -372,6 +373,7 @@ void MainWindow::writeData_RGB(const QByteArray &data)
         serial->sendBreak(1);
         //dmxrdm->delay(1);
         serial->write(data);
+        qDebug()<<"write data_RGB:" + data.toHex() + "\n";
     }
 }
 
@@ -398,6 +400,7 @@ void MainWindow::writeDataBreak_RGB(const QByteArray &data, bool _break)
     else {
     }
     serial->write(data);
+    qDebug()<<"write data break_RGB:" + data.toHex() + "\n";
 }
 
 void MainWindow::readData_RGB()
@@ -413,6 +416,7 @@ void MainWindow::readData_RGB()
     }
     DEBUG(_sprint);
     dmxrdm_rgb->RDMRecHandler(data);
+    qDebug()<<"read data_RGB:" + data.toHex() + "\n";
 }
 
 
@@ -421,6 +425,7 @@ void MainWindow::writeBreak(void)
     if(IsUSARTAvailable == true && serial->isOpen() == true)
     {
         serial->sendBreak(1);
+        qDebug()<<"write break: 1\n";
     }
 }
 
@@ -445,6 +450,7 @@ void MainWindow::readData()
         dmxrdm->RxFrame = _dat;
         DMXmonitor->ReadData(_dat);
         dmxrdm_rgb->RDMRecHandler(_dat);
+        qDebug()<<"read data:" + _dat.toHex() + "\n";
     }
 }
 //! [7]
@@ -854,3 +860,4 @@ void MainWindow::on_BtnReadDMXID_clicked()
 
 
 }
+

@@ -9,6 +9,7 @@
 #include <QHBoxLayout>
 #include <QLayout>
 #include <QTimer>
+#include <QCloseEvent>
 
 
 namespace Ui {
@@ -44,6 +45,7 @@ private slots:
     void _syncDMXBuffer(int index);
     void _chk_SelectAll_Changed(void);
     void FocusChanged(bool dir);
+    void closeEvent (QCloseEvent *event);
 };
 
 #endif // DMXCONSOLE_H
