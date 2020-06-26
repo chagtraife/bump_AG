@@ -67,12 +67,23 @@ int Authen::checkUser(QString pw){
 //    while (query.next()) {
 //        qDebug() << query.value(0).toInt() << ": " << query.value(1).toString()<< ":" <<query.value(2).toString();
 //    }
-    if (query.exec("SELECT ID, Password, Role FROM Users WHERE Password=\'"+pw+"\'")){
+    if (query.exec("SELECT ID, Password, Role, Threshold_Min, Threshold_Max FROM Users WHERE Password=\'"+pw+"\'")){
         if (query.next()){
             role = query.value(2).toString();
-//            qDebug()<<role;
+            threshold_min = query.value(3).toInt();
+            threshold_max = query.value(4).toInt();
+            qDebug()<<"min"<<threshold_min;
+            qDebug()<<"max"<<threshold_max;
+//            qDebug()<<;
         }
     }
+
+//    qDebug()<<"threshold";
+//    query.exec("select Min, Max from Set_threshold_Value");
+//    while (query.next()) {
+//        qDebug() << query.value(0).toInt() << ": " << query.value(1).toString();
+//    }
+
 
     if(role == "admin"){
         return 1;
@@ -89,3 +100,5 @@ int Authen::checkUser(QString pw){
 
 QSqlDatabase Authen::myDB;
 int Authen::user_lv = 4;
+int Authen::threshold_min = 0;
+int Authen::threshold_max = 255;

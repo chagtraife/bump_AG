@@ -71,6 +71,7 @@ class LoadingDialog;
 class TestDialog;
 class DMX_Monitor;
 class UserManagerSetting;
+class ThresholdManagerSetting;
 
 class MainWindow : public QMainWindow, public Authen
 {
@@ -150,6 +151,7 @@ private:
     TestDialog *testDialog;
     DMX_Monitor *DMXmonitor;
     UserManagerSetting *userManagerSetting;
+    ThresholdManagerSetting *thresholdManagerSetting;
     bool IsUSARTAvailable;
 
     QTime StartTime;

@@ -6,6 +6,7 @@
 #include "QDebug"
 #include "QtSql"
 #include "QFileInfo"
+
 #ifdef Q_OS_IOS
 #  include <QtPlugin>
 
@@ -24,6 +25,8 @@ public:
     int checkUser(QString pw);
     static QSqlDatabase myDB;
     static int user_lv;
+    static int threshold_min;
+    static int threshold_max;
 };
 
 #endif // AUTHEN_H

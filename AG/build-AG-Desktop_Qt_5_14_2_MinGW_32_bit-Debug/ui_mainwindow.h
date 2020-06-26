@@ -45,6 +45,7 @@ public:
     QAction *actionDMX_monitor;
     QAction *actionDMX_monitor_2;
     QAction *actionUser_Manager;
+    QAction *actionThreshold_Manager;
     QWidget *centralWidget;
     QGridLayout *gridLayout;
     QGroupBox *Functions;
@@ -140,6 +141,8 @@ public:
         actionDMX_monitor_2->setIcon(icon7);
         actionUser_Manager = new QAction(MainWindow);
         actionUser_Manager->setObjectName(QString::fromUtf8("actionUser_Manager"));
+        actionThreshold_Manager = new QAction(MainWindow);
+        actionThreshold_Manager->setObjectName(QString::fromUtf8("actionThreshold_Manager"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         gridLayout = new QGridLayout(centralWidget);
@@ -370,6 +373,7 @@ public:
         menuTools->addAction(actionClear);
         menuTools->addAction(actionUser);
         menuTools->addAction(actionUser_Manager);
+        menuTools->addAction(actionThreshold_Manager);
         menuTools->addSeparator();
         menuTools->addSeparator();
         menuTools->addSeparator();
@@ -434,6 +438,7 @@ public:
         actionDMX_monitor->setText(QCoreApplication::translate("MainWindow", "DMX monitor", nullptr));
         actionDMX_monitor_2->setText(QCoreApplication::translate("MainWindow", "DMX monitor", nullptr));
         actionUser_Manager->setText(QCoreApplication::translate("MainWindow", "User Manager", nullptr));
+        actionThreshold_Manager->setText(QCoreApplication::translate("MainWindow", "Threshold Manager", nullptr));
         Functions->setTitle(QCoreApplication::translate("MainWindow", "Functions", nullptr));
         BtnDeviceDiscovery->setText(QCoreApplication::translate("MainWindow", "Discovery", nullptr));
         BtnSearchDev->setText(QCoreApplication::translate("MainWindow", "Ping Device", nullptr));

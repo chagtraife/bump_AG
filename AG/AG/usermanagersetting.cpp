@@ -38,11 +38,11 @@ void UserManagerSetting::on_pushButton_2_clicked()
     QMessageBox::information(this, "Info", "Success");
 }
 
-void UserManagerSetting::on_pushButton_3_clicked()
-{
-    qDebug()<<"setting pass lv3";
-    QSqlQuery qry;
-    QString value = Hash_key(ui->txtPwLv3->text());
-    if(qry.exec("UPDATE Users SET Password =\'" + value+ "\' WHERE ID = 3"))
-    QMessageBox::information(this, "Info", "Success");
-}
+//void UserManagerSetting::on_pushButton_3_clicked()
+//{
+//    qDebug()<<"setting pass lv3";
+//    QSqlQuery qry;
+//    QString value = Hash_key(ui->txtPwLv3->text());
+//    if(qry.exec("UPDATE Users SET Password =\'" + value+ "\' WHERE ID = 3"))
+//    QMessageBox::information(this, "Info", "Success");
+//}

@@ -43,6 +43,7 @@
 #include "testdialog.h"
 #include "dmx_monitor.h"
 #include "usermanagersetting.h"
+#include "thresholdmanagersetting.h"
 #include <QTimer>
 
 #include <QMessageBox>
@@ -115,6 +116,7 @@ MainWindow::MainWindow(QWidget *parent) :
     testDialog = new TestDialog(this);
     DMXmonitor = new DMX_Monitor(this);
     userManagerSetting = new UserManagerSetting(this);
+    thresholdManagerSetting = new ThresholdManagerSetting(this);
 
     ui->actionConnect->setEnabled(true);
     ui->actionDisconnect->setEnabled(false);
@@ -228,6 +230,7 @@ void MainWindow::setUser(bool isAdministratorUser)
         ui->gboptionRGB->setVisible(false);
         ui->BtnReadDMXID->setVisible(false);
         ui->actionUser_Manager->setVisible(false);
+        ui->actionThreshold_Manager->setVisible(false);
         ui->BtnWriteUID->setVisible(false);
         ui->BtnWrThreshold->setVisible(false);
         ui->BtnUpdateFirmware->setVisible(false);
@@ -489,6 +492,7 @@ void MainWindow::initActionsConnections()
     connect(ui->actionUser, SIGNAL(triggered()), this, SLOT(on_ActionUser()));
     connect(ui->actionDMX_monitor_2, SIGNAL(triggered()),DMXmonitor, SLOT(ShowDMXmonitor()));
     connect(ui->actionUser_Manager,SIGNAL(triggered()),userManagerSetting,SLOT(ShowUserManagerSetting()));
+    connect(ui->actionThreshold_Manager,SIGNAL(triggered()),thresholdManagerSetting,SLOT(ShowThresholdManagerSetting()));
 }
 
 void MainWindow::on_ActionUser(void)
@@ -515,9 +519,11 @@ void MainWindow::on_ActionUser(void)
             ui->TxtMinHeight->setVisible(true);
             ui->TxtMaxHeight->setVisible(true);
             ui->actionUser_Manager->setVisible(true);
+            ui->actionThreshold_Manager->setVisible(true);
         }else if(user_lv == 2){
             qDebug()<<"lv2 level";
             setUser(false);
+            ui->BtnWrThreshold->setVisible(true);
             ui->BtnUpdateFirmware->setVisible(true);
             ui->lb_MaxHeight->setVisible(true);
             ui->lb_MinHeight->setVisible(true);
@@ -616,7 +622,19 @@ void MainWindow::on_BtnWrThreshold_clicked()
     dmxrdm->SetUID(s);
     Min = ui->TxtMinHeight->text().trimmed().toInt();
     Max = ui->TxtMaxHeight->text().trimmed().toInt();
-    dmxrdm->SetThreshold(Max, Min);
+    if(Authen::user_lv == 1){
+        dmxrdm->SetThreshold(Max, Min);
+    }
+    if(Authen::user_lv > 1){
+        if((Authen::threshold_min <= Min)and(Max <= Authen::threshold_max)){
+            dmxrdm->SetThreshold(Max, Min);
+        }
+        else{
+            QMessageBox::information(this, "Warning", "Out of limit:"+QString::number(Authen::threshold_min)+"->"+QString::number(Authen::threshold_max));
+        }
+    }
+
+
     this->hideLoadingDialog();
     ui->BtnWrThreshold->setEnabled(true);
 }

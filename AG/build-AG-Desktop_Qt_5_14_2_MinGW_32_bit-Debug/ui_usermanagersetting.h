@@ -39,11 +39,6 @@ public:
     QLabel *label_4;
     QLineEdit *txtPwLv2;
     QPushButton *pushButton_2;
-    QGroupBox *groupBox_4;
-    QHBoxLayout *horizontalLayout_3;
-    QLabel *label_6;
-    QLineEdit *txtPwLv3;
-    QPushButton *pushButton_3;
 
     void setupUi(QDialog *UserManagerSetting)
     {
@@ -103,28 +98,6 @@ public:
 
         verticalLayout_4->addWidget(groupBox_3);
 
-        groupBox_4 = new QGroupBox(groupBox);
-        groupBox_4->setObjectName(QString::fromUtf8("groupBox_4"));
-        horizontalLayout_3 = new QHBoxLayout(groupBox_4);
-        horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
-        label_6 = new QLabel(groupBox_4);
-        label_6->setObjectName(QString::fromUtf8("label_6"));
-
-        horizontalLayout_3->addWidget(label_6);
-
-        txtPwLv3 = new QLineEdit(groupBox_4);
-        txtPwLv3->setObjectName(QString::fromUtf8("txtPwLv3"));
-
-        horizontalLayout_3->addWidget(txtPwLv3);
-
-        pushButton_3 = new QPushButton(groupBox_4);
-        pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
-
-        horizontalLayout_3->addWidget(pushButton_3);
-
-
-        verticalLayout_4->addWidget(groupBox_4);
-
 
         gridLayout->addWidget(groupBox, 0, 0, 1, 1);
 
@@ -138,15 +111,12 @@ public:
     {
         UserManagerSetting->setWindowTitle(QCoreApplication::translate("UserManagerSetting", "User Manager Setting", nullptr));
         groupBox->setTitle(QCoreApplication::translate("UserManagerSetting", "User Manager", nullptr));
-        groupBox_2->setTitle(QCoreApplication::translate("UserManagerSetting", "admin", nullptr));
+        groupBox_2->setTitle(QCoreApplication::translate("UserManagerSetting", "Admin", nullptr));
         label_2->setText(QCoreApplication::translate("UserManagerSetting", "Password", nullptr));
         pushButton->setText(QCoreApplication::translate("UserManagerSetting", "OK", nullptr));
-        groupBox_3->setTitle(QCoreApplication::translate("UserManagerSetting", "lv2", nullptr));
+        groupBox_3->setTitle(QCoreApplication::translate("UserManagerSetting", "Customer", nullptr));
         label_4->setText(QCoreApplication::translate("UserManagerSetting", "Password", nullptr));
         pushButton_2->setText(QCoreApplication::translate("UserManagerSetting", "OK", nullptr));
-        groupBox_4->setTitle(QCoreApplication::translate("UserManagerSetting", "lv3", nullptr));
-        label_6->setText(QCoreApplication::translate("UserManagerSetting", "Password", nullptr));
-        pushButton_3->setText(QCoreApplication::translate("UserManagerSetting", "OK", nullptr));
     } // retranslateUi
 
 };

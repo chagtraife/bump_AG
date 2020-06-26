@@ -583,16 +583,48 @@ void DeviceView::on_BtnWriteLevel_clicked()
         if(!isRunning) break;
         DeviceInfo devInfo = GetRow(index);
         dmxrdm->SetUID(devInfo.UID);
-        dmxrdm->SetThreshold(devInfo.MaxLevel, devInfo.MinLevel, &ok);
-        if(ok)
-        {
-            this->SetRow(devInfo, index.row());
-        }
-        else
-        {
 
-            this->SetRow(devInfo, index.row(), Qt::red);
+        if(Authen::user_lv == 1){
+//            dmxrdm->SetThreshold(Max, Min);
+            dmxrdm->SetThreshold(devInfo.MaxLevel, devInfo.MinLevel, &ok);
+            if(ok)
+            {
+                this->SetRow(devInfo, index.row());
+            }
+            else
+            {
+
+                this->SetRow(devInfo, index.row(), Qt::red);
+            }
         }
+        if(Authen::user_lv > 1){
+            if((Authen::threshold_min <= devInfo.MinLevel)and(devInfo.MaxLevel <= Authen::threshold_max)){
+                dmxrdm->SetThreshold(devInfo.MaxLevel, devInfo.MinLevel, &ok);
+                if(ok)
+                {
+                    this->SetRow(devInfo, index.row());
+                }
+                else
+                {
+
+                    this->SetRow(devInfo, index.row(), Qt::red);
+                }
+            }
+            else{
+                QMessageBox::information(this, "Warning", "Out of limit:"+QString::number(Authen::threshold_min)+"->"+QString::number(Authen::threshold_max));
+            }
+        }
+
+//        dmxrdm->SetThreshold(devInfo.MaxLevel, devInfo.MinLevel, &ok);
+//        if(ok)
+//        {
+//            this->SetRow(devInfo, index.row());
+//        }
+//        else
+//        {
+
+//            this->SetRow(devInfo, index.row(), Qt::red);
+//        }
     }
     ui->BtnWriteLevel->setEnabled(true);
     isRunning = false;

@@ -34,6 +34,7 @@ SOURCES += \
     settingsdialog.cpp \
     testdialog.cpp \
     console.cpp \
+    thresholdmanagersetting.cpp \
     usermanagersetting.cpp \
 
 HEADERS += \
@@ -50,6 +51,7 @@ HEADERS += \
     testdialog.h \
     console.h \
     qtBaseLib.h \
+    thresholdmanagersetting.h \
     usermanagersetting.h \
 
 FORMS += \
@@ -61,6 +63,7 @@ FORMS += \
     mainwindow.ui \
     settingsdialog.ui \
     testdialog.ui \
+    thresholdmanagersetting.ui \
     usermanagersetting.ui \
 
 

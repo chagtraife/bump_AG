@@ -11,6 +11,7 @@ release/qtdmxlib.o
 release/settingsdialog.o
 release/testdialog.o
 release/console.o
+release/thresholdmanagersetting.o
 release/usermanagersetting.o
 release/qrc_AG.o
 release/moc_WindDMXConverter_Setting.o
@@ -24,4 +25,5 @@ release/moc_settingsdialog.o
 release/moc_testdialog.o
 release/moc_console.o
 release/moc_qtBaseLib.o
+release/moc_thresholdmanagersetting.o
 release/moc_usermanagersetting.o

@@ -1,5 +1,5 @@
 /****************************************************************************
-** Meta object code from reading C++ file 'usermanagersetting.h'
+** Meta object code from reading C++ file 'thresholdmanagersetting.h'
 **
 ** Created by: The Qt Meta Object Compiler version 67 (Qt 5.14.2)
 **
@@ -7,11 +7,11 @@
 *****************************************************************************/
 
 #include <memory>
-#include "../../AG/usermanagersetting.h"
+#include "../../AG/thresholdmanagersetting.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
-#error "The header file 'usermanagersetting.h' doesn't include <QObject>."
+#error "The header file 'thresholdmanagersetting.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
 #error "This file was generated using the moc from 5.14.2. It"
 #error "cannot be used with the include files from this version of Qt."
@@ -21,30 +21,31 @@
 QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
-struct qt_meta_stringdata_UserManagerSetting_t {
+struct qt_meta_stringdata_ThresholdManagerSetting_t {
     QByteArrayData data[5];
-    char stringdata0[89];
+    char stringdata0[95];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    qptrdiff(offsetof(qt_meta_stringdata_UserManagerSetting_t, stringdata0) + ofs \
+    qptrdiff(offsetof(qt_meta_stringdata_ThresholdManagerSetting_t, stringdata0) + ofs \
         - idx * sizeof(QByteArrayData)) \
     )
-static const qt_meta_stringdata_UserManagerSetting_t qt_meta_stringdata_UserManagerSetting = {
+static const qt_meta_stringdata_ThresholdManagerSetting_t qt_meta_stringdata_ThresholdManagerSetting = {
     {
-QT_MOC_LITERAL(0, 0, 18), // "UserManagerSetting"
-QT_MOC_LITERAL(1, 19, 22), // "ShowUserManagerSetting"
-QT_MOC_LITERAL(2, 42, 0), // ""
-QT_MOC_LITERAL(3, 43, 21), // "on_pushButton_clicked"
-QT_MOC_LITERAL(4, 65, 23) // "on_pushButton_2_clicked"
+QT_MOC_LITERAL(0, 0, 23), // "ThresholdManagerSetting"
+QT_MOC_LITERAL(1, 24, 27), // "ShowThresholdManagerSetting"
+QT_MOC_LITERAL(2, 52, 0), // ""
+QT_MOC_LITERAL(3, 53, 20), // "on_btnSetMin_clicked"
+QT_MOC_LITERAL(4, 74, 20) // "on_btnSetMax_clicked"
 
     },
-    "UserManagerSetting\0ShowUserManagerSetting\0"
-    "\0on_pushButton_clicked\0on_pushButton_2_clicked"
+    "ThresholdManagerSetting\0"
+    "ShowThresholdManagerSetting\0\0"
+    "on_btnSetMin_clicked\0on_btnSetMax_clicked"
 };
 #undef QT_MOC_LITERAL
 
-static const uint qt_meta_data_UserManagerSetting[] = {
+static const uint qt_meta_data_ThresholdManagerSetting[] = {
 
  // content:
        8,       // revision
@@ -70,47 +71,47 @@ static const uint qt_meta_data_UserManagerSetting[] = {
        0        // eod
 };
 
-void UserManagerSetting::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void ThresholdManagerSetting::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
-        auto *_t = static_cast<UserManagerSetting *>(_o);
+        auto *_t = static_cast<ThresholdManagerSetting *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->ShowUserManagerSetting(); break;
-        case 1: _t->on_pushButton_clicked(); break;
-        case 2: _t->on_pushButton_2_clicked(); break;
+        case 0: _t->ShowThresholdManagerSetting(); break;
+        case 1: _t->on_btnSetMin_clicked(); break;
+        case 2: _t->on_btnSetMax_clicked(); break;
         default: ;
         }
     }
     Q_UNUSED(_a);
 }
 
-QT_INIT_METAOBJECT const QMetaObject UserManagerSetting::staticMetaObject = { {
+QT_INIT_METAOBJECT const QMetaObject ThresholdManagerSetting::staticMetaObject = { {
     QMetaObject::SuperData::link<QDialog::staticMetaObject>(),
-    qt_meta_stringdata_UserManagerSetting.data,
-    qt_meta_data_UserManagerSetting,
+    qt_meta_stringdata_ThresholdManagerSetting.data,
+    qt_meta_data_ThresholdManagerSetting,
     qt_static_metacall,
     nullptr,
     nullptr
 } };
 
 
-const QMetaObject *UserManagerSetting::metaObject() const
+const QMetaObject *ThresholdManagerSetting::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *UserManagerSetting::qt_metacast(const char *_clname)
+void *ThresholdManagerSetting::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_UserManagerSetting.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_ThresholdManagerSetting.stringdata0))
         return static_cast<void*>(this);
     if (!strcmp(_clname, "Authen"))
         return static_cast< Authen*>(this);
     return QDialog::qt_metacast(_clname);
 }
 
-int UserManagerSetting::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int ThresholdManagerSetting::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QDialog::qt_metacall(_c, _id, _a);
     if (_id < 0)

@@ -371,6 +371,7 @@
     <addaction name="actionClear"/>
     <addaction name="actionUser"/>
     <addaction name="actionUser_Manager"/>
+    <addaction name="actionThreshold_Manager"/>
     <addaction name="separator"/>
     <addaction name="separator"/>
     <addaction name="separator"/>
@@ -516,6 +517,11 @@
   <action name="actionUser_Manager">
    <property name="text">
     <string>User Manager</string>
+   </property>
+  </action>
+  <action name="actionThreshold_Manager">
+   <property name="text">
+    <string>Threshold Manager</string>
    </property>
   </action>
  </widget>
