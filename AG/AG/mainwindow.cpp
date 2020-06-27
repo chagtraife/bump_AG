@@ -44,6 +44,8 @@
 #include "dmx_monitor.h"
 #include "usermanagersetting.h"
 #include "thresholdmanagersetting.h"
+#include "ledrgbctrl.h"
+#include "ledrgbwctrl.h"
 #include <QTimer>
 
 #include <QMessageBox>
@@ -117,6 +119,8 @@ MainWindow::MainWindow(QWidget *parent) :
     DMXmonitor = new DMX_Monitor(this);
     userManagerSetting = new UserManagerSetting(this);
     thresholdManagerSetting = new ThresholdManagerSetting(this);
+    ledRGBCtrl = new LedRGBCtrl(this);
+    ledRGBWCtrl = new LedRGBWCtrl(this);
 
     ui->actionConnect->setEnabled(true);
     ui->actionDisconnect->setEnabled(false);
@@ -227,6 +231,8 @@ void MainWindow::setUser(bool isAdministratorUser)
     }
     else
     {
+        ui->rdBtn_Light->setVisible(false);
+        ui->rdBtn_LightRGBW->setVisible(false);
         ui->gboptionRGB->setVisible(false);
         ui->BtnReadDMXID->setVisible(false);
         ui->actionUser_Manager->setVisible(false);
@@ -493,6 +499,8 @@ void MainWindow::initActionsConnections()
     connect(ui->actionDMX_monitor_2, SIGNAL(triggered()),DMXmonitor, SLOT(ShowDMXmonitor()));
     connect(ui->actionUser_Manager,SIGNAL(triggered()),userManagerSetting,SLOT(ShowUserManagerSetting()));
     connect(ui->actionThreshold_Manager,SIGNAL(triggered()),thresholdManagerSetting,SLOT(ShowThresholdManagerSetting()));
+    connect(ui->actionLED_RGB_V1_0,SIGNAL(triggered()),ledRGBCtrl,SLOT(ShowLedRGBCtrl()));
+    connect(ui->actionLED_RGBW_V1_0,SIGNAL(triggered()),ledRGBWCtrl,SLOT(ShowLedRGBWCtrl()));
 }
 
 void MainWindow::on_ActionUser(void)

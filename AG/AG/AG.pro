@@ -27,6 +27,8 @@ SOURCES += \
     deviceview.cpp \
     dmx_monitor.cpp \
     dmxconsole.cpp \
+    ledrgbctrl.cpp \
+    ledrgbwctrl.cpp \
     loadingdialog.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -44,6 +46,8 @@ HEADERS += \
     deviceview.h \
     dmx_monitor.h \
     dmxconsole.h \
+    ledrgbctrl.h \
+    ledrgbwctrl.h \
     loadingdialog.h \
     mainwindow.h \
     qtdmxlib.h \
@@ -59,6 +63,8 @@ FORMS += \
     deviceview.ui \
     dmx_monitor.ui \
     dmxconsole.ui \
+    ledrgbctrl.ui \
+    ledrgbwctrl.ui \
     loadingdialog.ui \
     mainwindow.ui \
     settingsdialog.ui \

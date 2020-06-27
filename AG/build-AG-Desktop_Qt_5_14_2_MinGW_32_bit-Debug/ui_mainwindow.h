@@ -46,6 +46,8 @@ public:
     QAction *actionDMX_monitor_2;
     QAction *actionUser_Manager;
     QAction *actionThreshold_Manager;
+    QAction *actionLED_RGB_V1_0;
+    QAction *actionLED_RGBW_V1_0;
     QWidget *centralWidget;
     QGridLayout *gridLayout;
     QGroupBox *Functions;
@@ -143,6 +145,10 @@ public:
         actionUser_Manager->setObjectName(QString::fromUtf8("actionUser_Manager"));
         actionThreshold_Manager = new QAction(MainWindow);
         actionThreshold_Manager->setObjectName(QString::fromUtf8("actionThreshold_Manager"));
+        actionLED_RGB_V1_0 = new QAction(MainWindow);
+        actionLED_RGB_V1_0->setObjectName(QString::fromUtf8("actionLED_RGB_V1_0"));
+        actionLED_RGBW_V1_0 = new QAction(MainWindow);
+        actionLED_RGBW_V1_0->setObjectName(QString::fromUtf8("actionLED_RGBW_V1_0"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         gridLayout = new QGridLayout(centralWidget);
@@ -371,6 +377,8 @@ public:
         menuCalls->addAction(actionQuit);
         menuTools->addAction(actionConfigure);
         menuTools->addAction(actionClear);
+        menuTools->addAction(actionLED_RGB_V1_0);
+        menuTools->addAction(actionLED_RGBW_V1_0);
         menuTools->addAction(actionUser);
         menuTools->addAction(actionUser_Manager);
         menuTools->addAction(actionThreshold_Manager);
@@ -439,6 +447,8 @@ public:
         actionDMX_monitor_2->setText(QCoreApplication::translate("MainWindow", "DMX monitor", nullptr));
         actionUser_Manager->setText(QCoreApplication::translate("MainWindow", "User Manager", nullptr));
         actionThreshold_Manager->setText(QCoreApplication::translate("MainWindow", "Threshold Manager", nullptr));
+        actionLED_RGB_V1_0->setText(QCoreApplication::translate("MainWindow", "LED RGB V1.0", nullptr));
+        actionLED_RGBW_V1_0->setText(QCoreApplication::translate("MainWindow", "LED RGBW V1.0", nullptr));
         Functions->setTitle(QCoreApplication::translate("MainWindow", "Functions", nullptr));
         BtnDeviceDiscovery->setText(QCoreApplication::translate("MainWindow", "Discovery", nullptr));
         BtnSearchDev->setText(QCoreApplication::translate("MainWindow", "Ping Device", nullptr));

@@ -252,6 +252,7 @@ public:
     quint16 readChannl_RBB_old();
     bool writeChannel_RGB_old(quint16 channel);
     void writeChannel_RGB_old_Loop(quint16 channel);
+    bool askSensor(QByteArray UID);
 private:
     typedef enum
     {

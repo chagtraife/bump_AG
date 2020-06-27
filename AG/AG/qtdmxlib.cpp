@@ -694,6 +694,31 @@ void QT_RGB_DMX_LIB::DMXRDM::writeChannel_RGB_old_Loop(quint16 channel)
     }
 }
 
+bool QT_RGB_DMX_LIB::DMXRDM::askSensor(QByteArray UID){
+    QByteArray data;
+    data.resize(1);
+    data[0] = 1;
+    rdm_cmd = cmd_AskValSensor;
+    _isRec = false;
+    emit writeData(MakeDataSend(DeviceInfo.bUID, cmd_AskValSensor, data));
+    delay(50);
+    if(!_isRec)
+    {
+        emit writeData(MakeDataSend(DeviceInfo.bUID, cmd_AskValSensor, data));
+        delay(50);
+    }
+    if(!_isRec)
+    {
+        emit writeData(MakeDataSend(DeviceInfo.bUID, cmd_AskValSensor, data));
+        delay(50);
+    }
+    if(!_isRec)
+    {
+        return false;
+    }
+    return true;
+}
+
 
 
 

@@ -72,6 +72,8 @@ class TestDialog;
 class DMX_Monitor;
 class UserManagerSetting;
 class ThresholdManagerSetting;
+class LedRGBCtrl;
+class LedRGBWCtrl;
 
 class MainWindow : public QMainWindow, public Authen
 {
@@ -152,6 +154,8 @@ private:
     DMX_Monitor *DMXmonitor;
     UserManagerSetting *userManagerSetting;
     ThresholdManagerSetting *thresholdManagerSetting;
+    LedRGBCtrl *ledRGBCtrl;
+    LedRGBWCtrl *ledRGBWCtrl;
     bool IsUSARTAvailable;
 
     QTime StartTime;

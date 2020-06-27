@@ -429,6 +429,15 @@ void DeviceView::on_BtnReadParameters_clicked()
             qDebug()<<"SensorValue:" + QString::number(devInfo.SensorValue);
             qDebug()<<"rawSensorValue:" + QString::number(devInfo.rawSensorValue);
             qDebug("===============");
+//            QByteArray uid_;
+//            uid_.resize(6);
+//            uid_[0] = 0x14;
+//            uid_[1] = 0x00;
+//            uid_[2] = 0x00;
+//            uid_[3] = 0x00;
+//            uid_[4] = 0x00;
+//            uid_[5] = 0x01;
+//            dmxrdm_rgb->askSensor(uid_);
 
         }
         else

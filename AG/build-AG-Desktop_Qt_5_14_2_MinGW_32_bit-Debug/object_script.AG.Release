@@ -4,6 +4,8 @@ release/debug.o
 release/deviceview.o
 release/dmx_monitor.o
 release/dmxconsole.o
+release/ledrgbctrl.o
+release/ledrgbwctrl.o
 release/loadingdialog.o
 release/main.o
 release/mainwindow.o
@@ -18,6 +20,8 @@ release/moc_WindDMXConverter_Setting.o
 release/moc_deviceview.o
 release/moc_dmx_monitor.o
 release/moc_dmxconsole.o
+release/moc_ledrgbctrl.o
+release/moc_ledrgbwctrl.o
 release/moc_loadingdialog.o
 release/moc_mainwindow.o
 release/moc_qtdmxlib.o

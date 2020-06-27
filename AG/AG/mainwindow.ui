@@ -369,6 +369,8 @@
     </property>
     <addaction name="actionConfigure"/>
     <addaction name="actionClear"/>
+    <addaction name="actionLED_RGB_V1_0"/>
+    <addaction name="actionLED_RGBW_V1_0"/>
     <addaction name="actionUser"/>
     <addaction name="actionUser_Manager"/>
     <addaction name="actionThreshold_Manager"/>
@@ -522,6 +524,16 @@
   <action name="actionThreshold_Manager">
    <property name="text">
     <string>Threshold Manager</string>
+   </property>
+  </action>
+  <action name="actionLED_RGB_V1_0">
+   <property name="text">
+    <string>LED RGB V1.0</string>
+   </property>
+  </action>
+  <action name="actionLED_RGBW_V1_0">
+   <property name="text">
+    <string>LED RGBW V1.0</string>
    </property>
   </action>
  </widget>

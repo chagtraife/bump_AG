@@ -4,6 +4,8 @@ debug/debug.o
 debug/deviceview.o
 debug/dmx_monitor.o
 debug/dmxconsole.o
+debug/ledrgbctrl.o
+debug/ledrgbwctrl.o
 debug/loadingdialog.o
 debug/main.o
 debug/mainwindow.o
@@ -18,6 +20,8 @@ debug/moc_WindDMXConverter_Setting.o
 debug/moc_deviceview.o
 debug/moc_dmx_monitor.o
 debug/moc_dmxconsole.o
+debug/moc_ledrgbctrl.o
+debug/moc_ledrgbwctrl.o
 debug/moc_loadingdialog.o
 debug/moc_mainwindow.o
 debug/moc_qtdmxlib.o

@@ -9,6 +9,7 @@
 #include "loadingdialog.h"
 #include "authen.h"
 #include <QCloseEvent>
+#include "qtdmxlib.h"
 class QStandardItemModel;
 class QLabel;
 class DMXRDM;
