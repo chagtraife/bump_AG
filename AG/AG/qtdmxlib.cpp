@@ -115,6 +115,17 @@ void QT_RGB_DMX_LIB::DMXRDM::RDMRecHandler(QByteArray data)
             }
             DEBUG(_sprint);
         }
+        else if(rdm_cmd == cmd_AskTemperaterSensor){
+            quint16 _tempSen;
+            _tempSen = ((((quint16)data[17]<<8)&0xFF00)|(((quint16)data[18])&0x00FF));
+            DeviceInfo.TemperaterSensor = _tempSen;
+        }
+        else if(rdm_cmd == cmd_AskCurrentSensor){
+            quint16 _currSen;
+            _currSen = ((((quint16)data[17]<<8)&0xFF00)|(((quint16)data[18])&0x00FF));
+            DeviceInfo.CurrentSensor = _currSen;
+        }
+
 
         /*
         check_sum &= 0x00FF;
@@ -164,6 +175,9 @@ void QT_RGB_DMX_LIB::DMXRDM::RDMRecHandler(QByteArray data)
 
             else if(rdm_cmd == cmd_RstDev) {
 
+            }
+            else if (rdm_cmd == cmd_AskTemperaterSensor){
+                emit writeData(MakeDataSend(DeviceInfo.bUID, cmd_AskCurrentSensor, data_temp));
             }
             _isRecRDM = true;
         }*/
@@ -652,7 +666,7 @@ bool QT_RGB_DMX_LIB::DMXRDM::askChannel_RGB_old()
     data_send.resize(3);
     memcpy(data_send.data(), RDM_LED_old_read, 3);
     emit writeData(data_send);
-    delay(1000);
+    delay(100);
     return LedOldCheckData;
 }
 
@@ -710,6 +724,58 @@ bool QT_RGB_DMX_LIB::DMXRDM::askSensor(QByteArray UID){
     if(!_isRec)
     {
         emit writeData(MakeDataSend(DeviceInfo.bUID, cmd_AskValSensor, data));
+        delay(50);
+    }
+    if(!_isRec)
+    {
+        return false;
+    }
+    return true;
+}
+
+bool QT_RGB_DMX_LIB::DMXRDM::AskTemperaterSensor(QByteArray UID){
+//    delay(100);
+    QByteArray data;
+    data.resize(1);
+    data[0] = 1;
+    rdm_cmd = cmd_AskTemperaterSensor;
+    _isRec = false;
+    emit writeData(MakeDataSend(UID, cmd_AskTemperaterSensor, data));
+    delay(50);
+    if(!_isRec)
+    {
+        emit writeData(MakeDataSend(UID, cmd_AskTemperaterSensor, data));
+        delay(50);
+    }
+    if(!_isRec)
+    {
+        emit writeData(MakeDataSend(UID, cmd_AskTemperaterSensor, data));
+        delay(50);
+    }
+    if(!_isRec)
+    {
+        return false;
+    }
+    return true;
+}
+
+bool QT_RGB_DMX_LIB::DMXRDM::AskCurrentSensor(QByteArray UID){
+    delay(100);
+    QByteArray data;
+    data.resize(1);
+    data[0] = 1;
+    rdm_cmd = cmd_AskCurrentSensor;
+    _isRec = false;
+    emit writeData(MakeDataSend(UID, cmd_AskCurrentSensor, data));
+    delay(50);
+    if(!_isRec)
+    {
+        emit writeData(MakeDataSend(UID, cmd_AskCurrentSensor, data));
+        delay(50);
+    }
+    if(!_isRec)
+    {
+        emit writeData(MakeDataSend(UID, cmd_AskCurrentSensor, data));
         delay(50);
     }
     if(!_isRec)
@@ -798,7 +864,8 @@ QString QT_RGB_DMX_LIB::DeviceInfo::GetDeviceTypeName(uint8_t DevType)
 {
     if(DevType > DEVICE_TOTAL)
     {
-        return "UNKNOWN";
+//        return "UNKNOWN";
+        return "";
     }
     else {
         return DEVICE_NAME[DevType];

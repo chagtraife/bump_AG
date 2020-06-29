@@ -66,7 +66,7 @@ void DeviceView::DiscoveryAddDeviceList(QString FoundUID)
     FoundDevice.UID = UID(FoundUID);
     qDebug()<<FoundDevice.UID.toString();
     FoundDevice.DMXAddr = 0;
-    FoundDevice.SensorValue = 0;
+//    FoundDevice.SensorValue = 0;
     lstOfDevice<<FoundDevice;
     SetNextRow(FoundDevice);
 }
@@ -114,10 +114,11 @@ DeviceInfo DeviceView::GetRow(quint16 y)
     DeviceInfo readDev = DeviceInfo();
     readDev.UID = UID(GetCell(UID_CollumIndex, y));
     readDev.DMXAddr = GetCell(DMXAddr_CollumIndex, y).toUInt();
-    readDev.SensorValue = GetCell(Sensor_CollumIndex, y).toUInt();
+//    readDev.SensorValue = GetCell(Sensor_CollumIndex, y).toUInt();
     readDev.SEQAddr = GetCell(SEQAddr_CollumIndex, y).toUInt();
     readDev.strDeviceType = GetCell(DeviceType_CollumIndex, y);
     readDev.strFWVersion = GetCell(FirmwareVersion_CollumIndex, y);
+
 
     if(Authen::user_lv == 1)
     {
@@ -145,7 +146,7 @@ DeviceInfo DeviceView::GetRow(QModelIndex index)
     DeviceInfo readDev = DeviceInfo();
     readDev.UID = UID(GetCell(UID_CollumIndex, index.row()));
     readDev.DMXAddr = GetCell(DMXAddr_CollumIndex, index.row()).toUInt();
-    readDev.SensorValue = GetCell(Sensor_CollumIndex, index.row()).toUInt();
+//    readDev.SensorValue = GetCell(Sensor_CollumIndex, index.row()).toUInt();
     readDev.SEQAddr = GetCell(SEQAddr_CollumIndex, index.row()).toUInt();
     readDev.strDeviceType = GetCell(DeviceType_CollumIndex, index.row());
     readDev.strFWVersion = GetCell(FirmwareVersion_CollumIndex, index.row());
@@ -280,7 +281,7 @@ void DeviceView::SetNextRow(DeviceInfo devInfo, QColor color)
     SetCell(UID_CollumIndex, Row_cnt, devInfo.UID.toString(), color);
     SetCell(DMXAddr_CollumIndex, Row_cnt, devInfo.DMXAddr, color);
     SetCell(SEQAddr_CollumIndex, Row_cnt, devInfo.SEQAddr, color);
-    SetCell(Sensor_CollumIndex, Row_cnt, QString::number(devInfo.SensorValue,16), color);
+//    SetCell(Sensor_CollumIndex, Row_cnt, QString::number(devInfo.SensorValue,16), color);
     SetCell(DeviceType_CollumIndex, Row_cnt, devInfo.strDeviceType, color);
     SetCell(FirmwareVersion_CollumIndex, Row_cnt, devInfo.strFWVersion, color);
     if(Authen::user_lv == 1)
@@ -310,7 +311,7 @@ void DeviceView::SetRow(DeviceInfo devInfo, quint16 row, QColor color)
     SetCell(UID_CollumIndex, row, devInfo.UID.toString(), color);
     SetCell(DMXAddr_CollumIndex, row, devInfo.DMXAddr, color);
     SetCell(SEQAddr_CollumIndex, row, devInfo.SEQAddr, color);
-    SetCell(Sensor_CollumIndex, row, QString::number(devInfo.SensorValue,16), color);
+//    SetCell(Sensor_CollumIndex, row, QString::number(devInfo.SensorValue,16), color);
     SetCell(DeviceType_CollumIndex, row, devInfo.strDeviceType, color);
     SetCell(FirmwareVersion_CollumIndex, row, devInfo.strFWVersion, color);
 
@@ -395,6 +396,7 @@ void DeviceView::on_tableView_Device_entered(const QModelIndex &index)
 
 void DeviceView::on_BtnReadParameters_clicked()
 {
+    qDebug()<<"on_BtnReadParameters_clicked";
     bool ok;
     QModelIndexList selectedList;
     selectedList = ui->tableView_Device->selectionModel()->selectedRows();
@@ -416,7 +418,13 @@ void DeviceView::on_BtnReadParameters_clicked()
     foreach (QModelIndex index, selectedList)
     {
         if(!isRunning) break;
-        DeviceInfo devInfo = dmxrdm->GetDeviceInfo(UID(GetCell(UID_CollumIndex, index.row())), &ok);
+        DeviceInfo devInfo;
+        devInfo = dmxrdm->GetDeviceInfo(UID(GetCell(UID_CollumIndex, index.row())), &ok);
+        if(!ok){
+            dmxrdm->delay_ms(500);
+            devInfo = dmxrdm->GetDeviceInfo(UID(GetCell(UID_CollumIndex, index.row())), &ok);
+        }
+
         if(ok)
         {
             this->SetRow(devInfo, index.row());
@@ -429,6 +437,7 @@ void DeviceView::on_BtnReadParameters_clicked()
             qDebug()<<"SensorValue:" + QString::number(devInfo.SensorValue);
             qDebug()<<"rawSensorValue:" + QString::number(devInfo.rawSensorValue);
             qDebug("===============");
+            QT_RGB_DMX_LIB::UID uid_ = GetCell(UID_CollumIndex, index.row());
 //            QByteArray uid_;
 //            uid_.resize(6);
 //            uid_[0] = 0x14;
@@ -437,13 +446,21 @@ void DeviceView::on_BtnReadParameters_clicked()
 //            uid_[3] = 0x00;
 //            uid_[4] = 0x00;
 //            uid_[5] = 0x01;
-//            dmxrdm_rgb->askSensor(uid_);
+            dmxrdm_rgb->AskTemperaterSensor(uid_.toQByteArray());
+            dmxrdm_rgb->AskCurrentSensor(uid_.toQByteArray());
+            this->SetCell(TempSensor_CollumIndex, index.row(), dmxrdm_rgb->DeviceInfo.TemperaterSensor);
+            this->SetCell(CurrSensor_CollumIndex, index.row(), dmxrdm_rgb->DeviceInfo.CurrentSensor);
+            qDebug()<< QString::number(dmxrdm_rgb->DeviceInfo.TemperaterSensor);
+            qDebug()<< QString::number(dmxrdm_rgb->DeviceInfo.CurrentSensor);
 
+//            qDebug()<<QString::number(index.row());
         }
         else
         {
-
+//            qDebug()<<QString::number(index.row());
             this->SetRow(devInfo, index.row(), Qt::red);
+            this->SetCell(TempSensor_CollumIndex, index.row(), dmxrdm_rgb->DeviceInfo.TemperaterSensor, Qt::red );
+            this->SetCell(CurrSensor_CollumIndex, index.row(), dmxrdm_rgb->DeviceInfo.CurrentSensor, Qt::red);
         }
     }
     ui->BtnReadParameters->setEnabled(true);
@@ -591,14 +608,16 @@ void DeviceView::on_BtnWriteLevel_clicked()
     {
         if(!isRunning) break;
         DeviceInfo devInfo = GetRow(index);
-        dmxrdm->SetUID(devInfo.UID);
+//        dmxrdm->SetUID(devInfo.UID);
 
         if(Authen::user_lv == 1){
 //            dmxrdm->SetThreshold(Max, Min);
+            dmxrdm->SetUID(devInfo.UID);
             dmxrdm->SetThreshold(devInfo.MaxLevel, devInfo.MinLevel, &ok);
             if(ok)
             {
                 this->SetRow(devInfo, index.row());
+//                dmxrdm->delay_ms(2000);
             }
             else
             {
@@ -608,10 +627,12 @@ void DeviceView::on_BtnWriteLevel_clicked()
         }
         if(Authen::user_lv > 1){
             if((Authen::threshold_min <= devInfo.MinLevel)and(devInfo.MaxLevel <= Authen::threshold_max)){
+                dmxrdm->SetUID(devInfo.UID);
                 dmxrdm->SetThreshold(devInfo.MaxLevel, devInfo.MinLevel, &ok);
                 if(ok)
                 {
                     this->SetRow(devInfo, index.row());
+//                    dmxrdm->delay_ms(2000);
                 }
                 else
                 {
@@ -635,9 +656,10 @@ void DeviceView::on_BtnWriteLevel_clicked()
 //            this->SetRow(devInfo, index.row(), Qt::red);
 //        }
     }
-    ui->BtnWriteLevel->setEnabled(true);
+
     isRunning = false;
     loadingDialog->hideDialog();
+    ui->BtnWriteLevel->setEnabled(true);
 }
 
 void DeviceView::SaveFile(void)

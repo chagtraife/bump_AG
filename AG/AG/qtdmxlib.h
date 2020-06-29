@@ -59,6 +59,8 @@ public:
     quint8 MaxLevel;
     quint8 MinLevel;
     quint8 Sensor;
+    quint16 TemperaterSensor;// -> unit: 0.1 C
+    quint16 CurrentSensor;// -> unit: 100ma
     quint8 SEQAddr;
     quint8 DeviceType;
     QString DeviceName;
@@ -223,7 +225,9 @@ private:
         cmd_OpenGate = 0x12,
         cmd_ReadInternalMemory = 0x13,
         cmd_WriteInternalMemory = 0x14,
-        cmd_null
+        cmd_null,
+        cmd_AskTemperaterSensor = 0x21,
+        cmd_AskCurrentSensor = 0x22
     }RDM_CMD;
     RDM_CMD rdm_cmd;
 
@@ -253,6 +257,8 @@ public:
     bool writeChannel_RGB_old(quint16 channel);
     void writeChannel_RGB_old_Loop(quint16 channel);
     bool askSensor(QByteArray UID);
+    bool AskTemperaterSensor(QByteArray UID);
+    bool AskCurrentSensor(QByteArray UID);
 private:
     typedef enum
     {

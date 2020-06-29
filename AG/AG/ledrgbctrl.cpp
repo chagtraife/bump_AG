@@ -23,9 +23,39 @@ void LedRGBCtrl::on_btnRead_clicked()
     if(ui->rbOneOne->isChecked()){
         quint16 channel;
         ui->btnRead->setEnabled(false);
-        if(dmxrdm_rgb->askChannel_RGB_old())
-        {
-            channel = dmxrdm_rgb->readChannl_RBB_old();
+        int cnt;
+        cnt =0;
+        bool noise = true;
+        quint16 channel_pre = 0;
+        while ((cnt < 3)and (noise)){
+
+            if(dmxrdm_rgb->askChannel_RGB_old()){
+                channel_pre = dmxrdm_rgb->readChannl_RBB_old();
+            }
+
+            if(dmxrdm_rgb->askChannel_RGB_old()){
+                channel_pre += dmxrdm_rgb->readChannl_RBB_old();
+            }
+
+            if(dmxrdm_rgb->askChannel_RGB_old()){
+                channel = dmxrdm_rgb->readChannl_RBB_old();
+            }
+
+            if (channel_pre == 2*channel){
+                noise = false;
+            }else{
+                channel_pre = 0;
+            }
+            cnt++;
+        }
+
+//        if(dmxrdm_rgb->askChannel_RGB_old())
+//        {
+//            channel = dmxrdm_rgb->readChannl_RBB_old();
+//            channel = (channel - 1)*3 + 1;
+//            ui->txt_DMX_ID->setText(QString::number(channel));
+//        }
+        if(!noise){
             channel = (channel - 1)*3 + 1;
             ui->txt_DMX_ID->setText(QString::number(channel));
         }

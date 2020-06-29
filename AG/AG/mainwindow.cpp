@@ -642,7 +642,6 @@ void MainWindow::on_BtnWrThreshold_clicked()
         }
     }
 
-
     this->hideLoadingDialog();
     ui->BtnWrThreshold->setEnabled(true);
 }
