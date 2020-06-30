@@ -19,7 +19,7 @@ CXXFLAGS      = -fno-keep-inline-dllexport -g -std=gnu++11 -Wall -Wextra -Wextra
 INCPATH       = -I..\AG -I. -I..\AG -I../qtBaseLib -IC:\Qt\Qt5.14.2\5.14.2\mingw73_32\include -IC:\Qt\Qt5.14.2\5.14.2\mingw73_32\include\QtWidgets -IC:\Qt\Qt5.14.2\5.14.2\mingw73_32\include\QtGui -IC:\Qt\Qt5.14.2\5.14.2\mingw73_32\include\QtANGLE -IC:\Qt\Qt5.14.2\5.14.2\mingw73_32\include\QtSerialPort -IC:\Qt\Qt5.14.2\5.14.2\mingw73_32\include\QtSql -IC:\Qt\Qt5.14.2\5.14.2\mingw73_32\include\QtCore -Idebug -I. -IC:\Qt\Qt5.14.2\5.14.2\mingw73_32\mkspecs\win32-g++ 
 LINKER      =        g++
 LFLAGS        =        -Wl,-subsystem,windows -mthreads
-LIBS        =        -LC:\Users\thang\Desktop\work\bump_AG\AG\AG -lqtBaseLib C:\Qt\Qt5.14.2\5.14.2\mingw73_32\lib\libQt5Widgets.a C:\Qt\Qt5.14.2\5.14.2\mingw73_32\lib\libQt5Gui.a C:\Qt\Qt5.14.2\5.14.2\mingw73_32\lib\libQt5SerialPort.a C:\Qt\Qt5.14.2\5.14.2\mingw73_32\lib\libQt5Sql.a C:\Qt\Qt5.14.2\5.14.2\mingw73_32\lib\libQt5Core.a  -lmingw32 C:\Qt\Qt5.14.2\5.14.2\mingw73_32\lib\libqtmain.a -LC:\openssl\lib -LC:\Utils\my_sql\mysql-5.7.25-win32\lib -LC:\Utils\postgresql\pgsql\lib -lshell32 
+LIBS        =        -LC:\Users\thang\Desktop\work\bump_AG\AG\AG -lqtBaseLib C:\Qt\Qt5.14.2\5.14.2\mingw73_32\lib\libQt5Widgets.a C:\Qt\Qt5.14.2\5.14.2\mingw73_32\lib\libQt5Gui.a C:\Qt\Qt5.14.2\5.14.2\mingw73_32\lib\libQt5SerialPort.a C:\Qt\Qt5.14.2\5.14.2\mingw73_32\lib\libQt5Sql.a C:\Qt\Qt5.14.2\5.14.2\mingw73_32\lib\libQt5Core.a debug\AG_resource_res.o  -lmingw32 C:\Qt\Qt5.14.2\5.14.2\mingw73_32\lib\libqtmain.a -LC:\openssl\lib -LC:\Utils\my_sql\mysql-5.7.25-win32\lib -LC:\Utils\postgresql\pgsql\lib -lshell32 
 QMAKE         = C:\Qt\Qt5.14.2\5.14.2\mingw73_32\bin\qmake.exe
 DEL_FILE      = del
 CHK_DIR_EXISTS= if not exist
@@ -40,7 +40,7 @@ IDC           = idc
 IDL           = midl
 ZIP           = zip -r -9
 DEF_FILE      = 
-RES_FILE      = 
+RES_FILE      = debug\AG_resource_res.o
 SED           = $(QMAKE) -install sed
 MOVE          = move
 
@@ -159,8 +159,11 @@ DESTDIR_TARGET = debug\AG.exe
 first: all
 all: Makefile.Debug  debug/AG.exe
 
-debug/AG.exe: C:/Qt/Qt5.14.2/5.14.2/mingw73_32/lib/libQt5Widgets.a C:/Qt/Qt5.14.2/5.14.2/mingw73_32/lib/libQt5Gui.a C:/Qt/Qt5.14.2/5.14.2/mingw73_32/lib/libQt5SerialPort.a C:/Qt/Qt5.14.2/5.14.2/mingw73_32/lib/libQt5Sql.a C:/Qt/Qt5.14.2/5.14.2/mingw73_32/lib/libQt5Core.a C:/Qt/Qt5.14.2/5.14.2/mingw73_32/lib/libqtmain.a ui_WindDMXConverter_Setting.h ui_deviceview.h ui_dmx_monitor.h ui_dmxconsole.h ui_ledrgbctrl.h ui_ledrgbwctrl.h ui_loadingdialog.h ui_mainwindow.h ui_settingsdialog.h ui_testdialog.h ui_thresholdmanagersetting.h ui_usermanagersetting.h $(OBJECTS) 
+debug/AG.exe: C:/Qt/Qt5.14.2/5.14.2/mingw73_32/lib/libQt5Widgets.a C:/Qt/Qt5.14.2/5.14.2/mingw73_32/lib/libQt5Gui.a C:/Qt/Qt5.14.2/5.14.2/mingw73_32/lib/libQt5SerialPort.a C:/Qt/Qt5.14.2/5.14.2/mingw73_32/lib/libQt5Sql.a C:/Qt/Qt5.14.2/5.14.2/mingw73_32/lib/libQt5Core.a C:/Qt/Qt5.14.2/5.14.2/mingw73_32/lib/libqtmain.a ui_WindDMXConverter_Setting.h ui_deviceview.h ui_dmx_monitor.h ui_dmxconsole.h ui_ledrgbctrl.h ui_ledrgbwctrl.h ui_loadingdialog.h ui_mainwindow.h ui_settingsdialog.h ui_testdialog.h ui_thresholdmanagersetting.h ui_usermanagersetting.h $(OBJECTS) debug/AG_resource_res.o
 	$(LINKER) $(LFLAGS) -o $(DESTDIR_TARGET) @object_script.AG.Debug  $(LIBS)
+
+debug/AG_resource_res.o: AG_resource.rc
+	windres -i AG_resource.rc -o debug\AG_resource_res.o --include-dir=. $(DEFINES)
 
 qmake: FORCE
 	@$(QMAKE) -o Makefile.Debug ..\AG\AG.pro -spec win32-g++ "CONFIG+=qtquickcompiler"
@@ -172,6 +175,7 @@ dist:
 
 clean: compiler_clean 
 	-$(DEL_FILE) debug\WindDMXConverter_Setting.o debug\authen.o debug\debug.o debug\deviceview.o debug\dmx_monitor.o debug\dmxconsole.o debug\ledrgbctrl.o debug\ledrgbwctrl.o debug\loadingdialog.o debug\main.o debug\mainwindow.o debug\qtdmxlib.o debug\settingsdialog.o debug\testdialog.o debug\console.o debug\thresholdmanagersetting.o debug\usermanagersetting.o debug\qrc_AG.o debug\moc_WindDMXConverter_Setting.o debug\moc_deviceview.o debug\moc_dmx_monitor.o debug\moc_dmxconsole.o debug\moc_ledrgbctrl.o debug\moc_ledrgbwctrl.o debug\moc_loadingdialog.o debug\moc_mainwindow.o debug\moc_qtdmxlib.o debug\moc_settingsdialog.o debug\moc_testdialog.o debug\moc_console.o debug\moc_qtBaseLib.o debug\moc_thresholdmanagersetting.o debug\moc_usermanagersetting.o
+	-$(DEL_FILE) debug\AG_resource_res.o
 
 distclean: clean 
 	-$(DEL_FILE) .qmake.stash

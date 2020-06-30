@@ -93,5 +93,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 RESOURCES += \
     AG.qrc
 
-
+RC_ICONS = AG-logo.ico
 
