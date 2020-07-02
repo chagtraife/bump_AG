@@ -20,9 +20,10 @@ void LedRGBWCtrl::ShowLedRGBWCtrl(void)
 
 void LedRGBWCtrl::on_btnRead_clicked()
 {
+    ui->btnRead->setEnabled(false);
     if(ui->rb_OneOne->isChecked()){
         quint16 channel;
-        ui->btnRead->setEnabled(false);
+//        ui->btnRead->setEnabled(false);
         int cnt;
         cnt =0;
         bool noise = true;
@@ -64,15 +65,18 @@ void LedRGBWCtrl::on_btnRead_clicked()
         else {
             QMessageBox::information(this, "ERROR", "Device not found!");
         }
-        ui->btnRead->setEnabled(true);
+//        ui->btnRead->setEnabled(true);
     }else if (ui->rb_Loop->isChecked()){
 
     }
+    ui->btnRead->setEnabled(true);
 }
 
 void LedRGBWCtrl::on_btnWrite_clicked()
 {
+    ui->btnWrite->setEnabled(false);
     if(ui->rb_OneOne->isChecked()){
+//
         //================RGBW one one===================
         quint16 channel = (quint16) ui->txtDMX_ID->text().trimmed().toInt();
         if(channel == 1 || (channel - 1)%4 == 0)
@@ -89,9 +93,11 @@ void LedRGBWCtrl::on_btnWrite_clicked()
         else {
             QMessageBox::information(this, "INFO", "DMX ID 1, 5, 9, 13, ...!");
         }
+//
         //===================================
     }
     else if(ui->rb_Loop->isChecked()){
+//
         //================RGBW loop===================
         quint16 channel = (quint16) ui->txtDMX_ID->text().trimmed().toInt();
         if(channel == 1 || (channel - 1)%4 == 0)
@@ -103,6 +109,8 @@ void LedRGBWCtrl::on_btnWrite_clicked()
         else {
             QMessageBox::information(this, "INFO", "DMX ID 1, 5, 9, 13, ...!");
         }
+//
         //===================================
     }
+    ui->btnWrite->setEnabled(true);
 }

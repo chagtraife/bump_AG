@@ -14,7 +14,11 @@ DMXconsole::DMXconsole(QWidget *parent) :
 //
     UI_Init();
     DMXBuffer.resize(513);
-    DMXBuffer[0] = 0;
+//    DMXBuffer[0] = 0;
+    for(quint16 i = 0; i < 513; i++)
+    {
+        DMXBuffer[i] = 0;
+    }
 
     TimerTick = new QTimer(this);
     connect(TimerTick, SIGNAL(timeout()), this, SLOT(DMXTick()));
@@ -75,6 +79,7 @@ void DMXconsole::UI_Init(void)
     ui->grp_index8->setTitle(tr("%1").arg(ui->sl_virtualH->value()+9));
     ui->grp_index9->setTitle(tr("%1").arg(ui->sl_virtualH->value()+10));
     ui->grp_index10->setTitle(tr("%1").arg(ui->sl_virtualH->value()+11));
+
 }
 
 quint16 DMXconsole::GetIndex(void)
