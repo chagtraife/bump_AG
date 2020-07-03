@@ -231,6 +231,8 @@ void MainWindow::setUser(bool isAdministratorUser)
     }
     else
     {
+//        ui->groupBox_2->setVisible(false);
+        ui->rdBtn_OthersDevices->setVisible(false);
         ui->rdBtn_Light->setVisible(false);
         ui->rdBtn_LightRGBW->setVisible(false);
         ui->gboptionRGB->setVisible(false);

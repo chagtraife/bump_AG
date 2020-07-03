@@ -401,7 +401,7 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "AG DMX Device manager", nullptr));
+        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "AG Device Manager 4.0", nullptr));
         actionAbout->setText(QCoreApplication::translate("MainWindow", "&About", nullptr));
 #if QT_CONFIG(tooltip)
         actionAbout->setToolTip(QCoreApplication::translate("MainWindow", "About program", nullptr));
@@ -472,7 +472,7 @@ public:
         gboptionRGB->setTitle(QString());
         rdOneOne->setText(QCoreApplication::translate("MainWindow", "One-One", nullptr));
         rdLoop->setText(QCoreApplication::translate("MainWindow", "LOOP", nullptr));
-        menuCalls->setTitle(QCoreApplication::translate("MainWindow", "Calls", nullptr));
+        menuCalls->setTitle(QCoreApplication::translate("MainWindow", "Connect", nullptr));
         menuTools->setTitle(QCoreApplication::translate("MainWindow", "Tools", nullptr));
         menuHelp->setTitle(QCoreApplication::translate("MainWindow", "Help", nullptr));
     } // retranslateUi
