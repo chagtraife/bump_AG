@@ -289,6 +289,7 @@ release/moc_WindDMXConverter_Setting.cpp: ../AG/WindDMXConverter_Setting.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmetatype.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qvarlengtharray.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qcontainerfwd.h \
+		release/map \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qobject_impl.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmargins.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/qpaintdevice.h \
@@ -425,6 +426,7 @@ release/moc_deviceview.cpp: ../AG/deviceview.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmetatype.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qvarlengtharray.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qcontainerfwd.h \
+		release/map \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qobject_impl.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmargins.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/qpaintdevice.h \
@@ -726,6 +728,7 @@ release/moc_dmx_monitor.cpp: ../AG/dmx_monitor.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmetatype.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qvarlengtharray.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qcontainerfwd.h \
+		release/map \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qobject_impl.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmargins.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/qpaintdevice.h \
@@ -844,6 +847,7 @@ release/moc_dmxconsole.cpp: ../AG/dmxconsole.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmetatype.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qvarlengtharray.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qcontainerfwd.h \
+		release/map \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qobject_impl.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmargins.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/qpaintdevice.h \
@@ -973,6 +977,7 @@ release/moc_ledrgbctrl.cpp: ../AG/ledrgbctrl.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmetatype.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qvarlengtharray.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qcontainerfwd.h \
+		release/map \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qobject_impl.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmargins.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/qpaintdevice.h \
@@ -1276,6 +1281,7 @@ release/moc_ledrgbwctrl.cpp: ../AG/ledrgbwctrl.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmetatype.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qvarlengtharray.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qcontainerfwd.h \
+		release/map \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qobject_impl.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmargins.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/qpaintdevice.h \
@@ -1579,6 +1585,7 @@ release/moc_loadingdialog.cpp: ../AG/loadingdialog.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmetatype.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qvarlengtharray.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qcontainerfwd.h \
+		release/map \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qobject_impl.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmargins.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/qpaintdevice.h \
@@ -1704,6 +1711,7 @@ release/moc_mainwindow.cpp: ../AG/mainwindow.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmetatype.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qvarlengtharray.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qcontainerfwd.h \
+		release/map \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qobject_impl.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmargins.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/qpaintdevice.h \
@@ -2000,6 +2008,7 @@ release/moc_qtdmxlib.cpp: ../AG/qtdmxlib.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmetatype.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qvarlengtharray.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qcontainerfwd.h \
+		release/map \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qobject_impl.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmargins.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/qpaintdevice.h \
@@ -2123,6 +2132,7 @@ release/moc_settingsdialog.cpp: ../AG/settingsdialog.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmetatype.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qvarlengtharray.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qcontainerfwd.h \
+		release/map \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qobject_impl.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmargins.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/qpaintdevice.h \
@@ -2236,6 +2246,7 @@ release/moc_testdialog.cpp: ../AG/testdialog.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmetatype.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qvarlengtharray.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qcontainerfwd.h \
+		release/map \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qobject_impl.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmargins.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/qpaintdevice.h \
@@ -2352,6 +2363,7 @@ release/moc_console.cpp: ../AG/console.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmetatype.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qvarlengtharray.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qcontainerfwd.h \
+		release/map \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qobject_impl.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmargins.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/qpaintdevice.h \
@@ -2473,6 +2485,7 @@ release/moc_qtBaseLib.cpp: ../AG/qtBaseLib.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmetatype.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qvarlengtharray.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qcontainerfwd.h \
+		release/map \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qobject_impl.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmargins.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/qpaintdevice.h \
@@ -2605,6 +2618,7 @@ release/moc_thresholdmanagersetting.cpp: ../AG/thresholdmanagersetting.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmetatype.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qvarlengtharray.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qcontainerfwd.h \
+		release/map \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qobject_impl.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmargins.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/qpaintdevice.h \
@@ -2879,6 +2893,7 @@ release/moc_usermanagersetting.cpp: ../AG/usermanagersetting.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmetatype.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qvarlengtharray.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qcontainerfwd.h \
+		release/map \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qobject_impl.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmargins.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/qpaintdevice.h \
@@ -3220,6 +3235,7 @@ release/WindDMXConverter_Setting.o: ../AG/WindDMXConverter_Setting.cpp ../AG/Win
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmetatype.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qvarlengtharray.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qcontainerfwd.h \
+		release/map \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qobject_impl.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmargins.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/qpaintdevice.h \
@@ -3361,6 +3377,7 @@ release/authen.o: ../AG/authen.cpp ../AG/authen.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmetatype.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qvarlengtharray.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qcontainerfwd.h \
+		release/map \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qobject_impl.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/QDebug \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qdebug.h \
@@ -3624,6 +3641,7 @@ release/debug.o: ../AG/debug.cpp ../AG/debug.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qregexp.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qstringmatcher.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmap.h \
+		release/map \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qtextstream.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qiodevice.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qobject.h \
@@ -3707,6 +3725,7 @@ release/deviceview.o: ../AG/deviceview.cpp ../AG/deviceview.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmetatype.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qvarlengtharray.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qcontainerfwd.h \
+		release/map \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qobject_impl.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmargins.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/qpaintdevice.h \
@@ -4028,6 +4047,7 @@ release/dmx_monitor.o: ../AG/dmx_monitor.cpp ../AG/dmx_monitor.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmetatype.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qvarlengtharray.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qcontainerfwd.h \
+		release/map \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qobject_impl.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmargins.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/qpaintdevice.h \
@@ -4175,6 +4195,7 @@ release/dmxconsole.o: ../AG/dmxconsole.cpp ../AG/dmxconsole.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmetatype.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qvarlengtharray.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qcontainerfwd.h \
+		release/map \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qobject_impl.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmargins.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/qpaintdevice.h \
@@ -4304,6 +4325,7 @@ release/ledrgbctrl.o: ../AG/ledrgbctrl.cpp ../AG/ledrgbctrl.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmetatype.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qvarlengtharray.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qcontainerfwd.h \
+		release/map \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qobject_impl.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmargins.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/qpaintdevice.h \
@@ -4606,6 +4628,7 @@ release/ledrgbwctrl.o: ../AG/ledrgbwctrl.cpp ../AG/ledrgbwctrl.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmetatype.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qvarlengtharray.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qcontainerfwd.h \
+		release/map \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qobject_impl.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmargins.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/qpaintdevice.h \
@@ -4908,6 +4931,7 @@ release/loadingdialog.o: ../AG/loadingdialog.cpp ../AG/loadingdialog.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmetatype.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qvarlengtharray.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qcontainerfwd.h \
+		release/map \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qobject_impl.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmargins.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/qpaintdevice.h \
@@ -5035,6 +5059,7 @@ release/main.o: ../AG/main.cpp C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidget
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmetatype.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qvarlengtharray.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qcontainerfwd.h \
+		release/map \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qobject_impl.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qeventloop.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/qwindowdefs.h \
@@ -5335,6 +5360,7 @@ release/mainwindow.o: ../AG/mainwindow.cpp ../AG/mainwindow.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmetatype.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qvarlengtharray.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qcontainerfwd.h \
+		release/map \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qobject_impl.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmargins.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/qpaintdevice.h \
@@ -5675,6 +5701,7 @@ release/qtdmxlib.o: ../AG/qtdmxlib.cpp ../AG/qtdmxlib.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmetatype.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qvarlengtharray.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qcontainerfwd.h \
+		release/map \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qobject_impl.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmargins.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/qpaintdevice.h \
@@ -5975,6 +6002,7 @@ release/settingsdialog.o: ../AG/settingsdialog.cpp ../AG/settingsdialog.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmetatype.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qvarlengtharray.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qcontainerfwd.h \
+		release/map \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qobject_impl.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmargins.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/qpaintdevice.h \
@@ -6099,6 +6127,7 @@ release/testdialog.o: ../AG/testdialog.cpp ../AG/TestDialog.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmetatype.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qvarlengtharray.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qcontainerfwd.h \
+		release/map \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qobject_impl.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmargins.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/qpaintdevice.h \
@@ -6239,6 +6268,7 @@ release/console.o: ../AG/console.cpp ../AG/console.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmetatype.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qvarlengtharray.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qcontainerfwd.h \
+		release/map \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qobject_impl.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmargins.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/qpaintdevice.h \
@@ -6361,6 +6391,7 @@ release/thresholdmanagersetting.o: ../AG/thresholdmanagersetting.cpp ../AG/thres
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmetatype.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qvarlengtharray.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qcontainerfwd.h \
+		release/map \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qobject_impl.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmargins.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/qpaintdevice.h \
@@ -6636,6 +6667,7 @@ release/usermanagersetting.o: ../AG/usermanagersetting.cpp ../AG/usermanagersett
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmetatype.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qvarlengtharray.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qcontainerfwd.h \
+		release/map \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qobject_impl.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qmargins.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/qpaintdevice.h \
