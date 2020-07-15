@@ -257,6 +257,8 @@ void DeviceView::DeviceTable_Clear(void)
         for(int i = NumberOfUserCollum; i < NumberOfCollum; i++)
         {
             model->setHorizontalHeaderItem(i, new QStandardItem(strCollumIndex[i]));
+            QHeaderView *header = ui->tableView_Device->horizontalHeader();
+            header->setSectionResizeMode(QHeaderView::ResizeToContents);
         }
     }
     else if ((Authen::user_lv == 2) or (Authen::user_lv == 3))
@@ -397,6 +399,8 @@ void DeviceView::on_tableView_Device_entered(const QModelIndex &index)
 void DeviceView::on_BtnReadParameters_clicked()
 {
     qDebug()<<"on_BtnReadParameters_clicked";
+    status_running = false;
+    loadingDialog->hideDialog();
     bool ok;
     QModelIndexList selectedList;
     selectedList = ui->tableView_Device->selectionModel()->selectedRows();
@@ -427,6 +431,9 @@ void DeviceView::on_BtnReadParameters_clicked()
 
         if(ok)
         {
+            QT_RGB_DMX_LIB::UID uid_ = GetCell(UID_CollumIndex, index.row());
+            dmxrdm_rgb->AskTemperaterSensor(uid_.toQByteArray());
+            dmxrdm_rgb->AskCurrentSensor(uid_.toQByteArray());
             this->SetRow(devInfo, index.row());
             qDebug()<<"DMXAddr:" + QString::number(devInfo.DMXAddr);
             qDebug()<<"Sensor:" + QString::number(devInfo.Sensor);
@@ -437,7 +444,7 @@ void DeviceView::on_BtnReadParameters_clicked()
             qDebug()<<"SensorValue:" + QString::number(devInfo.SensorValue);
             qDebug()<<"rawSensorValue:" + QString::number(devInfo.rawSensorValue);
             qDebug("===============");
-            QT_RGB_DMX_LIB::UID uid_ = GetCell(UID_CollumIndex, index.row());
+
 //            QByteArray uid_;
 //            uid_.resize(6);
 //            uid_[0] = 0x14;
@@ -446,8 +453,6 @@ void DeviceView::on_BtnReadParameters_clicked()
 //            uid_[3] = 0x00;
 //            uid_[4] = 0x00;
 //            uid_[5] = 0x01;
-            dmxrdm_rgb->AskTemperaterSensor(uid_.toQByteArray());
-            dmxrdm_rgb->AskCurrentSensor(uid_.toQByteArray());
             this->SetCell(TempSensor_CollumIndex, index.row(), dmxrdm_rgb->DeviceInfo.TemperaterSensor);
             this->SetCell(CurrSensor_CollumIndex, index.row(), dmxrdm_rgb->DeviceInfo.CurrentSensor);
             qDebug()<< QString::number(dmxrdm_rgb->DeviceInfo.TemperaterSensor);
@@ -898,6 +903,7 @@ void DeviceView::closeEvent (QCloseEvent *event)
 {
     qDebug("close DeviceView window");
     status_running = false;
+    emit signal_close();
 }
 
 

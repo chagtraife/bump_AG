@@ -111,6 +111,10 @@ private slots:
     void _BtnFirmwareUpdate_Clicked(void);
     void _DMXStream(void);
 
+    void _on_DMX_clicked();
+    void _on_Discovery_clicked();
+    void _back_to_mainwindow();
+
 
     void on_BtnSearchDev_clicked();
 
@@ -127,6 +131,7 @@ private slots:
 
     void on_DeviceTypeSelection_clicked();
     void on_BtnReadDMXID_clicked();
+
 
 private:
     void initActionsConnections();

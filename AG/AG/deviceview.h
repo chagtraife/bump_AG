@@ -2,6 +2,7 @@
 #define DEVICEVIEW_H
 
 #include <QMainWindow>
+#include <QHeaderView>
 #include <QList>
 #include <QProgressBar>
 #include "qtbaselib.h"
@@ -31,6 +32,7 @@ public:
 signals:
     void DiscoveryActived(UID startUID);
     void WriteSEQ_ID(void);
+    void signal_close(void);
 
 private slots:
     void on_tableView_Device_clicked(const QModelIndex &index);

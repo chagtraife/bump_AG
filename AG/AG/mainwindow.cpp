@@ -155,7 +155,13 @@ MainWindow::MainWindow(QWidget *parent) :
     //DMX console UI
     connect(ui->BtnTestMode, SIGNAL(clicked(bool)), this, SLOT(_setTestMode()));
     connect(ui->BtnDMXConsole, SIGNAL(clicked(bool)), dmx, SLOT(show()));
+    connect(ui->BtnDMXConsole, SIGNAL(clicked(bool)),this, SLOT(_on_DMX_clicked()));
+    connect(dmx,SIGNAL(signal_close()), this, SLOT(_back_to_mainwindow()));
+
     connect(ui->BtnDeviceDiscovery, SIGNAL(clicked(bool)), devView, SLOT(show()));
+    connect(ui->BtnDeviceDiscovery, SIGNAL(clicked(bool)), this, SLOT(_on_Discovery_clicked()));
+    connect(devView, SIGNAL(signal_close()), this, SLOT(_back_to_mainwindow()));
+
     connect(this, SIGNAL(setUserlev()), devView, SLOT(setUser()));
 
     connect(dmx, SIGNAL(DMXTriggle()), this, SLOT(_DMXStream()));
@@ -615,9 +621,23 @@ void MainWindow::on_BtnSearchDev_clicked()
     QString s;
     ui->BtnSearchDev->setEnabled(false);
     this->showLoadingDialog();
-    s = ui->TxtUID->text().trimmed();
+    DeviceInfo devInfo;
+    s = "";
     dmxrdm->SetUID(s);
     dmxrdm->GetDeviceInfo();
+
+    QT_RGB_DMX_LIB::UID uid_ = ui->TxtUID->text().trimmed();
+    devInfo = dmxrdm->GetDeviceInfo(UID(ui->TxtUID->text().trimmed()));
+
+    this->writeBreak();
+    dmxrdm_rgb->AskTemperaterSensor(uid_.toQByteArray());
+    ui->txt_Temp->setText(QString::number(dmxrdm_rgb->DeviceInfo.TemperaterSensor));
+    this->writeBreak();
+    dmxrdm_rgb->AskCurrentSensor(uid_.toQByteArray());
+    ui->txt_Current->setText(QString::number(dmxrdm_rgb->DeviceInfo.CurrentSensor));
+
+
+
     this->hideLoadingDialog();
     ui->BtnSearchDev->setEnabled(true);
 }
@@ -887,4 +907,20 @@ void MainWindow::on_BtnReadDMXID_clicked()
 
 
 }
+
+void MainWindow::_on_DMX_clicked(){
+    ui->BtnDeviceDiscovery->setEnabled(false);
+}
+
+void MainWindow::_on_Discovery_clicked(){
+    ui->BtnDMXConsole->setEnabled(false);
+}
+
+void MainWindow::_back_to_mainwindow(){
+    ui->BtnDMXConsole->setEnabled(true);
+    ui->BtnDeviceDiscovery->setEnabled(true);
+}
+
+
+
 

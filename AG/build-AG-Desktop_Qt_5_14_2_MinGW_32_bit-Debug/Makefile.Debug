@@ -472,17 +472,32 @@ debug/moc_deviceview.cpp: ../AG/deviceview.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/qtouchdevice.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qtabwidget.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/qicon.h \
+		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/QHeaderView \
+		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qheaderview.h \
+		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qabstractitemview.h \
+		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qframe.h \
+		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qabstractitemmodel.h \
+		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qitemselectionmodel.h \
+		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qabstractitemdelegate.h \
+		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qstyleoption.h \
+		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qabstractspinbox.h \
+		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/qvalidator.h \
+		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qregularexpression.h \
+		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qslider.h \
+		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qabstractslider.h \
+		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qstyle.h \
+		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qtabbar.h \
+		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qrubberband.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/QList \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/QProgressBar \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qprogressbar.h \
-		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qframe.h \
 		../AG/qtbaselib.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/QtGlobal \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/QObject \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/QPlainTextEdit \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qplaintextedit.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qtextedit.h \
-		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qabstractscrollarea.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/qtextdocument.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/qtextoption.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/qtextcursor.h \
@@ -522,7 +537,6 @@ debug/moc_deviceview.cpp: ../AG/deviceview.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/QtCoreDepends \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qabstractanimation.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qabstracteventdispatcher.h \
-		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qabstractitemmodel.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qabstractnativeeventfilter.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qabstractproxymodel.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qabstractstate.h \
@@ -538,7 +552,6 @@ debug/moc_deviceview.cpp: ../AG/deviceview.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qcborarray.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qcborvalue.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qcborcommon.h \
-		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qregularexpression.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/quuid.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qcbormap.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qcborstream.h \
@@ -570,7 +583,6 @@ debug/moc_deviceview.cpp: ../AG/deviceview.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qhistorystate.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qidentityproxymodel.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qisenum.h \
-		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qitemselectionmodel.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qjsonarray.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qjsondocument.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qlibrary.h \
@@ -643,17 +655,7 @@ debug/moc_deviceview.cpp: ../AG/deviceview.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtSql/qsqlquerymodel.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtSql/qsqlrelationaldelegate.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qitemdelegate.h \
-		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qabstractitemdelegate.h \
-		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qstyleoption.h \
-		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qabstractspinbox.h \
-		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/qvalidator.h \
-		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qslider.h \
-		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qabstractslider.h \
-		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qstyle.h \
-		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qtabbar.h \
-		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qrubberband.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qlistview.h \
-		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qabstractitemview.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qcombobox.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtSql/qsqlrelationaltablemodel.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtSql/qsqltablemodel.h \
@@ -3754,17 +3756,32 @@ debug/deviceview.o: ../AG/deviceview.cpp ../AG/deviceview.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/qtouchdevice.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qtabwidget.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/qicon.h \
+		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/QHeaderView \
+		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qheaderview.h \
+		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qabstractitemview.h \
+		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qframe.h \
+		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qabstractitemmodel.h \
+		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qitemselectionmodel.h \
+		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qabstractitemdelegate.h \
+		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qstyleoption.h \
+		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qabstractspinbox.h \
+		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/qvalidator.h \
+		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qregularexpression.h \
+		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qslider.h \
+		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qabstractslider.h \
+		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qstyle.h \
+		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qtabbar.h \
+		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qrubberband.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/QList \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/QProgressBar \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qprogressbar.h \
-		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qframe.h \
 		../AG/qtbaselib.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/QtGlobal \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/QObject \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/QPlainTextEdit \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qplaintextedit.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qtextedit.h \
-		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qabstractscrollarea.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/qtextdocument.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/qtextoption.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/qtextcursor.h \
@@ -3804,7 +3821,6 @@ debug/deviceview.o: ../AG/deviceview.cpp ../AG/deviceview.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/QtCoreDepends \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qabstractanimation.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qabstracteventdispatcher.h \
-		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qabstractitemmodel.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qabstractnativeeventfilter.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qabstractproxymodel.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qabstractstate.h \
@@ -3820,7 +3836,6 @@ debug/deviceview.o: ../AG/deviceview.cpp ../AG/deviceview.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qcborarray.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qcborvalue.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qcborcommon.h \
-		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qregularexpression.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/quuid.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qcbormap.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qcborstream.h \
@@ -3852,7 +3867,6 @@ debug/deviceview.o: ../AG/deviceview.cpp ../AG/deviceview.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qhistorystate.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qidentityproxymodel.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qisenum.h \
-		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qitemselectionmodel.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qjsonarray.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qjsondocument.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/qlibrary.h \
@@ -3925,17 +3939,7 @@ debug/deviceview.o: ../AG/deviceview.cpp ../AG/deviceview.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtSql/qsqlquerymodel.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtSql/qsqlrelationaldelegate.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qitemdelegate.h \
-		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qabstractitemdelegate.h \
-		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qstyleoption.h \
-		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qabstractspinbox.h \
-		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/qvalidator.h \
-		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qslider.h \
-		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qabstractslider.h \
-		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qstyle.h \
-		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qtabbar.h \
-		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qrubberband.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qlistview.h \
-		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qabstractitemview.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qcombobox.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtSql/qsqlrelationaltablemodel.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtSql/qsqltablemodel.h \
@@ -5585,6 +5589,8 @@ debug/mainwindow.o: ../AG/mainwindow.cpp ../AG/mainwindow.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/QLayout \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/QCloseEvent \
 		../AG/deviceview.h \
+		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/QHeaderView \
+		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qheaderview.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/QList \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/QProgressBar \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qprogressbar.h \

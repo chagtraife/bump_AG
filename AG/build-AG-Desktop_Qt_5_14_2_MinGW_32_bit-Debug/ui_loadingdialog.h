@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
@@ -24,6 +25,7 @@ class Ui_LoadingDialog
 {
 public:
     QWidget *centralwidget;
+    QGridLayout *gridLayout;
     QLabel *lb_loadingImg;
     QMenuBar *menubar;
     QStatusBar *statusbar;
@@ -34,7 +36,7 @@ public:
             LoadingDialog->setObjectName(QString::fromUtf8("LoadingDialog"));
         LoadingDialog->setWindowModality(Qt::NonModal);
         LoadingDialog->setEnabled(true);
-        LoadingDialog->resize(139, 100);
+        LoadingDialog->resize(154, 100);
         LoadingDialog->setMaximumSize(QSize(200, 100));
         QPalette palette;
         QBrush brush(QColor(255, 255, 255, 255));
@@ -62,14 +64,19 @@ public:
         LoadingDialog->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
         centralwidget = new QWidget(LoadingDialog);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
+        gridLayout = new QGridLayout(centralwidget);
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         lb_loadingImg = new QLabel(centralwidget);
         lb_loadingImg->setObjectName(QString::fromUtf8("lb_loadingImg"));
-        lb_loadingImg->setGeometry(QRect(28, 9, 81, 51));
         lb_loadingImg->setMaximumSize(QSize(16777215, 16777215));
+        lb_loadingImg->setLayoutDirection(Qt::LeftToRight);
+
+        gridLayout->addWidget(lb_loadingImg, 0, 0, 1, 1);
+
         LoadingDialog->setCentralWidget(centralwidget);
         menubar = new QMenuBar(LoadingDialog);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 139, 21));
+        menubar->setGeometry(QRect(0, 0, 154, 21));
         LoadingDialog->setMenuBar(menubar);
         statusbar = new QStatusBar(LoadingDialog);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -82,7 +89,7 @@ public:
 
     void retranslateUi(QMainWindow *LoadingDialog)
     {
-        LoadingDialog->setWindowTitle(QCoreApplication::translate("LoadingDialog", "MainWindow", nullptr));
+        LoadingDialog->setWindowTitle(QString());
         lb_loadingImg->setText(QString());
     } // retranslateUi
 

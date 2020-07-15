@@ -205,4 +205,5 @@ void DMXconsole::closeEvent (QCloseEvent *event){
     ui->BtnStartStreaming->setText("DMX Stream ON");
     ui->BtnStartStreaming->setStyleSheet("background-color:red");
     IsDMXRunning = false;
+    emit signal_close();
 }

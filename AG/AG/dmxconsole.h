@@ -22,6 +22,7 @@ class DMXconsole : public QDialog
     Q_OBJECT
 signals:
     void DMXTriggle(void);
+    void signal_close(void);
 
 public:
     explicit DMXconsole(QWidget *parent = 0);

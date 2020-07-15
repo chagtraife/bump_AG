@@ -48,6 +48,7 @@ public:
     QAction *actionThreshold_Manager;
     QAction *actionLED_RGB_V1_0;
     QAction *actionLED_RGBW_V1_0;
+    QAction *actionOverview;
     QWidget *centralWidget;
     QGridLayout *gridLayout;
     QGroupBox *Functions;
@@ -71,16 +72,20 @@ public:
     QRadioButton *rdBtn_LightRGBW;
     QGroupBox *groupBox;
     QGridLayout *gridLayout_2;
-    QLineEdit *TxtMaxHeight;
+    QLabel *label;
+    QLineEdit *TxtUID;
     QLabel *label_2;
     QLineEdit *TxtDMXID;
-    QLineEdit *TxtUID;
-    QLabel *label;
     QLabel *lb_MaxHeight;
+    QLineEdit *TxtMaxHeight;
     QLabel *lb_MinHeight;
-    QLineEdit *TxtSEQID;
     QLineEdit *TxtMinHeight;
     QLabel *label_3;
+    QLineEdit *TxtSEQID;
+    QLabel *label_5;
+    QLineEdit *txt_Temp;
+    QLabel *label_4;
+    QLineEdit *txt_Current;
     QGroupBox *gboptionRGB;
     QHBoxLayout *horizontalLayout_2;
     QRadioButton *rdOneOne;
@@ -96,7 +101,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(707, 508);
+        MainWindow->resize(721, 561);
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/AG-logo.png"), QSize(), QIcon::Normal, QIcon::Off);
         MainWindow->setWindowIcon(icon);
@@ -149,6 +154,8 @@ public:
         actionLED_RGB_V1_0->setObjectName(QString::fromUtf8("actionLED_RGB_V1_0"));
         actionLED_RGBW_V1_0 = new QAction(MainWindow);
         actionLED_RGBW_V1_0->setObjectName(QString::fromUtf8("actionLED_RGBW_V1_0"));
+        actionOverview = new QAction(MainWindow);
+        actionOverview->setObjectName(QString::fromUtf8("actionOverview"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         gridLayout = new QGridLayout(centralWidget);
@@ -270,63 +277,79 @@ public:
         gridLayout_2->setSpacing(6);
         gridLayout_2->setContentsMargins(11, 11, 11, 11);
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
-        gridLayout_2->setSizeConstraint(QLayout::SetDefaultConstraint);
-        gridLayout_2->setHorizontalSpacing(5);
-        gridLayout_2->setVerticalSpacing(1);
-        gridLayout_2->setContentsMargins(1, 1, 1, 1);
-        TxtMaxHeight = new QLineEdit(groupBox);
-        TxtMaxHeight->setObjectName(QString::fromUtf8("TxtMaxHeight"));
-
-        gridLayout_2->addWidget(TxtMaxHeight, 3, 2, 1, 1);
-
-        label_2 = new QLabel(groupBox);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setFont(font);
-
-        gridLayout_2->addWidget(label_2, 2, 0, 1, 1);
-
-        TxtDMXID = new QLineEdit(groupBox);
-        TxtDMXID->setObjectName(QString::fromUtf8("TxtDMXID"));
-
-        gridLayout_2->addWidget(TxtDMXID, 2, 2, 1, 1);
-
-        TxtUID = new QLineEdit(groupBox);
-        TxtUID->setObjectName(QString::fromUtf8("TxtUID"));
-
-        gridLayout_2->addWidget(TxtUID, 0, 2, 1, 1);
-
         label = new QLabel(groupBox);
         label->setObjectName(QString::fromUtf8("label"));
         label->setFont(font);
 
         gridLayout_2->addWidget(label, 0, 0, 1, 1);
 
+        TxtUID = new QLineEdit(groupBox);
+        TxtUID->setObjectName(QString::fromUtf8("TxtUID"));
+
+        gridLayout_2->addWidget(TxtUID, 0, 1, 1, 1);
+
+        label_2 = new QLabel(groupBox);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+        label_2->setFont(font);
+
+        gridLayout_2->addWidget(label_2, 1, 0, 1, 1);
+
+        TxtDMXID = new QLineEdit(groupBox);
+        TxtDMXID->setObjectName(QString::fromUtf8("TxtDMXID"));
+
+        gridLayout_2->addWidget(TxtDMXID, 1, 1, 1, 1);
+
         lb_MaxHeight = new QLabel(groupBox);
         lb_MaxHeight->setObjectName(QString::fromUtf8("lb_MaxHeight"));
         lb_MaxHeight->setFont(font);
 
-        gridLayout_2->addWidget(lb_MaxHeight, 3, 0, 1, 1);
+        gridLayout_2->addWidget(lb_MaxHeight, 2, 0, 1, 1);
+
+        TxtMaxHeight = new QLineEdit(groupBox);
+        TxtMaxHeight->setObjectName(QString::fromUtf8("TxtMaxHeight"));
+
+        gridLayout_2->addWidget(TxtMaxHeight, 2, 1, 1, 1);
 
         lb_MinHeight = new QLabel(groupBox);
         lb_MinHeight->setObjectName(QString::fromUtf8("lb_MinHeight"));
         lb_MinHeight->setFont(font);
 
-        gridLayout_2->addWidget(lb_MinHeight, 4, 0, 1, 1);
-
-        TxtSEQID = new QLineEdit(groupBox);
-        TxtSEQID->setObjectName(QString::fromUtf8("TxtSEQID"));
-
-        gridLayout_2->addWidget(TxtSEQID, 5, 2, 1, 1);
+        gridLayout_2->addWidget(lb_MinHeight, 3, 0, 1, 1);
 
         TxtMinHeight = new QLineEdit(groupBox);
         TxtMinHeight->setObjectName(QString::fromUtf8("TxtMinHeight"));
 
-        gridLayout_2->addWidget(TxtMinHeight, 4, 2, 1, 1);
+        gridLayout_2->addWidget(TxtMinHeight, 3, 1, 1, 1);
 
         label_3 = new QLabel(groupBox);
         label_3->setObjectName(QString::fromUtf8("label_3"));
 
-        gridLayout_2->addWidget(label_3, 5, 0, 1, 1);
+        gridLayout_2->addWidget(label_3, 4, 0, 1, 1);
+
+        TxtSEQID = new QLineEdit(groupBox);
+        TxtSEQID->setObjectName(QString::fromUtf8("TxtSEQID"));
+
+        gridLayout_2->addWidget(TxtSEQID, 4, 1, 1, 1);
+
+        label_5 = new QLabel(groupBox);
+        label_5->setObjectName(QString::fromUtf8("label_5"));
+
+        gridLayout_2->addWidget(label_5, 5, 0, 1, 1);
+
+        txt_Temp = new QLineEdit(groupBox);
+        txt_Temp->setObjectName(QString::fromUtf8("txt_Temp"));
+
+        gridLayout_2->addWidget(txt_Temp, 5, 1, 1, 1);
+
+        label_4 = new QLabel(groupBox);
+        label_4->setObjectName(QString::fromUtf8("label_4"));
+
+        gridLayout_2->addWidget(label_4, 6, 0, 1, 1);
+
+        txt_Current = new QLineEdit(groupBox);
+        txt_Current->setObjectName(QString::fromUtf8("txt_Current"));
+
+        gridLayout_2->addWidget(txt_Current, 6, 1, 1, 1);
 
 
         gridLayout->addWidget(groupBox, 3, 0, 2, 1);
@@ -353,7 +376,7 @@ public:
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 707, 21));
+        menuBar->setGeometry(QRect(0, 0, 721, 21));
         menuCalls = new QMenu(menuBar);
         menuCalls->setObjectName(QString::fromUtf8("menuCalls"));
         menuTools = new QMenu(menuBar);
@@ -382,6 +405,7 @@ public:
         menuTools->addAction(actionUser);
         menuTools->addAction(actionUser_Manager);
         menuTools->addAction(actionThreshold_Manager);
+        menuTools->addAction(actionOverview);
         menuTools->addSeparator();
         menuTools->addSeparator();
         menuTools->addSeparator();
@@ -449,6 +473,7 @@ public:
         actionThreshold_Manager->setText(QCoreApplication::translate("MainWindow", "Threshold Manager", nullptr));
         actionLED_RGB_V1_0->setText(QCoreApplication::translate("MainWindow", "LED RGB V1.0", nullptr));
         actionLED_RGBW_V1_0->setText(QCoreApplication::translate("MainWindow", "LED RGBW V1.0", nullptr));
+        actionOverview->setText(QCoreApplication::translate("MainWindow", "Overview", nullptr));
         Functions->setTitle(QCoreApplication::translate("MainWindow", "Functions", nullptr));
         BtnDeviceDiscovery->setText(QCoreApplication::translate("MainWindow", "Discovery", nullptr));
         BtnSearchDev->setText(QCoreApplication::translate("MainWindow", "Ping Device", nullptr));
@@ -464,11 +489,13 @@ public:
         rdBtn_Light->setText(QCoreApplication::translate("MainWindow", "RGB LED", nullptr));
         rdBtn_LightRGBW->setText(QCoreApplication::translate("MainWindow", "RGBW LED", nullptr));
         groupBox->setTitle(QCoreApplication::translate("MainWindow", "Device info", nullptr));
-        label_2->setText(QCoreApplication::translate("MainWindow", "DMX ID", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "UID", nullptr));
+        label_2->setText(QCoreApplication::translate("MainWindow", "DMX ID", nullptr));
         lb_MaxHeight->setText(QCoreApplication::translate("MainWindow", "MAX Height", nullptr));
         lb_MinHeight->setText(QCoreApplication::translate("MainWindow", "MIN Height", nullptr));
         label_3->setText(QCoreApplication::translate("MainWindow", "Position", nullptr));
+        label_5->setText(QCoreApplication::translate("MainWindow", "Temperater", nullptr));
+        label_4->setText(QCoreApplication::translate("MainWindow", "Current", nullptr));
         gboptionRGB->setTitle(QString());
         rdOneOne->setText(QCoreApplication::translate("MainWindow", "One-One", nullptr));
         rdLoop->setText(QCoreApplication::translate("MainWindow", "LOOP", nullptr));

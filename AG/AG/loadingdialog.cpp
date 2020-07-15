@@ -11,6 +11,7 @@ LoadingDialog::LoadingDialog(QWidget *parent) :
     movie = new QMovie(this);
     ui->lb_loadingImg->setMovie(movie);
     movie->setFileName(":/images/waiting.gif");
+    ui->lb_loadingImg->setAlignment(Qt::AlignHCenter);
 
     // Make sure the GIF was loaded correctly
     if (!movie->isValid())
