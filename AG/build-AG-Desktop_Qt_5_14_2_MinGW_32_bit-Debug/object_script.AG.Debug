@@ -1,5 +1,6 @@
 debug/WindDMXConverter_Setting.o
 debug/authen.o
+debug/console_enhance.o
 debug/debug.o
 debug/deviceview.o
 debug/dmx_monitor.o
@@ -17,6 +18,7 @@ debug/thresholdmanagersetting.o
 debug/usermanagersetting.o
 debug/qrc_AG.o
 debug/moc_WindDMXConverter_Setting.o
+debug/moc_console_enhance.o
 debug/moc_deviceview.o
 debug/moc_dmx_monitor.o
 debug/moc_dmxconsole.o

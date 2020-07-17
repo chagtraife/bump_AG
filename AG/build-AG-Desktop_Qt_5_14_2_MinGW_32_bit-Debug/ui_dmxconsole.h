@@ -12,12 +12,12 @@
 #include <QtCore/QVariant>
 #include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QRadioButton>
 #include <QtWidgets/QSlider>
 #include <QtWidgets/QVBoxLayout>
 
@@ -26,13 +26,37 @@ QT_BEGIN_NAMESPACE
 class Ui_DMXconsole
 {
 public:
+    QGridLayout *gridLayout_3;
+    QPushButton *BtnStartStreaming;
+    QGroupBox *groupBox_2;
     QGridLayout *gridLayout;
+    QRadioButton *rd_SelectAll;
+    QRadioButton *rd_Odd;
+    QRadioButton *rd_Even;
+    QRadioButton *rd_Enhance;
+    QRadioButton *rd_None;
     QGroupBox *groupBox;
     QGridLayout *gridLayout_2;
+    QGroupBox *grp_index7;
+    QVBoxLayout *verticalLayout_8;
+    QLabel *lb_value7;
+    QSlider *sl_value7;
     QGroupBox *grp_index1;
     QVBoxLayout *verticalLayout_2;
     QLabel *lb_value1;
     QSlider *sl_value1;
+    QGroupBox *grp_index0;
+    QVBoxLayout *verticalLayout;
+    QLabel *lb_value0;
+    QSlider *sl_value0;
+    QGroupBox *grp_index5;
+    QVBoxLayout *verticalLayout_6;
+    QLabel *lb_value5;
+    QSlider *sl_value5;
+    QGroupBox *grp_index10;
+    QVBoxLayout *verticalLayout_11;
+    QLabel *lb_value10;
+    QSlider *sl_value10;
     QGroupBox *grp_index4;
     QVBoxLayout *verticalLayout_5;
     QLabel *lb_value4;
@@ -41,18 +65,10 @@ public:
     QVBoxLayout *verticalLayout_3;
     QLabel *lb_value2;
     QSlider *sl_value2;
-    QGroupBox *grp_index5;
-    QVBoxLayout *verticalLayout_6;
-    QLabel *lb_value5;
-    QSlider *sl_value5;
     QGroupBox *grp_index3;
     QVBoxLayout *verticalLayout_4;
     QLabel *lb_value3;
     QSlider *sl_value3;
-    QGroupBox *grp_index0;
-    QVBoxLayout *verticalLayout;
-    QLabel *lb_value0;
-    QSlider *sl_value0;
     QGroupBox *grp_index9;
     QVBoxLayout *verticalLayout_10;
     QLabel *lb_value9;
@@ -61,36 +77,83 @@ public:
     QVBoxLayout *verticalLayout_9;
     QLabel *lb_value8;
     QSlider *sl_value8;
-    QGroupBox *grp_index10;
-    QVBoxLayout *verticalLayout_11;
-    QLabel *lb_value10;
-    QSlider *sl_value10;
-    QGroupBox *grp_index7;
-    QVBoxLayout *verticalLayout_8;
-    QLabel *lb_value7;
-    QSlider *sl_value7;
     QGroupBox *grp_index6;
     QVBoxLayout *verticalLayout_7;
     QLabel *lb_value6;
     QSlider *sl_value6;
-    QPushButton *BtnStartStreaming;
     QSlider *sl_virtualH;
-    QCheckBox *chk_SelectAll;
 
     void setupUi(QDialog *DMXconsole)
     {
         if (DMXconsole->objectName().isEmpty())
             DMXconsole->setObjectName(QString::fromUtf8("DMXconsole"));
-        DMXconsole->resize(938, 438);
+        DMXconsole->resize(842, 438);
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/AG-logo.png"), QSize(), QIcon::Normal, QIcon::Off);
         DMXconsole->setWindowIcon(icon);
-        gridLayout = new QGridLayout(DMXconsole);
+        gridLayout_3 = new QGridLayout(DMXconsole);
+        gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
+        BtnStartStreaming = new QPushButton(DMXconsole);
+        BtnStartStreaming->setObjectName(QString::fromUtf8("BtnStartStreaming"));
+        BtnStartStreaming->setAutoFillBackground(false);
+
+        gridLayout_3->addWidget(BtnStartStreaming, 0, 0, 1, 1);
+
+        groupBox_2 = new QGroupBox(DMXconsole);
+        groupBox_2->setObjectName(QString::fromUtf8("groupBox_2"));
+        gridLayout = new QGridLayout(groupBox_2);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        rd_SelectAll = new QRadioButton(groupBox_2);
+        rd_SelectAll->setObjectName(QString::fromUtf8("rd_SelectAll"));
+
+        gridLayout->addWidget(rd_SelectAll, 0, 0, 1, 1);
+
+        rd_Odd = new QRadioButton(groupBox_2);
+        rd_Odd->setObjectName(QString::fromUtf8("rd_Odd"));
+
+        gridLayout->addWidget(rd_Odd, 0, 1, 1, 1);
+
+        rd_Even = new QRadioButton(groupBox_2);
+        rd_Even->setObjectName(QString::fromUtf8("rd_Even"));
+
+        gridLayout->addWidget(rd_Even, 0, 2, 1, 1);
+
+        rd_Enhance = new QRadioButton(groupBox_2);
+        rd_Enhance->setObjectName(QString::fromUtf8("rd_Enhance"));
+
+        gridLayout->addWidget(rd_Enhance, 0, 3, 1, 1);
+
+        rd_None = new QRadioButton(groupBox_2);
+        rd_None->setObjectName(QString::fromUtf8("rd_None"));
+
+        gridLayout->addWidget(rd_None, 0, 4, 1, 1);
+
+
+        gridLayout_3->addWidget(groupBox_2, 1, 0, 1, 1);
+
         groupBox = new QGroupBox(DMXconsole);
         groupBox->setObjectName(QString::fromUtf8("groupBox"));
         gridLayout_2 = new QGridLayout(groupBox);
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
+        grp_index7 = new QGroupBox(groupBox);
+        grp_index7->setObjectName(QString::fromUtf8("grp_index7"));
+        verticalLayout_8 = new QVBoxLayout(grp_index7);
+        verticalLayout_8->setObjectName(QString::fromUtf8("verticalLayout_8"));
+        lb_value7 = new QLabel(grp_index7);
+        lb_value7->setObjectName(QString::fromUtf8("lb_value7"));
+
+        verticalLayout_8->addWidget(lb_value7);
+
+        sl_value7 = new QSlider(grp_index7);
+        sl_value7->setObjectName(QString::fromUtf8("sl_value7"));
+        sl_value7->setMaximum(255);
+        sl_value7->setOrientation(Qt::Vertical);
+
+        verticalLayout_8->addWidget(sl_value7);
+
+
+        gridLayout_2->addWidget(grp_index7, 2, 8, 1, 1);
+
         grp_index1 = new QGroupBox(groupBox);
         grp_index1->setObjectName(QString::fromUtf8("grp_index1"));
         verticalLayout_2 = new QVBoxLayout(grp_index1);
@@ -109,6 +172,63 @@ public:
 
 
         gridLayout_2->addWidget(grp_index1, 2, 2, 1, 1);
+
+        grp_index0 = new QGroupBox(groupBox);
+        grp_index0->setObjectName(QString::fromUtf8("grp_index0"));
+        verticalLayout = new QVBoxLayout(grp_index0);
+        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        lb_value0 = new QLabel(grp_index0);
+        lb_value0->setObjectName(QString::fromUtf8("lb_value0"));
+
+        verticalLayout->addWidget(lb_value0);
+
+        sl_value0 = new QSlider(grp_index0);
+        sl_value0->setObjectName(QString::fromUtf8("sl_value0"));
+        sl_value0->setMaximum(255);
+        sl_value0->setOrientation(Qt::Vertical);
+
+        verticalLayout->addWidget(sl_value0);
+
+
+        gridLayout_2->addWidget(grp_index0, 2, 0, 1, 1);
+
+        grp_index5 = new QGroupBox(groupBox);
+        grp_index5->setObjectName(QString::fromUtf8("grp_index5"));
+        verticalLayout_6 = new QVBoxLayout(grp_index5);
+        verticalLayout_6->setObjectName(QString::fromUtf8("verticalLayout_6"));
+        lb_value5 = new QLabel(grp_index5);
+        lb_value5->setObjectName(QString::fromUtf8("lb_value5"));
+
+        verticalLayout_6->addWidget(lb_value5);
+
+        sl_value5 = new QSlider(grp_index5);
+        sl_value5->setObjectName(QString::fromUtf8("sl_value5"));
+        sl_value5->setMaximum(255);
+        sl_value5->setOrientation(Qt::Vertical);
+
+        verticalLayout_6->addWidget(sl_value5);
+
+
+        gridLayout_2->addWidget(grp_index5, 2, 6, 1, 1);
+
+        grp_index10 = new QGroupBox(groupBox);
+        grp_index10->setObjectName(QString::fromUtf8("grp_index10"));
+        verticalLayout_11 = new QVBoxLayout(grp_index10);
+        verticalLayout_11->setObjectName(QString::fromUtf8("verticalLayout_11"));
+        lb_value10 = new QLabel(grp_index10);
+        lb_value10->setObjectName(QString::fromUtf8("lb_value10"));
+
+        verticalLayout_11->addWidget(lb_value10);
+
+        sl_value10 = new QSlider(grp_index10);
+        sl_value10->setObjectName(QString::fromUtf8("sl_value10"));
+        sl_value10->setMaximum(255);
+        sl_value10->setOrientation(Qt::Vertical);
+
+        verticalLayout_11->addWidget(sl_value10);
+
+
+        gridLayout_2->addWidget(grp_index10, 2, 11, 1, 1);
 
         grp_index4 = new QGroupBox(groupBox);
         grp_index4->setObjectName(QString::fromUtf8("grp_index4"));
@@ -148,25 +268,6 @@ public:
 
         gridLayout_2->addWidget(grp_index2, 2, 3, 1, 1);
 
-        grp_index5 = new QGroupBox(groupBox);
-        grp_index5->setObjectName(QString::fromUtf8("grp_index5"));
-        verticalLayout_6 = new QVBoxLayout(grp_index5);
-        verticalLayout_6->setObjectName(QString::fromUtf8("verticalLayout_6"));
-        lb_value5 = new QLabel(grp_index5);
-        lb_value5->setObjectName(QString::fromUtf8("lb_value5"));
-
-        verticalLayout_6->addWidget(lb_value5);
-
-        sl_value5 = new QSlider(grp_index5);
-        sl_value5->setObjectName(QString::fromUtf8("sl_value5"));
-        sl_value5->setMaximum(255);
-        sl_value5->setOrientation(Qt::Vertical);
-
-        verticalLayout_6->addWidget(sl_value5);
-
-
-        gridLayout_2->addWidget(grp_index5, 2, 6, 1, 1);
-
         grp_index3 = new QGroupBox(groupBox);
         grp_index3->setObjectName(QString::fromUtf8("grp_index3"));
         verticalLayout_4 = new QVBoxLayout(grp_index3);
@@ -185,25 +286,6 @@ public:
 
 
         gridLayout_2->addWidget(grp_index3, 2, 4, 1, 1);
-
-        grp_index0 = new QGroupBox(groupBox);
-        grp_index0->setObjectName(QString::fromUtf8("grp_index0"));
-        verticalLayout = new QVBoxLayout(grp_index0);
-        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        lb_value0 = new QLabel(grp_index0);
-        lb_value0->setObjectName(QString::fromUtf8("lb_value0"));
-
-        verticalLayout->addWidget(lb_value0);
-
-        sl_value0 = new QSlider(grp_index0);
-        sl_value0->setObjectName(QString::fromUtf8("sl_value0"));
-        sl_value0->setMaximum(255);
-        sl_value0->setOrientation(Qt::Vertical);
-
-        verticalLayout->addWidget(sl_value0);
-
-
-        gridLayout_2->addWidget(grp_index0, 2, 0, 1, 1);
 
         grp_index9 = new QGroupBox(groupBox);
         grp_index9->setObjectName(QString::fromUtf8("grp_index9"));
@@ -243,44 +325,6 @@ public:
 
         gridLayout_2->addWidget(grp_index8, 2, 9, 1, 1);
 
-        grp_index10 = new QGroupBox(groupBox);
-        grp_index10->setObjectName(QString::fromUtf8("grp_index10"));
-        verticalLayout_11 = new QVBoxLayout(grp_index10);
-        verticalLayout_11->setObjectName(QString::fromUtf8("verticalLayout_11"));
-        lb_value10 = new QLabel(grp_index10);
-        lb_value10->setObjectName(QString::fromUtf8("lb_value10"));
-
-        verticalLayout_11->addWidget(lb_value10);
-
-        sl_value10 = new QSlider(grp_index10);
-        sl_value10->setObjectName(QString::fromUtf8("sl_value10"));
-        sl_value10->setMaximum(255);
-        sl_value10->setOrientation(Qt::Vertical);
-
-        verticalLayout_11->addWidget(sl_value10);
-
-
-        gridLayout_2->addWidget(grp_index10, 2, 11, 1, 1);
-
-        grp_index7 = new QGroupBox(groupBox);
-        grp_index7->setObjectName(QString::fromUtf8("grp_index7"));
-        verticalLayout_8 = new QVBoxLayout(grp_index7);
-        verticalLayout_8->setObjectName(QString::fromUtf8("verticalLayout_8"));
-        lb_value7 = new QLabel(grp_index7);
-        lb_value7->setObjectName(QString::fromUtf8("lb_value7"));
-
-        verticalLayout_8->addWidget(lb_value7);
-
-        sl_value7 = new QSlider(grp_index7);
-        sl_value7->setObjectName(QString::fromUtf8("sl_value7"));
-        sl_value7->setMaximum(255);
-        sl_value7->setOrientation(Qt::Vertical);
-
-        verticalLayout_8->addWidget(sl_value7);
-
-
-        gridLayout_2->addWidget(grp_index7, 2, 8, 1, 1);
-
         grp_index6 = new QGroupBox(groupBox);
         grp_index6->setObjectName(QString::fromUtf8("grp_index6"));
         verticalLayout_7 = new QVBoxLayout(grp_index6);
@@ -301,26 +345,14 @@ public:
         gridLayout_2->addWidget(grp_index6, 2, 7, 1, 1);
 
 
-        gridLayout->addWidget(groupBox, 2, 0, 1, 1);
-
-        BtnStartStreaming = new QPushButton(DMXconsole);
-        BtnStartStreaming->setObjectName(QString::fromUtf8("BtnStartStreaming"));
-        BtnStartStreaming->setAutoFillBackground(false);
-
-        gridLayout->addWidget(BtnStartStreaming, 0, 0, 1, 1);
+        gridLayout_3->addWidget(groupBox, 2, 0, 1, 1);
 
         sl_virtualH = new QSlider(DMXconsole);
         sl_virtualH->setObjectName(QString::fromUtf8("sl_virtualH"));
         sl_virtualH->setMaximum(501);
         sl_virtualH->setOrientation(Qt::Horizontal);
 
-        gridLayout->addWidget(sl_virtualH, 3, 0, 1, 1);
-
-        chk_SelectAll = new QCheckBox(DMXconsole);
-        chk_SelectAll->setObjectName(QString::fromUtf8("chk_SelectAll"));
-        chk_SelectAll->setFocusPolicy(Qt::ClickFocus);
-
-        gridLayout->addWidget(chk_SelectAll, 1, 0, 1, 1);
+        gridLayout_3->addWidget(sl_virtualH, 3, 0, 1, 1);
 
 
         retranslateUi(DMXconsole);
@@ -331,31 +363,36 @@ public:
     void retranslateUi(QDialog *DMXconsole)
     {
         DMXconsole->setWindowTitle(QCoreApplication::translate("DMXconsole", "Dialog", nullptr));
+        BtnStartStreaming->setText(QCoreApplication::translate("DMXconsole", "DMX stream ON", nullptr));
+        groupBox_2->setTitle(QString());
+        rd_SelectAll->setText(QCoreApplication::translate("DMXconsole", "Select All", nullptr));
+        rd_Odd->setText(QCoreApplication::translate("DMXconsole", "Odd", nullptr));
+        rd_Even->setText(QCoreApplication::translate("DMXconsole", "Even", nullptr));
+        rd_Enhance->setText(QCoreApplication::translate("DMXconsole", "Enhance", nullptr));
+        rd_None->setText(QCoreApplication::translate("DMXconsole", "None", nullptr));
         groupBox->setTitle(QCoreApplication::translate("DMXconsole", "512 DMX channels", nullptr));
+        grp_index7->setTitle(QCoreApplication::translate("DMXconsole", "GroupBox", nullptr));
+        lb_value7->setText(QCoreApplication::translate("DMXconsole", "0", nullptr));
         grp_index1->setTitle(QCoreApplication::translate("DMXconsole", "GroupBox", nullptr));
         lb_value1->setText(QCoreApplication::translate("DMXconsole", "0", nullptr));
+        grp_index0->setTitle(QCoreApplication::translate("DMXconsole", "GroupBox", nullptr));
+        lb_value0->setText(QCoreApplication::translate("DMXconsole", "0", nullptr));
+        grp_index5->setTitle(QCoreApplication::translate("DMXconsole", "GroupBox", nullptr));
+        lb_value5->setText(QCoreApplication::translate("DMXconsole", "0", nullptr));
+        grp_index10->setTitle(QCoreApplication::translate("DMXconsole", "GroupBox", nullptr));
+        lb_value10->setText(QCoreApplication::translate("DMXconsole", "0", nullptr));
         grp_index4->setTitle(QCoreApplication::translate("DMXconsole", "GroupBox", nullptr));
         lb_value4->setText(QCoreApplication::translate("DMXconsole", "0", nullptr));
         grp_index2->setTitle(QCoreApplication::translate("DMXconsole", "GroupBox", nullptr));
         lb_value2->setText(QCoreApplication::translate("DMXconsole", "0", nullptr));
-        grp_index5->setTitle(QCoreApplication::translate("DMXconsole", "GroupBox", nullptr));
-        lb_value5->setText(QCoreApplication::translate("DMXconsole", "0", nullptr));
         grp_index3->setTitle(QCoreApplication::translate("DMXconsole", "GroupBox", nullptr));
         lb_value3->setText(QCoreApplication::translate("DMXconsole", "0", nullptr));
-        grp_index0->setTitle(QCoreApplication::translate("DMXconsole", "GroupBox", nullptr));
-        lb_value0->setText(QCoreApplication::translate("DMXconsole", "0", nullptr));
         grp_index9->setTitle(QCoreApplication::translate("DMXconsole", "GroupBox", nullptr));
         lb_value9->setText(QCoreApplication::translate("DMXconsole", "0", nullptr));
         grp_index8->setTitle(QCoreApplication::translate("DMXconsole", "GroupBox", nullptr));
         lb_value8->setText(QCoreApplication::translate("DMXconsole", "0", nullptr));
-        grp_index10->setTitle(QCoreApplication::translate("DMXconsole", "GroupBox", nullptr));
-        lb_value10->setText(QCoreApplication::translate("DMXconsole", "0", nullptr));
-        grp_index7->setTitle(QCoreApplication::translate("DMXconsole", "GroupBox", nullptr));
-        lb_value7->setText(QCoreApplication::translate("DMXconsole", "0", nullptr));
         grp_index6->setTitle(QCoreApplication::translate("DMXconsole", "GroupBox", nullptr));
         lb_value6->setText(QCoreApplication::translate("DMXconsole", "0", nullptr));
-        BtnStartStreaming->setText(QCoreApplication::translate("DMXconsole", "DMX stream ON", nullptr));
-        chk_SelectAll->setText(QCoreApplication::translate("DMXconsole", "Select All channels", nullptr));
     } // retranslateUi
 
 };

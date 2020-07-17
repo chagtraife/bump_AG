@@ -494,7 +494,7 @@ public:
         lb_MaxHeight->setText(QCoreApplication::translate("MainWindow", "MAX Height", nullptr));
         lb_MinHeight->setText(QCoreApplication::translate("MainWindow", "MIN Height", nullptr));
         label_3->setText(QCoreApplication::translate("MainWindow", "Position", nullptr));
-        label_5->setText(QCoreApplication::translate("MainWindow", "Temperater", nullptr));
+        label_5->setText(QCoreApplication::translate("MainWindow", "Temperature", nullptr));
         label_4->setText(QCoreApplication::translate("MainWindow", "Current", nullptr));
         gboptionRGB->setTitle(QString());
         rdOneOne->setText(QCoreApplication::translate("MainWindow", "One-One", nullptr));

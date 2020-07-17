@@ -28,6 +28,7 @@ public:
     explicit DMXconsole(QWidget *parent = 0);
     ~DMXconsole();
     QByteArray DMXBuffer;
+    int DMXBuffer_[513];
 
 private slots:
     void BtnDMXStreaming_Clicked(void);
@@ -40,6 +41,10 @@ private:
     bool IsDMXRunning, IsSelectAll;
     void UI_Init(void);
     quint16 GetIndex(void);
+
+public:
+    static int idx;
+
 private slots:
     void _updateLb_value0(int val);
 

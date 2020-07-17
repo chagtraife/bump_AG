@@ -23,6 +23,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     WindDMXConverter_Setting.cpp \
     authen.cpp \
+    console_enhance.cpp \
     debug.cpp \
     deviceview.cpp \
     dmx_monitor.cpp \
@@ -42,6 +43,7 @@ SOURCES += \
 HEADERS += \
     WindDMXConverter_Setting.h \
     authen.h \
+    console_enhance.h \
     debug.h \
     deviceview.h \
     dmx_monitor.h \
@@ -60,7 +62,9 @@ HEADERS += \
 
 FORMS += \
     WindDMXConverter_Setting.ui \
+    console_enhance.ui \
     deviceview.ui \
+    dmx_console_enhance.ui \
     dmx_monitor.ui \
     dmxconsole.ui \
     ledrgbctrl.ui \

@@ -1,5 +1,6 @@
 release/WindDMXConverter_Setting.o
 release/authen.o
+release/console_enhance.o
 release/debug.o
 release/deviceview.o
 release/dmx_monitor.o
@@ -17,6 +18,7 @@ release/thresholdmanagersetting.o
 release/usermanagersetting.o
 release/qrc_AG.o
 release/moc_WindDMXConverter_Setting.o
+release/moc_console_enhance.o
 release/moc_deviceview.o
 release/moc_dmx_monitor.o
 release/moc_dmxconsole.o
