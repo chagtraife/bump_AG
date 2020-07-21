@@ -28,14 +28,13 @@ class Ui_DMXconsole
 public:
     QGridLayout *gridLayout_3;
     QPushButton *BtnStartStreaming;
-    QGroupBox *groupBox_2;
+    QGroupBox *gB_selection;
     QGridLayout *gridLayout;
-    QRadioButton *rd_SelectAll;
     QRadioButton *rd_Odd;
+    QRadioButton *rd_SelectAll;
     QRadioButton *rd_Even;
     QRadioButton *rd_Enhance;
-    QRadioButton *rd_None;
-    QGroupBox *groupBox;
+    QGroupBox *gB_Stream_value;
     QGridLayout *gridLayout_2;
     QGroupBox *grp_index7;
     QVBoxLayout *verticalLayout_8;
@@ -99,43 +98,38 @@ public:
 
         gridLayout_3->addWidget(BtnStartStreaming, 0, 0, 1, 1);
 
-        groupBox_2 = new QGroupBox(DMXconsole);
-        groupBox_2->setObjectName(QString::fromUtf8("groupBox_2"));
-        gridLayout = new QGridLayout(groupBox_2);
+        gB_selection = new QGroupBox(DMXconsole);
+        gB_selection->setObjectName(QString::fromUtf8("gB_selection"));
+        gridLayout = new QGridLayout(gB_selection);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-        rd_SelectAll = new QRadioButton(groupBox_2);
-        rd_SelectAll->setObjectName(QString::fromUtf8("rd_SelectAll"));
-
-        gridLayout->addWidget(rd_SelectAll, 0, 0, 1, 1);
-
-        rd_Odd = new QRadioButton(groupBox_2);
+        rd_Odd = new QRadioButton(gB_selection);
         rd_Odd->setObjectName(QString::fromUtf8("rd_Odd"));
 
         gridLayout->addWidget(rd_Odd, 0, 1, 1, 1);
 
-        rd_Even = new QRadioButton(groupBox_2);
+        rd_SelectAll = new QRadioButton(gB_selection);
+        rd_SelectAll->setObjectName(QString::fromUtf8("rd_SelectAll"));
+
+        gridLayout->addWidget(rd_SelectAll, 0, 0, 1, 1);
+
+        rd_Even = new QRadioButton(gB_selection);
         rd_Even->setObjectName(QString::fromUtf8("rd_Even"));
 
         gridLayout->addWidget(rd_Even, 0, 2, 1, 1);
 
-        rd_Enhance = new QRadioButton(groupBox_2);
+        rd_Enhance = new QRadioButton(gB_selection);
         rd_Enhance->setObjectName(QString::fromUtf8("rd_Enhance"));
 
         gridLayout->addWidget(rd_Enhance, 0, 3, 1, 1);
 
-        rd_None = new QRadioButton(groupBox_2);
-        rd_None->setObjectName(QString::fromUtf8("rd_None"));
 
-        gridLayout->addWidget(rd_None, 0, 4, 1, 1);
+        gridLayout_3->addWidget(gB_selection, 1, 0, 1, 1);
 
-
-        gridLayout_3->addWidget(groupBox_2, 1, 0, 1, 1);
-
-        groupBox = new QGroupBox(DMXconsole);
-        groupBox->setObjectName(QString::fromUtf8("groupBox"));
-        gridLayout_2 = new QGridLayout(groupBox);
+        gB_Stream_value = new QGroupBox(DMXconsole);
+        gB_Stream_value->setObjectName(QString::fromUtf8("gB_Stream_value"));
+        gridLayout_2 = new QGridLayout(gB_Stream_value);
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
-        grp_index7 = new QGroupBox(groupBox);
+        grp_index7 = new QGroupBox(gB_Stream_value);
         grp_index7->setObjectName(QString::fromUtf8("grp_index7"));
         verticalLayout_8 = new QVBoxLayout(grp_index7);
         verticalLayout_8->setObjectName(QString::fromUtf8("verticalLayout_8"));
@@ -154,7 +148,7 @@ public:
 
         gridLayout_2->addWidget(grp_index7, 2, 8, 1, 1);
 
-        grp_index1 = new QGroupBox(groupBox);
+        grp_index1 = new QGroupBox(gB_Stream_value);
         grp_index1->setObjectName(QString::fromUtf8("grp_index1"));
         verticalLayout_2 = new QVBoxLayout(grp_index1);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
@@ -173,7 +167,7 @@ public:
 
         gridLayout_2->addWidget(grp_index1, 2, 2, 1, 1);
 
-        grp_index0 = new QGroupBox(groupBox);
+        grp_index0 = new QGroupBox(gB_Stream_value);
         grp_index0->setObjectName(QString::fromUtf8("grp_index0"));
         verticalLayout = new QVBoxLayout(grp_index0);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
@@ -192,7 +186,7 @@ public:
 
         gridLayout_2->addWidget(grp_index0, 2, 0, 1, 1);
 
-        grp_index5 = new QGroupBox(groupBox);
+        grp_index5 = new QGroupBox(gB_Stream_value);
         grp_index5->setObjectName(QString::fromUtf8("grp_index5"));
         verticalLayout_6 = new QVBoxLayout(grp_index5);
         verticalLayout_6->setObjectName(QString::fromUtf8("verticalLayout_6"));
@@ -211,7 +205,7 @@ public:
 
         gridLayout_2->addWidget(grp_index5, 2, 6, 1, 1);
 
-        grp_index10 = new QGroupBox(groupBox);
+        grp_index10 = new QGroupBox(gB_Stream_value);
         grp_index10->setObjectName(QString::fromUtf8("grp_index10"));
         verticalLayout_11 = new QVBoxLayout(grp_index10);
         verticalLayout_11->setObjectName(QString::fromUtf8("verticalLayout_11"));
@@ -230,7 +224,7 @@ public:
 
         gridLayout_2->addWidget(grp_index10, 2, 11, 1, 1);
 
-        grp_index4 = new QGroupBox(groupBox);
+        grp_index4 = new QGroupBox(gB_Stream_value);
         grp_index4->setObjectName(QString::fromUtf8("grp_index4"));
         verticalLayout_5 = new QVBoxLayout(grp_index4);
         verticalLayout_5->setObjectName(QString::fromUtf8("verticalLayout_5"));
@@ -249,7 +243,7 @@ public:
 
         gridLayout_2->addWidget(grp_index4, 2, 5, 1, 1);
 
-        grp_index2 = new QGroupBox(groupBox);
+        grp_index2 = new QGroupBox(gB_Stream_value);
         grp_index2->setObjectName(QString::fromUtf8("grp_index2"));
         verticalLayout_3 = new QVBoxLayout(grp_index2);
         verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
@@ -268,7 +262,7 @@ public:
 
         gridLayout_2->addWidget(grp_index2, 2, 3, 1, 1);
 
-        grp_index3 = new QGroupBox(groupBox);
+        grp_index3 = new QGroupBox(gB_Stream_value);
         grp_index3->setObjectName(QString::fromUtf8("grp_index3"));
         verticalLayout_4 = new QVBoxLayout(grp_index3);
         verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
@@ -287,7 +281,7 @@ public:
 
         gridLayout_2->addWidget(grp_index3, 2, 4, 1, 1);
 
-        grp_index9 = new QGroupBox(groupBox);
+        grp_index9 = new QGroupBox(gB_Stream_value);
         grp_index9->setObjectName(QString::fromUtf8("grp_index9"));
         verticalLayout_10 = new QVBoxLayout(grp_index9);
         verticalLayout_10->setObjectName(QString::fromUtf8("verticalLayout_10"));
@@ -306,7 +300,7 @@ public:
 
         gridLayout_2->addWidget(grp_index9, 2, 10, 1, 1);
 
-        grp_index8 = new QGroupBox(groupBox);
+        grp_index8 = new QGroupBox(gB_Stream_value);
         grp_index8->setObjectName(QString::fromUtf8("grp_index8"));
         verticalLayout_9 = new QVBoxLayout(grp_index8);
         verticalLayout_9->setObjectName(QString::fromUtf8("verticalLayout_9"));
@@ -325,7 +319,7 @@ public:
 
         gridLayout_2->addWidget(grp_index8, 2, 9, 1, 1);
 
-        grp_index6 = new QGroupBox(groupBox);
+        grp_index6 = new QGroupBox(gB_Stream_value);
         grp_index6->setObjectName(QString::fromUtf8("grp_index6"));
         verticalLayout_7 = new QVBoxLayout(grp_index6);
         verticalLayout_7->setObjectName(QString::fromUtf8("verticalLayout_7"));
@@ -345,7 +339,7 @@ public:
         gridLayout_2->addWidget(grp_index6, 2, 7, 1, 1);
 
 
-        gridLayout_3->addWidget(groupBox, 2, 0, 1, 1);
+        gridLayout_3->addWidget(gB_Stream_value, 2, 0, 1, 1);
 
         sl_virtualH = new QSlider(DMXconsole);
         sl_virtualH->setObjectName(QString::fromUtf8("sl_virtualH"));
@@ -364,13 +358,12 @@ public:
     {
         DMXconsole->setWindowTitle(QCoreApplication::translate("DMXconsole", "Dialog", nullptr));
         BtnStartStreaming->setText(QCoreApplication::translate("DMXconsole", "DMX stream ON", nullptr));
-        groupBox_2->setTitle(QString());
-        rd_SelectAll->setText(QCoreApplication::translate("DMXconsole", "Select All", nullptr));
+        gB_selection->setTitle(QCoreApplication::translate("DMXconsole", "Selection", nullptr));
         rd_Odd->setText(QCoreApplication::translate("DMXconsole", "Odd", nullptr));
+        rd_SelectAll->setText(QCoreApplication::translate("DMXconsole", "Select All", nullptr));
         rd_Even->setText(QCoreApplication::translate("DMXconsole", "Even", nullptr));
         rd_Enhance->setText(QCoreApplication::translate("DMXconsole", "Enhance", nullptr));
-        rd_None->setText(QCoreApplication::translate("DMXconsole", "None", nullptr));
-        groupBox->setTitle(QCoreApplication::translate("DMXconsole", "512 DMX channels", nullptr));
+        gB_Stream_value->setTitle(QCoreApplication::translate("DMXconsole", "512 DMX channels", nullptr));
         grp_index7->setTitle(QCoreApplication::translate("DMXconsole", "GroupBox", nullptr));
         lb_value7->setText(QCoreApplication::translate("DMXconsole", "0", nullptr));
         grp_index1->setTitle(QCoreApplication::translate("DMXconsole", "GroupBox", nullptr));

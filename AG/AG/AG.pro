@@ -64,7 +64,6 @@ FORMS += \
     WindDMXConverter_Setting.ui \
     console_enhance.ui \
     deviceview.ui \
-    dmx_console_enhance.ui \
     dmx_monitor.ui \
     dmxconsole.ui \
     ledrgbctrl.ui \

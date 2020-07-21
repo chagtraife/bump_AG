@@ -27,12 +27,12 @@ public:
     QGroupBox *groupBox;
     QGridLayout *gridLayout;
     QLabel *label;
-    QLineEdit *lineEdit;
+    QLineEdit *txtFrom;
     QLabel *label_2;
-    QLineEdit *lineEdit_2;
+    QLineEdit *txtTo;
     QLabel *label_3;
-    QLineEdit *lineEdit_3;
-    QPushButton *pushButton;
+    QLineEdit *txtOffset;
+    QPushButton *btnOk;
 
     void setupUi(QDialog *Console_Enhance)
     {
@@ -50,38 +50,38 @@ public:
 
         gridLayout->addWidget(label, 0, 0, 1, 1);
 
-        lineEdit = new QLineEdit(groupBox);
-        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
+        txtFrom = new QLineEdit(groupBox);
+        txtFrom->setObjectName(QString::fromUtf8("txtFrom"));
 
-        gridLayout->addWidget(lineEdit, 0, 1, 1, 1);
+        gridLayout->addWidget(txtFrom, 0, 1, 1, 1);
 
         label_2 = new QLabel(groupBox);
         label_2->setObjectName(QString::fromUtf8("label_2"));
 
         gridLayout->addWidget(label_2, 1, 0, 1, 1);
 
-        lineEdit_2 = new QLineEdit(groupBox);
-        lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
+        txtTo = new QLineEdit(groupBox);
+        txtTo->setObjectName(QString::fromUtf8("txtTo"));
 
-        gridLayout->addWidget(lineEdit_2, 1, 1, 1, 1);
+        gridLayout->addWidget(txtTo, 1, 1, 1, 1);
 
         label_3 = new QLabel(groupBox);
         label_3->setObjectName(QString::fromUtf8("label_3"));
 
         gridLayout->addWidget(label_3, 2, 0, 1, 1);
 
-        lineEdit_3 = new QLineEdit(groupBox);
-        lineEdit_3->setObjectName(QString::fromUtf8("lineEdit_3"));
+        txtOffset = new QLineEdit(groupBox);
+        txtOffset->setObjectName(QString::fromUtf8("txtOffset"));
 
-        gridLayout->addWidget(lineEdit_3, 2, 1, 1, 1);
+        gridLayout->addWidget(txtOffset, 2, 1, 1, 1);
 
 
         gridLayout_2->addWidget(groupBox, 0, 0, 1, 1);
 
-        pushButton = new QPushButton(Console_Enhance);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        btnOk = new QPushButton(Console_Enhance);
+        btnOk->setObjectName(QString::fromUtf8("btnOk"));
 
-        gridLayout_2->addWidget(pushButton, 1, 0, 1, 1);
+        gridLayout_2->addWidget(btnOk, 1, 0, 1, 1);
 
 
         retranslateUi(Console_Enhance);
@@ -91,12 +91,12 @@ public:
 
     void retranslateUi(QDialog *Console_Enhance)
     {
-        Console_Enhance->setWindowTitle(QCoreApplication::translate("Console_Enhance", "Dialog", nullptr));
+        Console_Enhance->setWindowTitle(QCoreApplication::translate("Console_Enhance", "Enhance Config", nullptr));
         groupBox->setTitle(QString());
         label->setText(QCoreApplication::translate("Console_Enhance", "From:", nullptr));
         label_2->setText(QCoreApplication::translate("Console_Enhance", "To:", nullptr));
         label_3->setText(QCoreApplication::translate("Console_Enhance", "Offset:", nullptr));
-        pushButton->setText(QCoreApplication::translate("Console_Enhance", "OK", nullptr));
+        btnOk->setText(QCoreApplication::translate("Console_Enhance", "OK", nullptr));
     } // retranslateUi
 
 };

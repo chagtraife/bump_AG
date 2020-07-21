@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Console_Enhance_t {
-    QByteArrayData data[1];
-    char stringdata0[16];
+    QByteArrayData data[9];
+    char stringdata0[110];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,10 +32,21 @@ struct qt_meta_stringdata_Console_Enhance_t {
     )
 static const qt_meta_stringdata_Console_Enhance_t qt_meta_stringdata_Console_Enhance = {
     {
-QT_MOC_LITERAL(0, 0, 15) // "Console_Enhance"
+QT_MOC_LITERAL(0, 0, 15), // "Console_Enhance"
+QT_MOC_LITERAL(1, 16, 8), // "get_data"
+QT_MOC_LITERAL(2, 25, 0), // ""
+QT_MOC_LITERAL(3, 26, 23), // "turn_off_config_enhance"
+QT_MOC_LITERAL(4, 50, 12), // "into_enhance"
+QT_MOC_LITERAL(5, 63, 16), // "on_btnOk_clicked"
+QT_MOC_LITERAL(6, 80, 10), // "closeEvent"
+QT_MOC_LITERAL(7, 91, 12), // "QCloseEvent*"
+QT_MOC_LITERAL(8, 104, 5) // "event"
 
     },
-    "Console_Enhance"
+    "Console_Enhance\0get_data\0\0"
+    "turn_off_config_enhance\0into_enhance\0"
+    "on_btnOk_clicked\0closeEvent\0QCloseEvent*\0"
+    "event"
 };
 #undef QT_MOC_LITERAL
 
@@ -45,22 +56,71 @@ static const uint qt_meta_data_Console_Enhance[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       0,    0, // methods
+       5,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       0,       // signalCount
+       3,       // signalCount
+
+ // signals: name, argc, parameters, tag, flags
+       1,    0,   39,    2, 0x06 /* Public */,
+       3,    0,   40,    2, 0x06 /* Public */,
+       4,    0,   41,    2, 0x06 /* Public */,
+
+ // slots: name, argc, parameters, tag, flags
+       5,    0,   42,    2, 0x08 /* Private */,
+       6,    1,   43,    2, 0x08 /* Private */,
+
+ // signals: parameters
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+
+ // slots: parameters
+    QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 7,    8,
 
        0        // eod
 };
 
 void Console_Enhance::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
-    Q_UNUSED(_o);
-    Q_UNUSED(_id);
-    Q_UNUSED(_c);
-    Q_UNUSED(_a);
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        auto *_t = static_cast<Console_Enhance *>(_o);
+        Q_UNUSED(_t)
+        switch (_id) {
+        case 0: _t->get_data(); break;
+        case 1: _t->turn_off_config_enhance(); break;
+        case 2: _t->into_enhance(); break;
+        case 3: _t->on_btnOk_clicked(); break;
+        case 4: _t->closeEvent((*reinterpret_cast< QCloseEvent*(*)>(_a[1]))); break;
+        default: ;
+        }
+    } else if (_c == QMetaObject::IndexOfMethod) {
+        int *result = reinterpret_cast<int *>(_a[0]);
+        {
+            using _t = void (Console_Enhance::*)();
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Console_Enhance::get_data)) {
+                *result = 0;
+                return;
+            }
+        }
+        {
+            using _t = void (Console_Enhance::*)();
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Console_Enhance::turn_off_config_enhance)) {
+                *result = 1;
+                return;
+            }
+        }
+        {
+            using _t = void (Console_Enhance::*)();
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Console_Enhance::into_enhance)) {
+                *result = 2;
+                return;
+            }
+        }
+    }
 }
 
 QT_INIT_METAOBJECT const QMetaObject Console_Enhance::staticMetaObject = { {
@@ -89,7 +149,36 @@ void *Console_Enhance::qt_metacast(const char *_clname)
 int Console_Enhance::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QDialog::qt_metacall(_c, _id, _a);
+    if (_id < 0)
+        return _id;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        if (_id < 5)
+            qt_static_metacall(this, _c, _id, _a);
+        _id -= 5;
+    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+        if (_id < 5)
+            *reinterpret_cast<int*>(_a[0]) = -1;
+        _id -= 5;
+    }
     return _id;
+}
+
+// SIGNAL 0
+void Console_Enhance::get_data()
+{
+    QMetaObject::activate(this, &staticMetaObject, 0, nullptr);
+}
+
+// SIGNAL 1
+void Console_Enhance::turn_off_config_enhance()
+{
+    QMetaObject::activate(this, &staticMetaObject, 1, nullptr);
+}
+
+// SIGNAL 2
+void Console_Enhance::into_enhance()
+{
+    QMetaObject::activate(this, &staticMetaObject, 2, nullptr);
 }
 QT_WARNING_POP
 QT_END_MOC_NAMESPACE
