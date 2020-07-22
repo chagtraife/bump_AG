@@ -3813,7 +3813,9 @@ debug/console_enhance.o: ../AG/console_enhance.cpp ../AG/console_enhance.h \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/QDebug \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore/QString \
 		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/QCloseEvent \
-		ui_console_enhance.h
+		ui_console_enhance.h \
+		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/QMessageBox \
+		C:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qmessagebox.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\console_enhance.o ..\AG\console_enhance.cpp
 
 debug/debug.o: ../AG/debug.cpp ../AG/debug.h \
