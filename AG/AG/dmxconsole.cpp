@@ -480,7 +480,7 @@ void DMXconsole::goback(void){
 void DMXconsole::on_sl_value0_valueChanged(int value)
 {
     if (state == Enhance){
-        if (((idx +1-enhance_config->From)%(enhance_config->offset+1)==0) and (idx +1 < enhance_config->To)){
+        if (((idx +1-enhance_config->From)%(enhance_config->offset+1)==0) and ((enhance_config->From<= idx +1) and (idx +1 <= enhance_config->To))){
             for(int x = enhance_config->From; x <= enhance_config->To; x += enhance_config->offset+1)
             {
                 DMXBuffer_[x] = ui->sl_value0->value();
@@ -505,7 +505,7 @@ void DMXconsole::on_sl_value0_valueChanged(int value)
 void DMXconsole::on_sl_value1_valueChanged(int value)
 {
     if (state == Enhance){
-        if (((idx +2-enhance_config->From)%(enhance_config->offset+1)==0) and (idx +1 < enhance_config->To)){
+        if (((idx +2-enhance_config->From)%(enhance_config->offset+1)==0) and ((enhance_config->From<= idx +2) and (idx +2 <= enhance_config->To))){
             for(int x = enhance_config->From; x <= enhance_config->To; x += enhance_config->offset+1)
             {
                 DMXBuffer_[x] = ui->sl_value1->value();
@@ -530,7 +530,7 @@ void DMXconsole::on_sl_value1_valueChanged(int value)
 void DMXconsole::on_sl_value2_valueChanged(int value)
 {
     if (state == Enhance){
-        if (((idx +3-enhance_config->From)%(enhance_config->offset+1)==0) and (idx +1 < enhance_config->To)){
+        if (((idx +3-enhance_config->From)%(enhance_config->offset+1)==0) and ((enhance_config->From<= idx +3) and (idx +3 <= enhance_config->To))){
             for(int x = enhance_config->From; x <= enhance_config->To; x += enhance_config->offset+1)
             {
                 DMXBuffer_[x] = ui->sl_value2->value();
@@ -547,7 +547,7 @@ void DMXconsole::on_sl_value2_valueChanged(int value)
             ui->sl_value9->setValue(DMXBuffer_[idx + 10]);
             ui->sl_value10->setValue(DMXBuffer_[idx + 11]);
         }else {
-            DMXBuffer_[idx + 3] = ui->sl_value1->value();
+            DMXBuffer_[idx + 3] = ui->sl_value2->value();
         }
     }
 }
@@ -555,7 +555,7 @@ void DMXconsole::on_sl_value2_valueChanged(int value)
 void DMXconsole::on_sl_value3_valueChanged(int value)
 {
     if (state == Enhance){
-        if (((idx +4-enhance_config->From)%(enhance_config->offset+1)==0) and (idx +1 < enhance_config->To)){
+        if (((idx +4-enhance_config->From)%(enhance_config->offset+1)==0) and ((enhance_config->From<= idx +4) and (idx +4 <= enhance_config->To))){
             for(int x = enhance_config->From; x <= enhance_config->To; x += enhance_config->offset+1)
             {
                 DMXBuffer_[x] = ui->sl_value3->value();
@@ -580,7 +580,7 @@ void DMXconsole::on_sl_value3_valueChanged(int value)
 void DMXconsole::on_sl_value4_valueChanged(int value)
 {
     if (state == Enhance){
-        if (((idx +5-enhance_config->From)%(enhance_config->offset+1)==0) and (idx +1 < enhance_config->To)){
+        if (((idx +5-enhance_config->From)%(enhance_config->offset+1)==0) and ((enhance_config->From<= idx +5) and (idx +5 <= enhance_config->To))){
             for(int x = enhance_config->From; x <= enhance_config->To; x += enhance_config->offset+1)
             {
                 DMXBuffer_[x] = ui->sl_value4->value();
@@ -605,7 +605,7 @@ void DMXconsole::on_sl_value4_valueChanged(int value)
 void DMXconsole::on_sl_value5_valueChanged(int value)
 {
     if (state == Enhance){
-        if (((idx +6-enhance_config->From)%(enhance_config->offset+1)==0) and (idx +1 < enhance_config->To)){
+        if (((idx +6-enhance_config->From)%(enhance_config->offset+1)==0) and ((enhance_config->From<= idx +6) and (idx +6 <= enhance_config->To))){
             for(int x = enhance_config->From; x <= enhance_config->To; x += enhance_config->offset+1)
             {
                 DMXBuffer_[x] = ui->sl_value5->value();
@@ -630,7 +630,7 @@ void DMXconsole::on_sl_value5_valueChanged(int value)
 void DMXconsole::on_sl_value6_valueChanged(int value)
 {
     if (state == Enhance){
-        if (((idx +7-enhance_config->From)%(enhance_config->offset+1)==0) and (idx +1 < enhance_config->To)){
+        if (((idx +7-enhance_config->From)%(enhance_config->offset+1)==0) and ((enhance_config->From<= idx +7) and (idx +7 <= enhance_config->To))){
             for(int x = enhance_config->From; x <= enhance_config->To; x += enhance_config->offset+1)
             {
                 DMXBuffer_[x] = ui->sl_value6->value();
@@ -655,7 +655,7 @@ void DMXconsole::on_sl_value6_valueChanged(int value)
 void DMXconsole::on_sl_value7_valueChanged(int value)
 {
     if (state == Enhance){
-        if (((idx +8-enhance_config->From)%(enhance_config->offset+1)==0) and (idx +1 < enhance_config->To)){
+        if (((idx +8-enhance_config->From)%(enhance_config->offset+1)==0) and ((enhance_config->From<= idx +8) and (idx +8 <= enhance_config->To))){
             for(int x = enhance_config->From; x <= enhance_config->To; x += enhance_config->offset+1)
             {
                 DMXBuffer_[x] = ui->sl_value7->value();
@@ -680,7 +680,7 @@ void DMXconsole::on_sl_value7_valueChanged(int value)
 void DMXconsole::on_sl_value8_valueChanged(int value)
 {
     if (state == Enhance){
-        if (((idx +9-enhance_config->From)%(enhance_config->offset+1)==0) and (idx +1 < enhance_config->To)){
+        if (((idx +9-enhance_config->From)%(enhance_config->offset+1)==0) and ((enhance_config->From<= idx +9) and (idx +9 <= enhance_config->To))){
             for(int x = enhance_config->From; x <= enhance_config->To; x += enhance_config->offset+1)
             {
                 DMXBuffer_[x] = ui->sl_value8->value();
@@ -705,7 +705,7 @@ void DMXconsole::on_sl_value8_valueChanged(int value)
 void DMXconsole::on_sl_value9_valueChanged(int value)
 {
     if (state == Enhance){
-        if (((idx +10-enhance_config->From)%(enhance_config->offset+1)==0) and (idx +1 < enhance_config->To)){
+        if (((idx +10-enhance_config->From)%(enhance_config->offset+1)==0) and ((enhance_config->From<= idx +10) and (idx +10 <= enhance_config->To))){
             for(int x = enhance_config->From; x <= enhance_config->To; x += enhance_config->offset+1)
             {
                 DMXBuffer_[x] = ui->sl_value9->value();
@@ -730,7 +730,7 @@ void DMXconsole::on_sl_value9_valueChanged(int value)
 void DMXconsole::on_sl_value10_valueChanged(int value)
 {
     if (state == Enhance){
-        if (((idx +11-enhance_config->From)%(enhance_config->offset+1)==0) and (idx +1 < enhance_config->To)){
+        if (((idx +11-enhance_config->From)%(enhance_config->offset+1)==0) and ((enhance_config->From<= idx +11) and (idx +11 <= enhance_config->To))){
             for(int x = enhance_config->From; x <= enhance_config->To; x += enhance_config->offset+1)
             {
                 DMXBuffer_[x] = ui->sl_value10->value();
