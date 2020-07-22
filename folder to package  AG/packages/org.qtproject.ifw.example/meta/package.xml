@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package>
+    <DisplayName>AG</DisplayName>
+    <Description>AG, accessible through a start menu entry.</Description>
+    <Version>4.0.0-2</Version>
+    <ReleaseDate>2020-06-30</ReleaseDate>
+    <Default>true</Default>
+    <Script>installscript.qs</Script>
+</Package>

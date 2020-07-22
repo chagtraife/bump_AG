@@ -1,0 +1,12 @@
+Shows how to add an entry to the Windows start menu.
+
+Generate installer with
+
+-> remove cpp/hpp file. o file
+go to release folder:
+windeployqt.exe .
+
+-> remove qm file, copy to data of "folder to package AG"
+-> go to "folder to package AG"
+
+binarycreator --offline-only -c config/config.xml -p packages AGInstaller

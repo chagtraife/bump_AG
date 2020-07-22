@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Installer>
+    <Name>AG Installer</Name>
+    <Version>4.0</Version>
+    <Title>AG</Title>
+    <Publisher>AVANT GARDE</Publisher>
+    <!-- Directory name is used in component.xml -->
+    <InstallerApplicationIcon>AG-logo</InstallerApplicationIcon>
+    <InstallerWindowIcon>logo_slogan.png</InstallerWindowIcon>
+    <!-- <Logo>logo_slogan.png</Logo> -->
+    <StartMenuDir>Qt Installer Framework Examples</StartMenuDir>
+    <TargetDir>C:/AGSoftware </TargetDir>
+</Installer>
