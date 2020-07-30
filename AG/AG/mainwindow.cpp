@@ -622,7 +622,7 @@ void MainWindow::on_BtnSearchDev_clicked()
     ui->BtnSearchDev->setEnabled(false);
     this->showLoadingDialog();
     DeviceInfo devInfo;
-    s = "";
+    s = ui->TxtUID->text().trimmed();
     dmxrdm->SetUID(s);
     dmxrdm->GetDeviceInfo();
 

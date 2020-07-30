@@ -387,6 +387,17 @@ void QT_RGB_DMX_LIB::DMXRDM::scanDev()
     emit writeData(MakeDataSend(DeviceInfo.bUID, cmd_Disc, data));
 }
 
+void QT_RGB_DMX_LIB::DMXRDM::scanDev_(QByteArray uidScan)
+{
+    QByteArray data;
+    data.resize(0);
+    //data[0] = 1;
+    _DevScan = false;
+    _isscan = true;
+    rdm_cmd = cmd_Disc;
+    emit writeData(MakeDataSend(uidScan, cmd_Disc, data));
+}
+
 bool QT_RGB_DMX_LIB::DMXRDM::scanDevCheck()
 {
 

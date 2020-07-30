@@ -341,49 +341,155 @@ void DeviceView::SetRow(DeviceInfo devInfo, quint16 row, QColor color)
 void DeviceView::BeginDiscovery()
 {
     status_running = true;
-    bool ok = false;
     loadingDialog->showDialog();
     DeviceTable_Clear();
     lstOfDevice.clear();
     BeginSetRow();
     isRunning = true;
-//    dmxrdm->discoveryProcess(UID::BroadcastUID());
+
     //======================
     DeviceInfo newDevice;
     newDevice.DMXAddr = 1;
     newDevice.SensorValue = 0;
-    quint8 a1;
+    quint16 a1, a2, a3, a4, a5,  a6;
+    QByteArray byteUID;
+    byteUID.resize(6);
+    a1 = 0;
+    a2 = 255;
+    a3 = 255;
+    a4 = 255;
+    a5 = 255;
+    a6 = 255;
+    bool aok1 = false;
+    bool aok2 = false;
+    bool aok3 = false;
+    bool aok4 = false;
+    bool aok5 = false;
+    bool aok6 = false;
 
-    for (a1 = 0; a1 <=254;a1++){
-        dmxrdm->SetUID((QString)"ff");
-        dmxrdm->GetDeviceInfo();
-        newDevice = dmxrdm->GetDeviceInfo(UID(scanUID), &ok);
-//                            _DisplayUIDAddress
+    for(a1 = 0; a1 < 255;a1++){
         if (!status_running)
         {
+            loadingDialog->hideDialog();
+            return;
+        }
+        byteUID[0]= (quint8)a1;
+        byteUID[1]= (quint8)255;
+        byteUID[2]= (quint8)255;
+        byteUID[3]= (quint8)255;
+        byteUID[4]= (quint8)255;
+        byteUID[5]= (quint8)255;
+        dmxrdm->showMessage("scanning"+QString::number(a1)+":"+QString::number(a2) + ":"+QString::number(a3)+":"+QString::number(a4) + ":"+QString::number(a5)+":"+QString::number(a6));
+        dmxrdm_rgb->scanDev_(byteUID);
+        dmxrdm_rgb->delay(100);
+        if(dmxrdm_rgb->scanDevCheck()){
+            qDebug()<<"scanDevCheck true";
+            aok1 = true;
+        }else{aok1 = false;}
+        if(aok1){
+        for(a2 = 0; a2 < 255;a2++){
+            if (!status_running)
+            {
                 loadingDialog->hideDialog();
                 return;
-        }
-
-        if(ok)
-        {
-            bool repeat_list = false;
-            foreach (DeviceInfo _dev, lstOfDevice) {
-                if(_dev.UID.toString() == newDevice.UID.toString())
+            }
+            byteUID[1]= (quint8)a2;
+            byteUID[2]= (quint8)255;
+            byteUID[3]= (quint8)255;
+            byteUID[4]= (quint8)255;
+            byteUID[5]= (quint8)255;
+            dmxrdm->showMessage("scanning"+QString::number(a1)+":"+QString::number(a2) + ":"+QString::number(a3)+":"+QString::number(a4) + ":"+QString::number(a5)+":"+QString::number(a6));
+            dmxrdm_rgb->scanDev_(byteUID);
+            dmxrdm_rgb->delay(100);
+            if(dmxrdm_rgb->scanDevCheck()){
+                qDebug()<<"scanDevCheck true";
+                aok2 = true;
+            }else{aok2 = false;}
+            if(aok2){
+            for(a3 = 0; a3 < 255;a3++){
+                if (!status_running)
                 {
-                    repeat_list = true;
+                    loadingDialog->hideDialog();
+                    return;
                 }
-            }
-            if(!repeat_list){
-                lstOfDevice<<newDevice;
-                SetNextRow(newDevice);
-            }
-        }
-        dmxrdm->showMessage("scanning");
+                byteUID[2]= (quint8)a3;
+                byteUID[3]= (quint8)255;
+                byteUID[4]= (quint8)255;
+                byteUID[5]= (quint8)255;
+                dmxrdm->showMessage("scanning"+QString::number(a1)+":"+QString::number(a2) + ":"+QString::number(a3)+":"+QString::number(a4) + ":"+QString::number(a5)+":"+QString::number(a6));
+                dmxrdm_rgb->scanDev_(byteUID);
+                dmxrdm_rgb->delay(100);
+                if(dmxrdm_rgb->scanDevCheck()){
+                    qDebug()<<"scanDevCheck true";
+                    aok3 = true;
+                }else{aok3 = false;}
+                if(aok3){
+                for(a4 = 0; a4 < 255;a4++){
+                    if (!status_running)
+                    {
+                        loadingDialog->hideDialog();
+                        return;
+                    }
+                    byteUID[3]= (quint8)a4;
+                    byteUID[4]= (quint8)255;
+                    byteUID[5]= (quint8)255;
+                    dmxrdm->showMessage("scanning"+QString::number(a1)+":"+QString::number(a2) + ":"+QString::number(a3)+":"+QString::number(a4) + ":"+QString::number(a5)+":"+QString::number(a6));
+                    dmxrdm_rgb->scanDev_(byteUID);
+                    dmxrdm_rgb->delay(100);
+                    if(dmxrdm_rgb->scanDevCheck()){
+                        qDebug()<<"scanDevCheck true";
+                        aok4 = true;
+                    }else{aok4 = false;}
+                    if(aok4){
+                    for(a5 = 0; a5 < 255;a5++){
+                        if (!status_running)
+                        {
+                            loadingDialog->hideDialog();
+                            return;
+                        }
+                        byteUID[4]= (quint8)a5;
+                        byteUID[5]= (quint8)255;
+                        dmxrdm->showMessage("scanning"+QString::number(a1)+":"+QString::number(a2) + ":"+QString::number(a3)+":"+QString::number(a4) + ":"+QString::number(a5)+":"+QString::number(a6));
+                        dmxrdm_rgb->scanDev_(byteUID);
+                        dmxrdm_rgb->delay(100);
+                        if(dmxrdm_rgb->scanDevCheck()){
+                            qDebug()<<"scanDevCheck true";
+                            aok5 = true;
+                        }else {aok5 = false;}
+                        if(aok5){
+                        for(a6 = 0; a6 < 255 ;a6++){
+                            if (!status_running)
+                            {
+                                loadingDialog->hideDialog();
+                                return;
+                            }
+                            byteUID[5]= (quint8)a6;
+                            dmxrdm->showMessage("scanning"+QString::number(a1)+":"+QString::number(a2) + ":"+QString::number(a3)+":"+QString::number(a4) + ":"+QString::number(a5)+":"+QString::number(a6));
+                            dmxrdm_rgb->scanDev_(byteUID);
+                            dmxrdm_rgb->delay(100);
+                            if(dmxrdm_rgb->scanDevCheck()){
+                                qDebug()<<"scanDevCheck true";
+                                aok6 = true;
+                            }else {aok6 = false;}
+                            if(aok1 and aok2 and aok3 and aok4 and aok5 and aok6)
+                            {
+                                byteUID[0]= (quint8)a1;
+                                byteUID[1]= (quint8)a2;
+                                byteUID[2]= (quint8)a3;
+                                byteUID[3]= (quint8)a4;
+                                byteUID[4]= (quint8)a5;
+                                byteUID[5]= (quint8)a6;
+                                newDevice.UID = byteUID;
+                                lstOfDevice<<newDevice;
+                                SetNextRow(newDevice);
+                            }
+                            //dmxrdm->showMessage("scanning"+QString::number(a1)+":"+QString::number(a2) + ":"+QString::number(a3)+":"+QString::number(a4) + ":"+QString::number(a5)+":"+QString::number(a6));
+                        }}
+                    }}
+                }}
+            }}
+        }}
     }
-
-
-
 
 
     //=====================

@@ -168,6 +168,7 @@ public:
     void updateFirmware();
     void delay(unsigned long ms);
     void scanDev();
+    void scanDev_(QByteArray uidScan);
     bool scanDevCheck();
     bool askDMXAdd();
     bool RDMPing();
